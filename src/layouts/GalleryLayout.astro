@@ -11,43 +11,44 @@ interface Props {
 }
 
 const { title, description, fullscreenHref, section = 'design-system' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const wireframes = [
-  { href: '/wireframes/home', label: 'Home' },
-  { href: '/wireframes/home-visual', label: 'Home (Visual)' },
-  { href: '/wireframes/holiday-listing', label: 'Holiday Listing' },
-  { href: '/wireframes/trip-detail', label: 'Trip Detail' },
-  { href: '/wireframes/destination', label: 'Destination' },
-  { href: '/wireframes/about', label: 'About' },
-  { href: '/wireframes/contact', label: 'Contact' },
-  { href: '/wireframes/faq', label: 'FAQ' },
+  { href: `${base}/wireframes/home`, label: 'Home' },
+  { href: `${base}/wireframes/home-visual`, label: 'Home (Visual)' },
+  { href: `${base}/wireframes/holiday-listing`, label: 'Holiday Listing' },
+  { href: `${base}/wireframes/trip-detail`, label: 'Trip Detail' },
+  { href: `${base}/wireframes/destination`, label: 'Destination' },
+  { href: `${base}/wireframes/about`, label: 'About' },
+  { href: `${base}/wireframes/contact`, label: 'Contact' },
+  { href: `${base}/wireframes/faq`, label: 'FAQ' },
 ];
 const pages = [
-  { href: '/style-guide', label: 'Style Guide' },
-  { href: '/buttons', label: 'Buttons' },
-  { href: '/icons', label: 'Icons' },
-  { href: '/grid', label: 'Grid' },
-  { href: '/cards', label: 'Cards' },
-  { href: '/forms', label: 'Forms' },
-  { href: '/nav', label: 'Navigation' },
-  { href: '/hero', label: 'Hero' },
-  { href: '/features', label: 'Features' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/testimonials', label: 'Testimonials' },
-  { href: '/stats', label: 'Stats' },
-  { href: '/logo-cloud', label: 'Logo Cloud' },
-  { href: '/faq', label: 'FAQ' },
-  { href: '/cta', label: 'CTA' },
-  { href: '/footer', label: 'Footer' },
+  { href: `${base}/style-guide`, label: 'Style Guide' },
+  { href: `${base}/buttons`, label: 'Buttons' },
+  { href: `${base}/icons`, label: 'Icons' },
+  { href: `${base}/grid`, label: 'Grid' },
+  { href: `${base}/cards`, label: 'Cards' },
+  { href: `${base}/forms`, label: 'Forms' },
+  { href: `${base}/nav`, label: 'Navigation' },
+  { href: `${base}/hero`, label: 'Hero' },
+  { href: `${base}/features`, label: 'Features' },
+  { href: `${base}/pricing`, label: 'Pricing' },
+  { href: `${base}/testimonials`, label: 'Testimonials' },
+  { href: `${base}/stats`, label: 'Stats' },
+  { href: `${base}/logo-cloud`, label: 'Logo Cloud' },
+  { href: `${base}/faq`, label: 'FAQ' },
+  { href: `${base}/cta`, label: 'CTA' },
+  { href: `${base}/footer`, label: 'Footer' },
 ];
 const layouts = [
-  { href: '/home', label: 'Home' },
-  { href: '/home-visual', label: 'Home (Visual)' },
-  { href: '/holiday-listing', label: 'Holiday Listing' },
-  { href: '/trip-detail', label: 'Trip Detail' },
-  { href: '/destination', label: 'Destination' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
-  { href: '/faq-page', label: 'FAQ' },
+  { href: `${base}/home`, label: 'Home' },
+  { href: `${base}/home-visual`, label: 'Home (Visual)' },
+  { href: `${base}/holiday-listing`, label: 'Holiday Listing' },
+  { href: `${base}/trip-detail`, label: 'Trip Detail' },
+  { href: `${base}/destination`, label: 'Destination' },
+  { href: `${base}/about`, label: 'About' },
+  { href: `${base}/contact`, label: 'Contact' },
+  { href: `${base}/faq-page`, label: 'FAQ' },
 ];
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
@@ -70,7 +71,7 @@ const sectionLabel = section === 'wireframes' ? 'Wireframes'
   <body>
     <div class="gallery-shell">
       <aside class="gallery-sidebar">
-        <a href="/" class="gallery-sidebar-back">← Gallery</a>
+        <a href={`${base}/`} class="gallery-sidebar-back">← Gallery</a>
         <div class="gallery-sidebar-title">{sectionLabel}</div>
         <nav class="gallery-nav">
           {navItems.map(({ href, label }) => (
@@ -86,7 +87,7 @@ const sectionLabel = section === 'wireframes' ? 'Wireframes'
       <main class="gallery-page">
         <div class="gallery-page-header">
           <h1>{title}</h1>
-          {fullscreenHref && <a href={fullscreenHref} class="gallery-fullscreen-link" target="_blank">View full screen</a>}
+          {fullscreenHref && <a href={`${base}${fullscreenHref}`} class="gallery-fullscreen-link" target="_blank">View full screen</a>}
         </div>
         {description && <p class="gallery-desc">{description}</p>}
         <slot />

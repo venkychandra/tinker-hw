@@ -3,21 +3,22 @@ import '../styles/global.css';
 import '../styles/reset.css';
 import '../styles/gallery.css';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const sections = [
   {
     label: 'Wireframes',
     description: 'Page structure and layout sketches. Hierarchy, flow, and content placement before visual design.',
-    href: '/wireframes/home',
+    href: `${base}/wireframes/home`,
   },
   {
     label: 'Design System',
     description: 'Tokens, primitives, and components. The visual language — colors, type, spacing, buttons, cards, forms.',
-    href: '/style-guide',
+    href: `${base}/style-guide`,
   },
   {
     label: 'Layouts',
     description: 'Full page compositions built from approved components. The assembled deliverable.',
-    href: '/layouts',
+    href: `${base}/layouts`,
   },
 ];
 ---
