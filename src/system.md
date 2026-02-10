@@ -70,4 +70,4 @@ Lang attribute: `lang` on `<html>` element required
 | Font family | Outfit | Geometric sans-serif with warm, open letterforms. Reads like a quality travel guide, not a tech product. Good x-height, many weights |
 | Border radius | 4/6/10px | Confident and grounded. 6px default. Not formal (0) or playful (12+) |
 | Shadow style | Firm, warm-tinted, 5 levels | Grounded depth with less blur than typical. Warm shadow color from gray-900. Matches "solid ground" feel |
-| Section spacing | 48px (page-flow) + component padding | page-flow: 48px gap between sections. Component internal padding: py-12/16/20 (FeatureGrid). Creates tighter vertical rhythm suitable for marketing pages. Override per-page with `style="--section-gap: 64px"` on page-flow container if needed |
+| Section spacing | 40px (page-flow) + component padding | page-flow: 40px gap between sections. Component internal padding: py-8/12/16 (FeatureGrid). Creates tighter vertical rhythm suitable for marketing pages. Override per-page with `style="--section-gap: 64px"` on page-flow container if needed |

@@ -142,7 +142,7 @@
  */
 @utility page-flow {
   & > * + * {
-    margin-top: var(--section-gap, 48px);
+    margin-top: var(--section-gap, 40px);
   }
   & > [data-seamless] + [data-seamless] {
     margin-top: 0;
