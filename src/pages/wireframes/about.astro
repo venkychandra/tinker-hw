@@ -1,0 +1,419 @@
+---
+import GalleryLayout from '../../layouts/GalleryLayout.astro';
+---
+
+<GalleryLayout title="About" description="Visual wireframe for About/Our Story page — company history, team, values, certifications." section="wireframes">
+  <div class="gallery-specimen @container">
+    <div class="max-w-[var(--container-max)] mx-auto space-y-12">
+
+      <!-- Navigation -->
+      <div class="bg-gray-100 border border-gray-300 rounded-md p-4 flex justify-between items-center">
+        <span class="text-base font-semibold text-gray-700">Headwater</span>
+        <div class="flex gap-6 text-sm text-gray-600">
+          <span>Walking</span>
+          <span>Cycling</span>
+          <span>Holiday Types</span>
+          <span>Destinations</span>
+          <span class="font-semibold text-primary-600">About</span>
+        </div>
+        <div class="flex gap-3 items-center">
+          <div class="bg-gray-200 border border-gray-400 rounded px-3 py-1 text-xs text-gray-600">Search</div>
+          <div class="text-xs text-gray-600">Contact</div>
+        </div>
+      </div>
+
+      <!-- Breadcrumbs -->
+      <div class="text-xs text-gray-500 flex gap-2">
+        <span>Home</span>
+        <span>›</span>
+        <span>About Us</span>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="text-center space-y-4 py-8">
+        <h1 class="text-5xl font-bold text-gray-800">Our Story</h1>
+        <p class="text-xl text-gray-600 max-w-[65ch] mx-auto">
+          40+ years creating exceptional self-guided active holidays across Europe and beyond
+        </p>
+      </div>
+
+      <!-- Intro Section with Image -->
+      <section class="grid grid-cols-1 @md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-4">
+          <p class="text-base text-gray-600 leading-relaxed">
+            Since 1985, Headwater has been pioneering self-guided active holidays, combining award-winning routes with hand-picked accommodation and authentic local experiences. What started as a small family business has grown into the UK's leading specialist in walking and cycling holidays.
+          </p>
+          <p class="text-base text-gray-600 leading-relaxed">
+            Our passion for active travel and commitment to quality has never changed. Every route is personally tested by our team, every hotel carefully selected, and every detail planned to give you the freedom to explore at your own pace.
+          </p>
+        </div>
+        <div class="bg-gray-300 border border-gray-400 rounded-lg h-80 flex items-center justify-center text-gray-500">
+          [ Founder/heritage image ]
+        </div>
+      </section>
+
+      <!-- Timeline -->
+      <section class="space-y-8">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">Our Journey</h2>
+
+        <div class="relative space-y-12">
+          <!-- Timeline line -->
+          <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 hidden @md:block"></div>
+
+          <!-- 1985 -->
+          <div class="grid grid-cols-1 @md:grid-cols-2 gap-8 items-center">
+            <div class="@md:text-right space-y-2">
+              <span class="text-2xl font-bold text-primary-600">1985</span>
+              <h3 class="text-xl font-semibold text-gray-800">Headwater Founded</h3>
+              <p class="text-sm text-gray-600">
+                Started by passionate walkers with a vision to create high-quality self-guided holidays in Europe.
+              </p>
+            </div>
+            <div class="bg-gray-200 border border-gray-400 rounded-lg h-40 flex items-center justify-center text-gray-500 text-xs">
+              [ 1985 image ]
+            </div>
+          </div>
+
+          <!-- 1990s -->
+          <div class="grid grid-cols-1 @md:grid-cols-2 gap-8 items-center">
+            <div class="bg-gray-200 border border-gray-400 rounded-lg h-40 flex items-center justify-center text-gray-500 text-xs @md:order-1">
+              [ 1990s image ]
+            </div>
+            <div class="space-y-2 @md:order-2">
+              <span class="text-2xl font-bold text-primary-600">1990s</span>
+              <h3 class="text-xl font-semibold text-gray-800">Expanding Horizons</h3>
+              <p class="text-sm text-gray-600">
+                Added cycling holidays and expanded destinations across France, Italy, and Spain.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2000s -->
+          <div class="grid grid-cols-1 @md:grid-cols-2 gap-8 items-center">
+            <div class="@md:text-right space-y-2">
+              <span class="text-2xl font-bold text-primary-600">2000s</span>
+              <h3 class="text-xl font-semibold text-gray-800">Award-Winning Service</h3>
+              <p class="text-sm text-gray-600">
+                Recognized with multiple travel industry awards for excellence in customer service and holiday quality.
+              </p>
+            </div>
+            <div class="bg-gray-200 border border-gray-400 rounded-lg h-40 flex items-center justify-center text-gray-500 text-xs">
+              [ 2000s image ]
+            </div>
+          </div>
+
+          <!-- Today -->
+          <div class="grid grid-cols-1 @md:grid-cols-2 gap-8 items-center">
+            <div class="bg-gray-200 border border-gray-400 rounded-lg h-40 flex items-center justify-center text-gray-500 text-xs @md:order-1">
+              [ Today image ]
+            </div>
+            <div class="space-y-2 @md:order-2">
+              <span class="text-2xl font-bold text-primary-600">Today</span>
+              <h3 class="text-xl font-semibold text-gray-800">Leading the Way</h3>
+              <p class="text-sm text-gray-600">
+                B-Corp certified, offering 35+ destinations with GPS navigation, sustainable travel practices, and unmatched expertise.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Company Values -->
+      <section class="bg-gray-50 border border-gray-300 rounded-lg p-12 space-y-8">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">What We Stand For</h2>
+
+        <div class="grid grid-cols-1 @md:grid-cols-3 gap-8">
+
+          <!-- Value 1 -->
+          <div class="text-center space-y-3">
+            <div class="bg-primary-100 border border-primary-300 rounded-full w-16 h-16 mx-auto flex items-center justify-center text-2xl">
+              🏔️
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800">Quality & Expertise</h3>
+            <p class="text-sm text-gray-600">
+              Every route personally tested, every hotel hand-picked, every detail carefully planned by our expert team.
+            </p>
+          </div>
+
+          <!-- Value 2 -->
+          <div class="text-center space-y-3">
+            <div class="bg-primary-100 border border-primary-300 rounded-full w-16 h-16 mx-auto flex items-center justify-center text-2xl">
+              🌱
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800">Sustainable Travel</h3>
+            <p class="text-sm text-gray-600">
+              B-Corp certified, committed to supporting local communities and protecting the environments we explore.
+            </p>
+          </div>
+
+          <!-- Value 3 -->
+          <div class="text-center space-y-3">
+            <div class="bg-primary-100 border border-primary-300 rounded-full w-16 h-16 mx-auto flex items-center justify-center text-2xl">
+              ❤️
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800">Personal Service</h3>
+            <p class="text-sm text-gray-600">
+              Tailor-made holidays, expert advice, and dedicated support before, during, and after your trip.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Meet the Team -->
+      <section class="space-y-8">
+        <div class="text-center space-y-3">
+          <h2 class="text-3xl font-bold text-gray-800">Meet the Team</h2>
+          <p class="text-base text-gray-600">The passionate people behind your perfect holiday</p>
+        </div>
+
+        <div class="grid grid-cols-2 @md:grid-cols-4 gap-6">
+
+          <!-- Team Member 1 -->
+          <div class="space-y-3">
+            <div class="bg-gray-300 border border-gray-400 rounded-lg aspect-square flex items-center justify-center text-gray-500 text-xs">
+              [ Team photo ]
+            </div>
+            <div class="text-center space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Sarah Mitchell</p>
+              <p class="text-xs text-gray-600">Managing Director</p>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="space-y-3">
+            <div class="bg-gray-300 border border-gray-400 rounded-lg aspect-square flex items-center justify-center text-gray-500 text-xs">
+              [ Team photo ]
+            </div>
+            <div class="text-center space-y-1">
+              <p class="text-sm font-semibold text-gray-800">James Harper</p>
+              <p class="text-xs text-gray-600">Head of Product</p>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="space-y-3">
+            <div class="bg-gray-300 border border-gray-400 rounded-lg aspect-square flex items-center justify-center text-gray-500 text-xs">
+              [ Team photo ]
+            </div>
+            <div class="text-center space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Emma Davies</p>
+              <p class="text-xs text-gray-600">Customer Experience</p>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="space-y-3">
+            <div class="bg-gray-300 border border-gray-400 rounded-lg aspect-square flex items-center justify-center text-gray-500 text-xs">
+              [ Team photo ]
+            </div>
+            <div class="text-center space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Marco Rossi</p>
+              <p class="text-xs text-gray-600">Route Specialist</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center pt-4">
+          <button class="text-sm text-primary-600 font-semibold">View Full Team →</button>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="bg-primary-50 border border-primary-200 rounded-lg p-12">
+        <div class="grid grid-cols-2 @md:grid-cols-4 gap-8 text-center">
+          <div class="space-y-2">
+            <p class="text-4xl font-bold text-primary-700">40+</p>
+            <p class="text-sm text-gray-700">Years of expertise</p>
+          </div>
+          <div class="space-y-2">
+            <p class="text-4xl font-bold text-primary-700">35+</p>
+            <p class="text-sm text-gray-700">Destinations</p>
+          </div>
+          <div class="space-y-2">
+            <p class="text-4xl font-bold text-primary-700">50k+</p>
+            <p class="text-sm text-gray-700">Happy travelers</p>
+          </div>
+          <div class="space-y-2">
+            <p class="text-4xl font-bold text-primary-700">★ 4.8</p>
+            <p class="text-sm text-gray-700">Average rating</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awards & Recognition -->
+      <section class="space-y-6">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">Awards & Recognition</h2>
+
+        <div class="grid grid-cols-2 @md:grid-cols-4 gap-6">
+
+          <!-- Award 1 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg p-6 text-center space-y-3">
+            <div class="bg-gray-200 rounded w-16 h-16 mx-auto flex items-center justify-center text-2xl">
+              🏆
+            </div>
+            <div class="space-y-1">
+              <p class="text-xs font-semibold text-gray-800">Best Tour Operator</p>
+              <p class="text-xs text-gray-600">Travel Awards 2024</p>
+            </div>
+          </div>
+
+          <!-- Award 2 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg p-6 text-center space-y-3">
+            <div class="bg-gray-200 rounded w-16 h-16 mx-auto flex items-center justify-center text-2xl">
+              ⭐
+            </div>
+            <div class="space-y-1">
+              <p class="text-xs font-semibold text-gray-800">Excellence Award</p>
+              <p class="text-xs text-gray-600">Active Travel 2023</p>
+            </div>
+          </div>
+
+          <!-- Award 3 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg p-6 text-center space-y-3">
+            <div class="bg-gray-200 rounded w-16 h-16 mx-auto flex items-center justify-center text-2xl">
+              🌟
+            </div>
+            <div class="space-y-1">
+              <p class="text-xs font-semibold text-gray-800">Customer Choice</p>
+              <p class="text-xs text-gray-600">Wanderlust 2024</p>
+            </div>
+          </div>
+
+          <!-- Award 4 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg p-6 text-center space-y-3">
+            <div class="bg-gray-200 rounded w-16 h-16 mx-auto flex items-center justify-center text-2xl">
+              🎖️
+            </div>
+            <div class="space-y-1">
+              <p class="text-xs font-semibold text-gray-800">Gold Standard</p>
+              <p class="text-xs text-gray-600">Tourism Board 2023</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Certifications & Trust -->
+      <section class="space-y-6">
+        <h2 class="text-3xl font-bold text-gray-800 text-center">Trust & Protection</h2>
+
+        <div class="bg-gray-50 border border-gray-300 rounded-lg p-8">
+          <div class="grid grid-cols-1 @md:grid-cols-3 gap-8">
+
+            <!-- ABTA -->
+            <div class="text-center space-y-3">
+              <div class="bg-gray-200 border border-gray-400 rounded-lg h-24 flex items-center justify-center">
+                <span class="text-sm text-gray-600 font-semibold">ABTA Logo</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm font-semibold text-gray-800">ABTA Protected</p>
+                <p class="text-xs text-gray-600">Member of the UK's leading travel association</p>
+              </div>
+            </div>
+
+            <!-- ATOL -->
+            <div class="text-center space-y-3">
+              <div class="bg-gray-200 border border-gray-400 rounded-lg h-24 flex items-center justify-center">
+                <span class="text-sm text-gray-600 font-semibold">ATOL 9957</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm font-semibold text-gray-800">ATOL Protected</p>
+                <p class="text-xs text-gray-600">Financial protection for package holidays</p>
+              </div>
+            </div>
+
+            <!-- B-Corp -->
+            <div class="text-center space-y-3">
+              <div class="bg-gray-200 border border-gray-400 rounded-lg h-24 flex items-center justify-center">
+                <span class="text-sm text-gray-600 font-semibold">B-Corp Logo</span>
+              </div>
+              <div class="space-y-2">
+                <p class="text-sm font-semibold text-gray-800">B-Corp Certified</p>
+                <p class="text-xs text-gray-600">Meeting highest standards of social and environmental performance</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Sustainability Section -->
+      <section class="grid grid-cols-1 @md:grid-cols-2 gap-12 items-center">
+        <div class="bg-gray-300 border border-gray-400 rounded-lg h-80 flex items-center justify-center text-gray-500">
+          [ Sustainability image ]
+        </div>
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold text-gray-800">Our Commitment to Sustainability</h2>
+          <p class="text-base text-gray-600 leading-relaxed">
+            As a B-Corp certified company, we're committed to responsible travel that supports local communities and protects the natural environments we explore. From working with local suppliers to offsetting carbon emissions, sustainability is at the heart of everything we do.
+          </p>
+          <button class="bg-primary-500 text-white px-6 py-3 rounded-md text-sm font-semibold">
+            Learn More About Our Impact
+          </button>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <div class="bg-gray-200 border border-gray-400 rounded-lg p-12 text-center space-y-4">
+        <p class="text-2xl font-bold text-gray-800">Ready to start your adventure?</p>
+        <p class="text-base text-gray-600">Join thousands of travelers who trust Headwater for their active holidays</p>
+        <div class="flex gap-3 justify-center">
+          <button class="bg-primary-500 text-white px-8 py-3 rounded-md text-sm font-semibold">
+            Browse Holidays
+          </button>
+          <button class="bg-gray-100 border border-gray-400 px-8 py-3 rounded-md text-sm font-semibold text-gray-700">
+            Contact Us
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="bg-gray-100 border border-gray-300 rounded-lg p-8">
+        <div class="grid grid-cols-2 @md:grid-cols-4 gap-6 mb-6">
+          <div class="space-y-2">
+            <p class="text-base font-bold text-gray-800">Headwater</p>
+            <p class="text-xs text-gray-600">Est. 1985</p>
+            <div class="flex gap-2 text-xs text-gray-500">
+              <span>ABTA</span>
+              <span>ATOL</span>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm font-semibold text-gray-700">Destinations</p>
+            <div class="space-y-1 text-xs text-gray-600">
+              <p>Walking</p>
+              <p>Cycling</p>
+              <p>Multi-Activity</p>
+              <p>View All</p>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm font-semibold text-gray-700">About</p>
+            <div class="space-y-1 text-xs text-gray-600">
+              <p>Our Story</p>
+              <p>Team</p>
+              <p>Reviews</p>
+              <p>Press</p>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm font-semibold text-gray-700">Contact</p>
+            <div class="space-y-1 text-xs text-gray-600">
+              <p>01606 720199</p>
+              <p>sales@headwater.com</p>
+              <p>Brochure</p>
+              <p>FAQ</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-300 pt-4 text-center text-xs text-gray-500">
+          © 2026 Headwater Holidays Ltd
+        </div>
+      </div>
+
+    </div>
+  </div>
+</GalleryLayout>

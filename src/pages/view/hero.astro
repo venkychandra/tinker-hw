@@ -1,0 +1,85 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Nav from '../../components/Nav.astro';
+---
+
+<FullScreenLayout title="Hero">
+
+  <!-- Image hero with transparent nav stacked above -->
+  <div class="@container relative overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&h=800&fit=crop"
+      alt="Mountain trail winding through alpine meadows"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gray-950/50"></div>
+    <div class="relative">
+      <Nav variant="transparent" />
+      <div class="max-w-[var(--container-max)] mx-auto px-6 py-24 @md:py-32 @lg:py-40">
+        <div class="max-w-2xl">
+          <p data-role="eyebrow" class="text-sm font-semibold uppercase tracking-wide text-accent-300 mb-4">Walking Holidays</p>
+          <h1 class="text-6xl font-bold tracking-tight text-white">Walk the Trails of Europe</h1>
+          <p class="text-xl text-white/80 mt-6 max-w-[50ch]">Self-guided walking holidays through the Dolomites, Pyrenees, and Amalfi Coast. Your trail, your pace, our expertise.</p>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="/trips" class="inline-flex items-center justify-center gap-2 font-semibold cursor-pointer text-lg px-8 py-4 rounded-md bg-white text-primary-600 hover:bg-primary-50 active:bg-primary-100 active:translate-y-px focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 transition-colors duration-fast ease-default">Explore Trips</a>
+            <a href="/how-it-works" class="inline-flex items-center justify-center gap-2 font-semibold cursor-pointer text-lg px-8 py-4 rounded-md bg-transparent text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)] hover:bg-white/10 active:bg-white/15 active:translate-y-px focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 transition-colors duration-fast ease-default">How It Works</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Split hero -->
+  <Hero
+    variant="split"
+    eyebrow="Featured Trip"
+    heading="The Amalfi Coast Path"
+    subheading="Five days walking the Path of the Gods — cliffside trails, lemon groves, and turquoise coves. Luggage transfers included."
+    primaryCta="Book This Trip"
+    primaryHref="/trips/amalfi"
+    secondaryCta="View Itinerary"
+    secondaryHref="/trips/amalfi/itinerary"
+    imageSrc="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&h=900&fit=crop"
+    imageAlt="Amalfi Coast cliffside path"
+  />
+
+  <!-- Split dark -->
+  <Hero
+    variant="split"
+    dark
+    eyebrow="New for 2026"
+    heading="Dolomites Traverse"
+    subheading="A week crossing the most dramatic peaks in the Alps. Rifugio to rifugio, with nothing but sky and stone."
+    primaryCta="Reserve Your Spot"
+    primaryHref="/trips/dolomites"
+    secondaryCta="See the Route"
+    secondaryHref="/trips/dolomites/route"
+    imageSrc="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=900&fit=crop"
+    imageAlt="Dramatic Dolomite peaks"
+  />
+
+  <!-- Simple light -->
+  <Hero
+    variant="simple"
+    eyebrow="About Headwater"
+    heading="Thirty Years on the Trail"
+    subheading="Since 1996, we've been crafting self-guided walking and cycling holidays across Europe."
+    primaryCta="Our Story"
+    primaryHref="/about"
+  />
+
+  <!-- Simple dark -->
+  <Hero
+    variant="simple"
+    dark
+    eyebrow="Ready to Go?"
+    heading="Your Next Trail Starts Here"
+    subheading="Browse our collection of walking and cycling holidays, or talk to our team about a custom itinerary."
+    primaryCta="Browse All Trips"
+    primaryHref="/trips"
+    secondaryCta="Talk to Us"
+    secondaryHref="/contact"
+  />
+
+</FullScreenLayout>

@@ -1,0 +1,82 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import TestimonialCard from '../../components/TestimonialCard.astro';
+---
+
+<FullScreenLayout title="Testimonials">
+
+  <!-- Default grid -->
+  <Testimonials
+    eyebrow="Testimonials"
+    heading="What Travelers Say"
+    subheading="Thousands of walkers and cyclists have trusted us with their European adventures."
+  >
+    <TestimonialCard
+      quote="The Amalfi Coast walk was magical. Headwater's route notes were perfect — we never got lost, and every lunch stop was a gem."
+      name="Sarah Mitchell"
+      location="Manchester, UK"
+      rating={5}
+      photo="https://i.pravatar.cc/150?img=5"
+    />
+    <TestimonialCard
+      quote="We've done three Headwater trips now. The hotels are always charming, the routes well thought out, and the local support is reassuring."
+      name="David & Claire Thompson"
+      location="Edinburgh, Scotland"
+      rating={5}
+      photo="https://i.pravatar.cc/150?img=33"
+    />
+    <TestimonialCard
+      quote="Cycling through Provence at our own pace was exactly what we needed. No rush, no group pressure. Just beautiful scenery."
+      name="James Carter"
+      location="Bristol, UK"
+      rating={5}
+      photo="https://i.pravatar.cc/150?img=12"
+    />
+  </Testimonials>
+
+  <!-- Featured -->
+  <Testimonials
+    variant="featured"
+    heading="Why We Trust Headwater"
+  >
+    <TestimonialCard
+      quote="We've walked all over Europe with Headwater — the Dolomites, the Pyrenees, the Welsh coast. Every trip has been flawlessly organized. The routes are stunning, the hotels are handpicked, and we've never had a single issue."
+      name="Margaret & Peter Lawson"
+      location="York, UK"
+      rating={5}
+      photo="https://i.pravatar.cc/150?img=60"
+    />
+  </Testimonials>
+
+  <!-- Dark -->
+  <Testimonials
+    dark
+    eyebrow="Testimonials"
+    heading="Trusted by Thousands"
+    subheading="Our travelers come back year after year."
+  >
+    <TestimonialCard
+      quote="The Amalfi Coast walk was the highlight of our year. Perfect organization from start to finish."
+      name="Sarah Mitchell"
+      location="Manchester, UK"
+      rating={5}
+      photo="https://i.pravatar.cc/150?img=5"
+    />
+    <TestimonialCard
+      quote="Three trips with Headwater, each one better than the last. The attention to detail is unmatched."
+      name="David Thompson"
+      location="Edinburgh, Scotland"
+      rating={5}
+      photo="https://i.pravatar.cc/150?img=33"
+    />
+    <TestimonialCard
+      quote="Provence by bike was stunning. The routes were quiet, scenic, and perfectly paced."
+      name="James Carter"
+      location="Bristol, UK"
+      rating={5}
+      photo="https://i.pravatar.cc/150?img=12"
+    />
+  </Testimonials>
+
+</FullScreenLayout>

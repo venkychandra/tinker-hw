@@ -1,0 +1,51 @@
+---
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  subheading?: string;
+  dark?: boolean;
+}
+
+const {
+  eyebrow,
+  heading,
+  subheading,
+  dark = false,
+} = Astro.props;
+
+const sectionBg = dark ? 'bg-gray-900' : '';
+const eyebrowColor = dark ? 'text-accent-300' : 'text-accent-500';
+const headingColor = dark ? 'text-white' : 'text-gray-900';
+const subColor = dark ? 'text-gray-400' : 'text-gray-600';
+---
+
+<section class={`@container ${sectionBg}`} data-seamless={dark || undefined}>
+  <div class="max-w-[var(--container-max)] mx-auto px-6 py-20 @md:py-24 @lg:py-32">
+
+    {/* Section header */}
+    {(eyebrow || heading || subheading) && (
+      <div class="text-center mb-12 @md:mb-16 max-w-2xl mx-auto">
+        {eyebrow && (
+          <p data-role="eyebrow" class={`text-sm font-semibold uppercase tracking-wide ${eyebrowColor} mb-3`}>
+            {eyebrow}
+          </p>
+        )}
+        {heading && (
+          <h2 class={`text-4xl font-bold tracking-tight ${headingColor}`}>
+            {heading}
+          </h2>
+        )}
+        {subheading && (
+          <p class={`text-lg ${subColor} mt-4 max-w-[55ch] mx-auto`}>
+            {subheading}
+          </p>
+        )}
+      </div>
+    )}
+
+    {/* Cards grid */}
+    <div class="grid grid-cols-1 @md:grid-cols-2 @lg:grid-cols-3 gap-6 @lg:gap-8 items-start">
+      <slot />
+    </div>
+  </div>
+</section>

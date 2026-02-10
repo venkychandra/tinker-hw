@@ -1,0 +1,131 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import CTA from '../../components/CTA.astro';
+import Hero from '../../components/Hero.astro';
+import FeatureGrid from '../../components/FeatureGrid.astro';
+---
+
+<FullScreenLayout title="CTA">
+
+  <div class="page-flow">
+    <!-- Hero to set the stage -->
+    <Hero
+      variant="image"
+      eyebrow="Walking Holidays"
+      heading="Walk the Trails of Europe"
+      subheading="Self-guided walking holidays through the Dolomites, Pyrenees, and Amalfi Coast. Your trail, your pace, our expertise."
+      primaryCta="Explore Trips"
+      primaryHref="/trips"
+      secondaryCta="How It Works"
+      secondaryHref="/how-it-works"
+      imageSrc="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&h=800&fit=crop"
+      imageAlt="Mountain trail winding through alpine meadows"
+    />
+
+    <!-- Feature grid content -->
+    <FeatureGrid
+      heading="Why Walk With Headwater?"
+      subheading="Self-guided walking designed for discovery, not endurance. We handle the logistics so you can focus on the trail."
+      features={[
+        {
+          icon: 'walking',
+          title: 'Your Pace, Your Way',
+          description: 'No group pressure, no rigid schedules. Walk as far and as fast as you like each day.',
+        },
+        {
+          icon: 'map-pin',
+          title: 'Expertly Routed',
+          description: 'We scout every trail ourselves. You get detailed maps, GPS tracks, and local tips.',
+        },
+        {
+          icon: 'mountain',
+          title: 'Luggage Transfers',
+          description: 'Your bags arrive at each hotel before you do. Walk light, sleep easy.',
+        },
+      ]}
+    />
+
+    <!-- CTA — simple light (mid-page conversion) -->
+    <CTA
+      variant="simple"
+      eyebrow="Start Your Adventure"
+      heading="Ready to Hit the Trail?"
+      subheading="Browse our collection of walking and cycling holidays, or talk to our team about a custom itinerary tailored to your pace."
+      primaryCta="Browse All Trips"
+      primaryHref="/trips"
+      secondaryCta="Talk to Us"
+      secondaryHref="/contact"
+    />
+
+    <!-- More content (simulated with a simple section) -->
+    <section class="@container bg-white">
+      <div class="max-w-[var(--container-max)] mx-auto px-6 py-20">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-4xl font-bold tracking-tight text-gray-900 mb-6">Featured Routes for Summer 2026</h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            This summer, explore our most popular trails across Europe. From coastal paths along the Mediterranean to alpine crossings in the Dolomites, every route is designed for self-guided discovery.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Each itinerary includes detailed maps, GPS tracks, hotel bookings, and daily luggage transfers. You bring the curiosity; we handle everything else.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA — bordered (embedded within content) -->
+    <CTA
+      variant="bordered"
+      eyebrow="Special Offer"
+      heading="Save 15% on Early Bookings"
+      subheading="Reserve your 2026 walking holiday before March 31st and save. Limited availability on our most popular routes."
+      primaryCta="See Availability"
+      primaryHref="/availability"
+      secondaryCta="Learn More"
+      secondaryHref="/offers"
+    />
+
+    <!-- Another content section -->
+    <section class="@container bg-gray-50" data-seamless>
+      <div class="max-w-[var(--container-max)] mx-auto px-6 py-20">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-4xl font-bold tracking-tight text-gray-900 mb-6">What Sets Us Apart</h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            We're not a tour operator. We're walkers who built the company we wanted to exist. Thirty years later, that principle still guides every route we design and every hotel we choose.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            No coaches, no crowds, no forced camaraderie. Just you, the trail, and the quiet satisfaction of covering ground at your own rhythm.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA — image (strong end-of-page conversion) -->
+    <CTA
+      variant="image"
+      eyebrow="Limited Spaces"
+      heading="Walk the Camino This Summer"
+      subheading="Join our guided group departure on the Camino de Santiago. June 15-25, 2026."
+      primaryCta="Reserve Your Spot"
+      primaryHref="/trips/camino"
+      secondaryCta="View Itinerary"
+      secondaryHref="/trips/camino/itinerary"
+      imageSrc="https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1400&h=600&fit=crop"
+      imageAlt="Pilgrims walking the Camino de Santiago trail"
+    />
+
+    <!-- Final CTA — simple dark (bottom of page) -->
+    <CTA
+      variant="simple"
+      dark
+      eyebrow="Book Now"
+      heading="Your Trail Awaits"
+      subheading="Join thousands of travelers who've discovered Europe's most beautiful paths with Headwater."
+      primaryCta="Get Started"
+      primaryHref="/start"
+      secondaryCta="View All Trips"
+      secondaryHref="/trips"
+    />
+
+  </div>
+
+</FullScreenLayout>

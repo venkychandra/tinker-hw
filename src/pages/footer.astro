@@ -1,0 +1,74 @@
+---
+import GalleryLayout from '../layouts/GalleryLayout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<GalleryLayout title="Footer" fullscreenHref="/view/footer">
+  <div class="space-y-16">
+    <!-- Simple - Light -->
+    <div class="specimen-row">
+      <div class="label-pair">
+        <span class="label">Simple</span>
+        <span class="spec">variant="simple"</span>
+      </div>
+      <div class="demo @container">
+        <Footer variant="simple" />
+      </div>
+    </div>
+
+    <!-- Simple - Dark -->
+    <div class="specimen-row">
+      <div class="label-pair">
+        <span class="label">Simple Dark</span>
+        <span class="spec">variant="simple" dark</span>
+      </div>
+      <div class="demo @container">
+        <Footer variant="simple" dark />
+      </div>
+    </div>
+
+    <!-- Standard - Light -->
+    <div class="specimen-row">
+      <div class="label-pair">
+        <span class="label">Standard</span>
+        <span class="spec">variant="standard"</span>
+      </div>
+      <div class="demo @container">
+        <Footer variant="standard" />
+      </div>
+    </div>
+
+    <!-- Standard - Dark -->
+    <div class="specimen-row">
+      <div class="label-pair">
+        <span class="label">Standard Dark</span>
+        <span class="spec">variant="standard" dark</span>
+      </div>
+      <div class="demo @container">
+        <Footer variant="standard" dark />
+      </div>
+    </div>
+
+    <!-- Newsletter - Light -->
+    <div class="specimen-row">
+      <div class="label-pair">
+        <span class="label">Newsletter</span>
+        <span class="spec">variant="newsletter"</span>
+      </div>
+      <div class="demo @container">
+        <Footer variant="newsletter" />
+      </div>
+    </div>
+
+    <!-- Newsletter - Dark -->
+    <div class="specimen-row">
+      <div class="label-pair">
+        <span class="label">Newsletter Dark</span>
+        <span class="spec">variant="newsletter" dark</span>
+      </div>
+      <div class="demo @container">
+        <Footer variant="newsletter" dark />
+      </div>
+    </div>
+  </div>
+</GalleryLayout>

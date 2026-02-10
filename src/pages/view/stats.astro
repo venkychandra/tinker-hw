@@ -1,0 +1,80 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import Stats from '../../components/Stats.astro';
+---
+
+<FullScreenLayout title="Stats">
+  <div class="page-flow">
+
+    <!-- Default 3-column with all features -->
+    <Stats
+      eyebrow="By the Numbers"
+      heading="Trusted by Thousands"
+      subheading="Over 25 years of crafting unforgettable walking and cycling holidays across Europe."
+    >
+      <div class="text-center">
+        <div class="text-6xl font-bold text-primary-500 mb-2">500+</div>
+        <div class="text-lg text-gray-900">Guided Trips</div>
+        <p class="text-sm text-gray-600 mt-2 max-w-[30ch] mx-auto">Carefully planned walking and cycling routes across Europe</p>
+      </div>
+      <div class="text-center">
+        <div class="text-6xl font-bold text-primary-500 mb-2">98%</div>
+        <div class="text-lg text-gray-900">Satisfaction Rate</div>
+        <p class="text-sm text-gray-600 mt-2 max-w-[30ch] mx-auto">Based on post-trip surveys from the last 12 months</p>
+      </div>
+      <div class="text-center">
+        <div class="text-6xl font-bold text-primary-500 mb-2">25</div>
+        <div class="text-lg text-gray-900">Years Experience</div>
+        <p class="text-sm text-gray-600 mt-2 max-w-[30ch] mx-auto">Pioneering self-guided European adventures since 1999</p>
+      </div>
+    </Stats>
+
+    <!-- 4-column simple stats -->
+    <Stats
+      columns={4}
+      heading="At a Glance"
+    >
+      <div class="text-center">
+        <div class="text-6xl font-bold text-primary-500 mb-2">500+</div>
+        <div class="text-lg text-gray-900">Trips</div>
+      </div>
+      <div class="text-center">
+        <div class="text-6xl font-bold text-primary-500 mb-2">50+</div>
+        <div class="text-lg text-gray-900">Destinations</div>
+      </div>
+      <div class="text-center">
+        <div class="text-6xl font-bold text-primary-500 mb-2">98%</div>
+        <div class="text-lg text-gray-900">Satisfaction</div>
+      </div>
+      <div class="text-center">
+        <div class="text-6xl font-bold text-primary-500 mb-2">25</div>
+        <div class="text-lg text-gray-900">Years</div>
+      </div>
+    </Stats>
+
+    <!-- Dark background variant -->
+    <Stats
+      dark
+      eyebrow="Our Track Record"
+      heading="Results That Matter"
+      subheading="Real numbers from real travelers. We've been perfecting the art of self-guided European travel for over two decades."
+    >
+      <div class="text-center">
+        <div class="text-6xl font-bold text-primary-500 mb-2">500+</div>
+        <div class="text-lg text-white">Guided Trips</div>
+        <p class="text-sm text-gray-400 mt-2 max-w-[30ch] mx-auto">From coastal paths to alpine passes</p>
+      </div>
+      <div class="text-center">
+        <div class="text-6xl font-bold text-primary-500 mb-2">98%</div>
+        <div class="text-lg text-white">Satisfaction Rate</div>
+        <p class="text-sm text-gray-400 mt-2 max-w-[30ch] mx-auto">Post-trip survey results</p>
+      </div>
+      <div class="text-center">
+        <div class="text-6xl font-bold text-primary-500 mb-2">25</div>
+        <div class="text-lg text-white">Years Experience</div>
+        <p class="text-sm text-gray-400 mt-2 max-w-[30ch] mx-auto">Since 1999</p>
+      </div>
+    </Stats>
+
+  </div>
+</FullScreenLayout>

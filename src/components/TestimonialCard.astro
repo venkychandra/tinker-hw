@@ -1,0 +1,50 @@
+---
+import Star from './icons/Star.astro';
+
+interface Props {
+  quote: string;
+  name: string;
+  location: string;
+  rating?: number;
+  photo?: string;
+}
+
+const {
+  quote,
+  name,
+  location,
+  rating = 5,
+  photo,
+} = Astro.props;
+---
+
+<div class="bg-white border border-gray-200 rounded-lg p-6 @md:p-8 shadow-sm flex flex-col">
+  {/* Rating stars */}
+  <div class="flex gap-1 mb-4">
+    {Array.from({ length: 5 }, (_, i) => (
+      <div class={`w-5 h-5 ${i < rating ? 'text-accent-500' : 'text-gray-400'}`}>
+        <Star size={20} variant="filled" />
+      </div>
+    ))}
+  </div>
+
+  {/* Quote */}
+  <blockquote class="text-base text-gray-700 leading-relaxed mb-6 grow">
+    "{quote}"
+  </blockquote>
+
+  {/* Attribution */}
+  <div class="flex items-center gap-4">
+    {photo && (
+      <img
+        src={photo}
+        alt={name}
+        class="w-12 h-12 rounded-full object-cover"
+      />
+    )}
+    <div>
+      <div class="text-sm font-semibold text-gray-900">{name}</div>
+      <div class="text-sm text-gray-500">{location}</div>
+    </div>
+  </div>
+</div>

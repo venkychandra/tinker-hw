@@ -1,0 +1,253 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Hero from '../../components/Hero.astro';
+import FAQ from '../../components/FAQ.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import Search from '../../components/icons/Search.astro';
+import Phone from '../../components/icons/Phone.astro';
+import Mail from '../../components/icons/Mail.astro';
+---
+
+<FullScreenLayout title="FAQ Page">
+  <div class="@container page-flow">
+    <!-- Navigation -->
+    <Nav variant="light" />
+
+    <!-- Hero with Search -->
+    <Hero
+      variant="simple"
+      heading="Frequently Asked Questions"
+      subheading="Find answers to common questions about our holidays, bookings, and services"
+    >
+      <div slot="content" class="max-w-2xl mx-auto mt-8">
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search for answers..."
+            class="w-full px-6 py-4 pr-14 text-base text-gray-900 bg-white border-2 border-gray-300 rounded-lg focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none transition-colors duration-fast ease-default placeholder:text-gray-500"
+          />
+          <div class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+            <Search size={24} />
+          </div>
+        </div>
+      </div>
+    </Hero>
+
+    <!-- Category Navigation -->
+    <section class="@container bg-white">
+      <div class="max-w-[var(--container-max)] mx-auto px-6 py-8">
+        <nav class="flex gap-3 justify-center flex-wrap" aria-label="FAQ categories">
+          <button class="px-6 py-2 text-sm font-semibold rounded-full bg-primary-500 text-white cursor-pointer transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+            All Questions
+          </button>
+          <button class="px-6 py-2 text-sm font-semibold rounded-full bg-white text-gray-700 shadow-[inset_0_0_0_1px_var(--color-gray-300)] hover:bg-gray-50 active:bg-gray-100 cursor-pointer transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+            Booking
+          </button>
+          <button class="px-6 py-2 text-sm font-semibold rounded-full bg-white text-gray-700 shadow-[inset_0_0_0_1px_var(--color-gray-300)] hover:bg-gray-50 active:bg-gray-100 cursor-pointer transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+            Holidays
+          </button>
+          <button class="px-6 py-2 text-sm font-semibold rounded-full bg-white text-gray-700 shadow-[inset_0_0_0_1px_var(--color-gray-300)] hover:bg-gray-50 active:bg-gray-100 cursor-pointer transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+            Planning
+          </button>
+          <button class="px-6 py-2 text-sm font-semibold rounded-full bg-white text-gray-700 shadow-[inset_0_0_0_1px_var(--color-gray-300)] hover:bg-gray-50 active:bg-gray-100 cursor-pointer transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+            During Your Trip
+          </button>
+          <button class="px-6 py-2 text-sm font-semibold rounded-full bg-white text-gray-700 shadow-[inset_0_0_0_1px_var(--color-gray-300)] hover:bg-gray-50 active:bg-gray-100 cursor-pointer transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+            Payments
+          </button>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Main Content: FAQ Sections with Sidebar -->
+    <section class="@container bg-white">
+      <div class="max-w-[var(--container-max)] mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 @lg:grid-cols-[1fr_320px] gap-12">
+
+          <!-- FAQ List -->
+          <main class="space-y-12">
+
+            <!-- Booking Questions -->
+            <div>
+              <h2 class="text-2xl font-bold text-gray-900 mb-6">Booking Your Holiday</h2>
+              <div class="space-y-0">
+                <FAQ
+                  question="How do I book a holiday?"
+                  answer="You can book online through our website, call us on 01606 720199, or request a callback. Our team will guide you through the process, help you choose the right holiday, and answer any questions you have. When booking, you'll need to provide traveler details, select your departure date, and pay a deposit (usually 20% of the total cost). Full payment is due 8 weeks before departure."
+                />
+                <FAQ
+                  question="What deposit do I need to pay?"
+                  answer="We typically require a 20% deposit to secure your booking, with the balance due 8 weeks before departure. For late bookings (within 8 weeks of departure), full payment is required at the time of booking. Payment can be made by credit card, debit card, or bank transfer."
+                />
+                <FAQ
+                  question="Can I change or cancel my booking?"
+                  answer="Yes, you can make changes or cancel your booking, but charges may apply depending on how close to departure you cancel. We strongly recommend taking out travel insurance to cover unforeseen circumstances. Full details of our cancellation policy are available in our booking conditions."
+                />
+                <FAQ
+                  question="Is my booking financially protected?"
+                  answer="Absolutely. We are ABTA and ATOL bonded, which means your holiday is fully financially protected. In the unlikely event of our insolvency, you will be refunded or your holiday will continue as planned. This protection applies to all our holidays."
+                />
+              </div>
+            </div>
+
+            <!-- Holiday Questions -->
+            <div>
+              <h2 class="text-2xl font-bold text-gray-900 mb-6">About Our Holidays</h2>
+              <div class="space-y-0">
+                <FAQ
+                  question="What fitness level do I need?"
+                  answer="Each holiday is graded from 1 (easy) to 5 (challenging) based on terrain, distance, and elevation. Grade 1-2 holidays suit most people with a reasonable level of fitness. Grade 3-4 require regular exercise and stamina. Grade 5 is for experienced walkers or cyclists. Detailed fitness requirements are listed on each holiday page."
+                />
+                <FAQ
+                  question="What's included in the price?"
+                  answer="All our holidays include hand-picked accommodation with breakfast, detailed route notes, GPS navigation via our app, luggage transfers between hotels, and 24/7 UK-based support. Many holidays also include some dinners, wine tastings, or cultural experiences. Flights and travel insurance are not included but can be arranged."
+                />
+                <FAQ
+                  question="Can you tailor-make a holiday for me?"
+                  answer="Yes, we specialize in tailor-made holidays. Our expert team can adjust routes, upgrade hotels, add rest days, arrange private transfers, or create entirely bespoke itineraries. Simply tell us what you're looking for and we'll design a holiday to match your preferences and fitness level."
+                />
+                <FAQ
+                  question="Are your holidays suitable for solo travelers?"
+                  answer="Absolutely. Many of our guests travel solo and our self-guided format gives you the freedom to go at your own pace. We can arrange single rooms (supplement applies) and can often match solo travelers who'd like to share accommodation. Our 24/7 support means you're never truly alone."
+                />
+              </div>
+            </div>
+
+            <!-- Planning Questions -->
+            <div>
+              <h2 class="text-2xl font-bold text-gray-900 mb-6">Planning Your Trip</h2>
+              <div class="space-y-0">
+                <FAQ
+                  question="When is the best time to travel?"
+                  answer="This varies by destination. Spring (April-May) and autumn (September-October) offer excellent conditions across most of Europe with mild temperatures and fewer crowds. Summer is ideal for alpine regions. Mediterranean destinations are walkable year-round. Each holiday page includes seasonal recommendations."
+                />
+                <FAQ
+                  question="Do I need travel insurance?"
+                  answer="Yes, comprehensive travel insurance is essential and a condition of booking. Your policy should cover medical expenses, trip cancellation, lost luggage, and activity-specific coverage for walking or cycling. We can recommend specialist providers who understand active holidays."
+                />
+                <FAQ
+                  question="What should I pack?"
+                  answer="A detailed packing list is included in your pre-departure information. Essentials include comfortable walking boots or cycling shoes, layered clothing, waterproofs, sun protection, a daypack, and reusable water bottle. We provide GPS devices or smartphone navigation, so you don't need your own GPS."
+                />
+                <FAQ
+                  question="How do I get to the start point?"
+                  answer="Most holidays begin with a transfer from a nearby airport or train station. Detailed travel instructions are provided once you book, including recommended flights, train connections, and transfer options. We can arrange private transfers if you prefer door-to-door service."
+                />
+              </div>
+            </div>
+
+            <!-- During Trip Questions -->
+            <div>
+              <h2 class="text-2xl font-bold text-gray-900 mb-6">During Your Holiday</h2>
+              <div class="space-y-0">
+                <FAQ
+                  question="How does luggage transfer work?"
+                  answer="Simply leave your main luggage at reception each morning. Our trusted local partners collect it and deliver it to your next hotel by late afternoon. You carry only a daypack with essentials. This service is included on all our walking and cycling holidays."
+                />
+                <FAQ
+                  question="What if I have a problem during my trip?"
+                  answer="We provide 24/7 UK-based emergency support throughout your holiday. You'll receive contact numbers for both routine queries and emergencies. Our team and local partners are on hand to help with route queries, accommodation issues, or any unexpected situations."
+                />
+                <FAQ
+                  question="How does GPS navigation work?"
+                  answer="We provide detailed route notes plus GPS files that work with our smartphone app (free download). The app works offline, so you don't need mobile data. Routes are marked with turn-by-turn instructions, points of interest, and emergency information. Traditional paper maps are also included."
+                />
+              </div>
+            </div>
+
+          </main>
+
+          <!-- Sidebar -->
+          <aside class="space-y-6">
+
+            <!-- Popular Questions -->
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4">Popular Questions</h3>
+              <nav class="space-y-3">
+                <a href="#fitness" class="block text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors duration-fast focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+                  What fitness level do I need?
+                </a>
+                <a href="#included" class="block text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors duration-fast focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+                  What's included in the price?
+                </a>
+                <a href="#luggage" class="block text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors duration-fast focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+                  How do luggage transfers work?
+                </a>
+                <a href="#solo" class="block text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors duration-fast focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+                  Can I travel solo?
+                </a>
+                <a href="#insurance" class="block text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors duration-fast focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+                  Do I need travel insurance?
+                </a>
+              </nav>
+            </div>
+
+            <!-- Helpful Resources -->
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4">Helpful Resources</h3>
+              <nav class="space-y-3">
+                <a href="/booking-conditions" class="block text-sm text-gray-700 hover:text-primary-600 transition-colors duration-fast focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+                  Booking Conditions
+                </a>
+                <a href="/travel-insurance" class="block text-sm text-gray-700 hover:text-primary-600 transition-colors duration-fast focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+                  Travel Insurance Guide
+                </a>
+                <a href="/packing-list" class="block text-sm text-gray-700 hover:text-primary-600 transition-colors duration-fast focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+                  Packing List
+                </a>
+                <a href="/gps-app" class="block text-sm text-gray-700 hover:text-primary-600 transition-colors duration-fast focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+                  GPS App Guide
+                </a>
+                <a href="/destinations" class="block text-sm text-gray-700 hover:text-primary-600 transition-colors duration-fast focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2">
+                  Destination Guides
+                </a>
+              </nav>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="bg-primary-50 border border-primary-200 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">Still have questions?</h3>
+              <p class="text-sm text-gray-600 mb-6">
+                Our team is here to help. Get in touch and we'll respond within 24 hours.
+              </p>
+              <div class="space-y-4 mb-6">
+                <div class="flex items-center gap-3 text-sm text-gray-700">
+                  <Phone size={20} class="text-primary-600" />
+                  <a href="tel:01606720199" class="font-semibold hover:text-primary-600 transition-colors duration-fast">01606 720199</a>
+                </div>
+                <div class="flex items-center gap-3 text-sm text-gray-700">
+                  <Mail size={20} class="text-primary-600" />
+                  <a href="mailto:sales@headwater.com" class="font-semibold hover:text-primary-600 transition-colors duration-fast">sales@headwater.com</a>
+                </div>
+              </div>
+              <a
+                href="/contact"
+                class="block w-full text-center px-4 py-3 text-sm font-semibold rounded-md bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 active:translate-y-px cursor-pointer transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2"
+              >
+                Contact Us
+              </a>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <CTA
+      variant="simple"
+      heading="Can't find what you're looking for?"
+      subheading="Our expert team is ready to help you plan your perfect active holiday"
+      primaryCta="Contact Us"
+      primaryHref="/contact"
+      secondaryCta="Browse Holidays"
+      secondaryHref="/holidays"
+    />
+
+    <!-- Footer -->
+    <Footer variant="standard" />
+  </div>
+</FullScreenLayout>

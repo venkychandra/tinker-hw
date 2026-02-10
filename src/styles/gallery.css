@@ -86,6 +86,7 @@
   min-width: 0;
   max-width: var(--container-max);
   padding: var(--spacing-12) var(--spacing-8);
+  container-type: inline-size;
 }
 
 .gallery-page-header {

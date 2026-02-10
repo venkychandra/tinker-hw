@@ -2,9 +2,15 @@
 import GalleryLayout from '../layouts/GalleryLayout.astro';
 import Card from '../components/Card.astro';
 import ArrowRight from '../components/icons/ArrowRight.astro';
+import MapPin from '../components/icons/MapPin.astro';
+import Star from '../components/icons/Star.astro';
+import Walking from '../components/icons/Walking.astro';
+import Cycling from '../components/icons/Cycling.astro';
+import Mountain from '../components/icons/Mountain.astro';
+import Calendar from '../components/icons/Calendar.astro';
 ---
 
-<GalleryLayout title="Cards" description="Three visual treatments for containing content. Default for most uses, elevated for interactive or featured items, flat for grouped or recessed content." fullscreenHref="/view/cards">
+<GalleryLayout title="Cards" description="Three visual treatments for containing content. Default for most uses, elevated for featured trips and interactive selections, flat for grouped activity details or low-emphasis containers." fullscreenHref="/view/cards">
 
   <!-- Variants -->
   <section class="specimen-section">
@@ -19,21 +25,21 @@ import ArrowRight from '../components/icons/ArrowRight.astro';
         <div class="flex flex-col gap-3">
           <Card>
             <p class="font-semibold text-gray-900 mb-1">Default</p>
-            <p class="text-sm text-gray-600">Border + subtle shadow. The workhorse for content sections, lists, and dashboards.</p>
+            <p class="text-sm text-gray-600">Versatile container for trip listings, destination details, and content sections.</p>
           </Card>
           <span class="text-xs font-mono text-gray-400 text-center">default</span>
         </div>
         <div class="flex flex-col gap-3">
           <Card variant="elevated">
             <p class="font-semibold text-gray-900 mb-1">Elevated</p>
-            <p class="text-sm text-gray-600">Shadow only, lifts on hover. For interactive items like pricing tiers or selectable options.</p>
+            <p class="text-sm text-gray-600">For featured trips and interactive selections — lifts on hover.</p>
           </Card>
           <span class="text-xs font-mono text-gray-400 text-center">elevated</span>
         </div>
         <div class="flex flex-col gap-3">
           <Card variant="flat">
             <p class="font-semibold text-gray-900 mb-1">Flat</p>
-            <p class="text-sm text-gray-600">Tinted background, no border. For grouped content or low-emphasis containers.</p>
+            <p class="text-sm text-gray-600">For grouped information, activity details, or low-emphasis containers.</p>
           </Card>
           <span class="text-xs font-mono text-gray-400 text-center">flat</span>
         </div>
@@ -41,39 +47,42 @@ import ArrowRight from '../components/icons/ArrowRight.astro';
     </div>
   </section>
 
-  <!-- Content Card -->
+  <!-- Content Card (Trip Card) -->
   <section class="specimen-section">
-    <h2>Content Card</h2>
+    <h2>Trip Card</h2>
     <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
-      Image top with <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">padding=false</code> on the card, then a padded body below. The image uses <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">object-fit: cover</code> in a fixed-height container. Good for blog posts, case studies, portfolios.
+      Image top with <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">padding=false</code> on the card, then a padded body below. The image uses <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">object-fit: cover</code> in a fixed-height container. Good for trip listings, destination highlights, and itinerary previews.
     </p>
     <div class="border border-gray-200 rounded-lg p-8">
       <div class="grid grid-cols-3 gap-6">
         <Card padding={false}>
-          <div class="h-40 bg-gray-200"></div>
+          <div class="h-48 bg-gray-200"></div>
           <div class="p-6">
-            <p class="text-xs font-semibold text-primary-500 uppercase tracking-wide mb-2">Engineering</p>
-            <p class="font-semibold text-gray-900 mb-2">Building reliable distributed systems</p>
-            <p class="text-sm text-gray-600 mb-4">How we scaled our infrastructure to handle 10x traffic growth without downtime.</p>
-            <a class="text-sm font-semibold text-primary-500 inline-flex items-center gap-1 hover:text-primary-600 transition-colors duration-fast ease-default" href="#">Read more <ArrowRight size={14} /></a>
+            <span class="inline-block text-xs font-semibold text-accent-600 bg-accent-100 px-2 py-0.5 rounded-full mb-3">Walking</span>
+            <p class="font-semibold text-gray-900 mb-1">Provence Lavender Trail</p>
+            <p class="text-xs text-gray-500 mb-3">7 nights · Guided · France</p>
+            <p class="text-sm text-gray-600 mb-4">Wander through purple lavender fields and hilltop villages in the heart of Provence, with picnic lunches and vineyard visits along the way.</p>
+            <a class="text-sm font-semibold text-accent-600 inline-flex items-center gap-1 hover:text-accent-700 transition-colors duration-fast ease-default" href="#">View trip <ArrowRight size={14} /></a>
           </div>
         </Card>
         <Card padding={false}>
-          <div class="h-40 bg-gray-200"></div>
+          <div class="h-48 bg-gray-200"></div>
           <div class="p-6">
-            <p class="text-xs font-semibold text-primary-500 uppercase tracking-wide mb-2">Product</p>
-            <p class="font-semibold text-gray-900 mb-2">Announcing our new dashboard</p>
-            <p class="text-sm text-gray-600 mb-4">A completely redesigned analytics experience with real-time insights and custom reports.</p>
-            <a class="text-sm font-semibold text-primary-500 inline-flex items-center gap-1 hover:text-primary-600 transition-colors duration-fast ease-default" href="#">Read more <ArrowRight size={14} /></a>
+            <span class="inline-block text-xs font-semibold text-accent-600 bg-accent-100 px-2 py-0.5 rounded-full mb-3">Cycling</span>
+            <p class="font-semibold text-gray-900 mb-1">Tuscan Hill Towns</p>
+            <p class="text-xs text-gray-500 mb-3">10 nights · Self-guided · Italy</p>
+            <p class="text-sm text-gray-600 mb-4">Ride between medieval hilltop towns, through olive groves and past cypress-lined roads, stopping for long lunches and local wines.</p>
+            <a class="text-sm font-semibold text-accent-600 inline-flex items-center gap-1 hover:text-accent-700 transition-colors duration-fast ease-default" href="#">View trip <ArrowRight size={14} /></a>
           </div>
         </Card>
         <Card padding={false}>
-          <div class="h-40 bg-gray-200"></div>
+          <div class="h-48 bg-gray-200"></div>
           <div class="p-6">
-            <p class="text-xs font-semibold text-primary-500 uppercase tracking-wide mb-2">Design</p>
-            <p class="font-semibold text-gray-900 mb-2">Our approach to accessible color</p>
-            <p class="text-sm text-gray-600 mb-4">Why we rebuilt our entire palette around WCAG AA contrast ratios from day one.</p>
-            <a class="text-sm font-semibold text-primary-500 inline-flex items-center gap-1 hover:text-primary-600 transition-colors duration-fast ease-default" href="#">Read more <ArrowRight size={14} /></a>
+            <span class="inline-block text-xs font-semibold text-accent-600 bg-accent-100 px-2 py-0.5 rounded-full mb-3">Walking</span>
+            <p class="font-semibold text-gray-900 mb-1">Amalfi Coast Path</p>
+            <p class="text-xs text-gray-500 mb-3">8 nights · Guided · Italy</p>
+            <p class="text-sm text-gray-600 mb-4">Follow ancient pathways high above the Mediterranean, descending to clifftop villages for fresh seafood and limoncello at sunset.</p>
+            <a class="text-sm font-semibold text-accent-600 inline-flex items-center gap-1 hover:text-accent-700 transition-colors duration-fast ease-default" href="#">View trip <ArrowRight size={14} /></a>
           </div>
         </Card>
       </div>
@@ -89,47 +98,148 @@ import ArrowRight from '../components/icons/ArrowRight.astro';
     <div class="border border-gray-200 rounded-lg p-8">
       <div class="grid grid-cols-3 gap-6">
         <Card variant="flat">
-          <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-600 flex items-center justify-center mb-4">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <div class="w-10 h-10 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center mb-4">
+            <MapPin size={20} />
           </div>
-          <p class="font-semibold text-gray-900 mb-1">Lightning fast</p>
-          <p class="text-sm text-gray-600">Sub-100ms response times with edge computing and intelligent caching.</p>
+          <p class="font-semibold text-gray-900 mb-1">Handpicked routes</p>
+          <p class="text-sm text-gray-600">Every trail is walked and verified by our team before we add it.</p>
         </Card>
         <Card variant="flat">
-          <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-600 flex items-center justify-center mb-4">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div class="w-10 h-10 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center mb-4">
+            <Star size={20} />
           </div>
-          <p class="font-semibold text-gray-900 mb-1">Secure by default</p>
-          <p class="text-sm text-gray-600">End-to-end encryption, SOC 2 compliance, and automatic key rotation.</p>
+          <p class="font-semibold text-gray-900 mb-1">Quality accommodation</p>
+          <p class="text-sm text-gray-600">Characterful hotels and guesthouses, never generic chains.</p>
         </Card>
         <Card variant="flat">
-          <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-600 flex items-center justify-center mb-4">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <div class="w-10 h-10 rounded-lg bg-accent-100 text-accent-600 flex items-center justify-center mb-4">
+            <Walking size={20} />
           </div>
-          <p class="font-semibold text-gray-900 mb-1">Global scale</p>
-          <p class="text-sm text-gray-600">Deploy to 30+ regions with one click. Automatic failover and load balancing.</p>
+          <p class="font-semibold text-gray-900 mb-1">Luggage transfers</p>
+          <p class="text-sm text-gray-600">Your bags move ahead while you walk. Arrive to find everything waiting.</p>
         </Card>
       </div>
     </div>
   </section>
 
-  <!-- Common Pairings -->
+  <!-- Pricing Card -->
   <section class="specimen-section">
-    <h2>Common Pairings</h2>
+    <h2>Pricing Card</h2>
     <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
-      Cards composed into realistic layouts — a testimonial using a flat card with avatar + quote.
+      Elevated cards for trip tier selection. The popular tier uses an accent badge and primary button to draw the eye. Others use secondary styling.
     </p>
+    <div class="border border-gray-200 rounded-lg p-8">
+      <div class="grid grid-cols-3 gap-6">
+        <!-- Comfort -->
+        <Card variant="elevated">
+          <p class="font-semibold text-gray-900 mb-1">Comfort</p>
+          <p class="text-sm text-gray-500 mb-4">Everything you need for a wonderful trip</p>
+          <p class="text-3xl font-bold text-gray-900 mb-1">from £1,295<span class="text-sm font-normal text-gray-500">pp</span></p>
+          <hr class="my-4 border-gray-200" />
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              Quality 3-star hotels
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              Half-board meals
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              Standard luggage transfer
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              Regional maps pack
+            </li>
+          </ul>
+          <button class="w-full rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors duration-fast ease-default cursor-pointer">Book this tier</button>
+        </Card>
 
-    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Testimonial</h3>
+        <!-- Superior (Popular) -->
+        <Card variant="elevated">
+          <div class="flex items-center justify-between mb-1">
+            <p class="font-semibold text-gray-900">Superior</p>
+            <span class="text-xs font-semibold text-accent-600 bg-accent-100 px-2 py-0.5 rounded-full">POPULAR</span>
+          </div>
+          <p class="text-sm text-gray-500 mb-4">Our most popular tier for good reason</p>
+          <p class="text-3xl font-bold text-gray-900 mb-1">from £1,695<span class="text-sm font-normal text-gray-500">pp</span></p>
+          <hr class="my-4 border-gray-200" />
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              4-star boutique hotels
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              Full-board with wine
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              Express luggage transfer
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              GPS route files
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              Welcome hamper
+            </li>
+          </ul>
+          <button class="w-full rounded-md bg-primary-500 px-4 py-2 text-sm font-semibold text-white hover:bg-primary-600 transition-colors duration-fast ease-default cursor-pointer">Book this tier</button>
+        </Card>
+
+        <!-- Premier -->
+        <Card variant="elevated">
+          <p class="font-semibold text-gray-900 mb-1">Premier</p>
+          <p class="text-sm text-gray-500 mb-4">The finest adventure travel experience</p>
+          <p class="text-3xl font-bold text-gray-900 mb-1">from £2,295<span class="text-sm font-normal text-gray-500">pp</span></p>
+          <hr class="my-4 border-gray-200" />
+          <ul class="space-y-2 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              5-star luxury accommodation
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              All meals with wine pairing
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              Private luggage transfer
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              Personal route consultation
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg>
+              Airport transfers
+            </li>
+          </ul>
+          <button class="w-full rounded-md border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors duration-fast ease-default cursor-pointer">Book this tier</button>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="specimen-section">
+    <h2>Testimonial</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      A flat card composed with avatar, quote, and attribution — a common pairing for social proof sections.
+    </p>
     <div class="border border-gray-200 rounded-lg p-8">
       <div class="max-w-lg">
         <Card variant="flat">
           <div class="flex gap-4">
             <div class="w-10 h-10 rounded-full bg-gray-300 shrink-0"></div>
             <div>
-              <p class="text-sm text-gray-900 mb-2">"This completely changed how we think about our marketing pipeline. The analytics alone paid for itself in the first month."</p>
-              <p class="text-xs font-semibold text-gray-900">Sarah Chen</p>
-              <p class="text-xs text-gray-400">VP Marketing, Acme Corp</p>
+              <p class="text-sm text-gray-900 mb-2">"The Provence trail was the holiday of a lifetime. Every detail was thought of — the routes, the hotels, the luggage transfers. We just walked and enjoyed."</p>
+              <p class="text-xs font-semibold text-gray-900">Margaret & David Thompson</p>
+              <p class="text-xs text-gray-400">Provence Lavender Trail, June 2024</p>
             </div>
           </div>
         </Card>
@@ -156,17 +266,17 @@ import ArrowRight from '../components/icons/ArrowRight.astro';
           <tr class="border-b border-gray-100">
             <td class="py-3 pr-6 font-mono text-xs">default</td>
             <td class="py-3 pr-6 font-mono text-xs">rounded-lg p-6 bg-white border border-gray-200 shadow-sm</td>
-            <td class="py-3">Content lists, dashboards, general containers</td>
+            <td class="py-3">Trip listings, destination details, general containers</td>
           </tr>
           <tr class="border-b border-gray-100">
             <td class="py-3 pr-6 font-mono text-xs">elevated</td>
             <td class="py-3 pr-6 font-mono text-xs">rounded-lg p-6 bg-white shadow-lg hover:shadow-xl transition-shadow</td>
-            <td class="py-3">Interactive items, featured tiers, selectable options</td>
+            <td class="py-3">Featured trips, pricing tiers, selectable options</td>
           </tr>
           <tr>
             <td class="py-3 pr-6 font-mono text-xs">flat</td>
             <td class="py-3 pr-6 font-mono text-xs">rounded-lg p-6 bg-gray-50</td>
-            <td class="py-3">Grouped content, low-emphasis, recessed containers</td>
+            <td class="py-3">Activity details, grouped content, low-emphasis containers</td>
           </tr>
         </tbody>
       </table>

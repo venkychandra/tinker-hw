@@ -1,0 +1,28 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<FullScreenLayout title="Footer">
+  <!-- Page content placeholder -->
+  <div class="min-h-screen bg-white">
+    <div class="max-w-[var(--container-max)] mx-auto px-6 py-24 text-center">
+      <h1 class="text-6xl font-bold text-gray-900">Page Content</h1>
+      <p class="text-xl text-gray-600 mt-4 max-w-[65ch] mx-auto">
+        This is placeholder content to show how the footer appears at the bottom of a full page.
+        Scroll down to see the footer variants.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer variants -->
+  <Footer variant="simple" />
+
+  <div class="h-16"></div>
+
+  <Footer variant="standard" dark />
+
+  <div class="h-16"></div>
+
+  <Footer variant="newsletter" />
+</FullScreenLayout>

@@ -1,0 +1,527 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Stats from '../../components/Stats.astro';
+import FAQ from '../../components/FAQ.astro';
+import Card from '../../components/Card.astro';
+import Button from '../../components/Button.astro';
+import TestimonialCard from '../../components/TestimonialCard.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import Star from '../../components/icons/Star.astro';
+import CheckCircle from '../../components/icons/CheckCircle.astro';
+import MapPin from '../../components/icons/MapPin.astro';
+---
+
+<FullScreenLayout title="Tuscany Walking Holiday — Trip Detail">
+  <div class="page-flow @container">
+    <!-- Navigation -->
+    <Nav variant="light" />
+
+    <!-- Main container -->
+    <div class="max-w-[var(--container-max)] mx-auto px-6 py-8">
+
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex items-center gap-2 text-sm text-gray-500">
+          <li><a href="/" class="hover:text-gray-900 transition-colors duration-fast">Home</a></li>
+          <li aria-hidden="true">›</li>
+          <li><a href="/walking" class="hover:text-gray-900 transition-colors duration-fast">Walking Holidays</a></li>
+          <li aria-hidden="true">›</li>
+          <li><a href="/destinations/italy" class="hover:text-gray-900 transition-colors duration-fast">Italy</a></li>
+          <li aria-hidden="true">›</li>
+          <li aria-current="page" class="text-gray-900 font-medium">Tuscany Walking</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Image Gallery -->
+      <div class="grid grid-cols-1 @md:grid-cols-4 gap-2 h-[400px] rounded-lg overflow-hidden mb-8">
+        <img
+          src="https://placehold.co/1200x400/4a7c59/f5f5f0?text=Tuscan+Hills+%26+Vineyards"
+          alt="Rolling Tuscan hills with cypress trees and vineyard landscape"
+          class="@md:col-span-3 w-full h-full object-cover"
+        />
+        <div class="hidden @md:flex flex-col gap-2">
+          <img
+            src="https://placehold.co/400x196/5a8d68/f5f5f0?text=Vineyard+Path"
+            alt="Scenic walking path through Tuscan vineyard"
+            class="flex-1 w-full h-full object-cover"
+          />
+          <div class="flex-1 relative">
+            <img
+              src="https://placehold.co/400x196/4a7c59/f5f5f0?text=San+Gimignano"
+              alt="Medieval towers of San Gimignano"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gray-900/60 flex items-center justify-center text-white text-sm font-semibold">
+              +12 photos
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page Title & Meta -->
+      <div class="mb-12">
+        <div class="flex flex-col @lg:flex-row items-start justify-between gap-6 mb-4">
+          <div class="flex-1">
+            <h1 class="text-5xl font-bold text-gray-900 mb-4">Tuscany Walking Holiday</h1>
+            <div class="flex flex-wrap items-center gap-4 text-base text-gray-600">
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 text-accent-500">
+                  <Star size={20} variant="filled" />
+                </div>
+                <span class="font-semibold text-gray-900">4.8</span>
+                <span>(127 reviews)</span>
+              </div>
+              <span aria-hidden="true">·</span>
+              <div class="flex items-center gap-2">
+                <div class="w-5 h-5 text-gray-600">
+                  <MapPin size={20} />
+                </div>
+                <span>Tuscany, Italy</span>
+              </div>
+              <span aria-hidden="true">·</span>
+              <span>Self-Guided</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <Button variant="secondary" size="sm">Share</Button>
+            <Button variant="ghost" size="sm">Save</Button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content + Sidebar Layout -->
+      <div class="grid grid-cols-1 @lg:grid-cols-[1fr_380px] gap-12">
+
+        <!-- Main Content -->
+        <main class="space-y-16">
+
+          <!-- Overview -->
+          <section>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Overview</h2>
+            <div class="prose prose-lg max-w-none">
+              <p class="text-lg text-gray-600 leading-relaxed mb-4">
+                Discover the rolling hills, medieval villages, and world-class wine regions of Tuscany on this self-guided walking holiday. Walk through cypress-lined paths, explore historic towns like San Gimignano and Montepulciano, and stay in carefully selected hotels featuring local cuisine and hospitality.
+              </p>
+              <p class="text-lg text-gray-600 leading-relaxed">
+                This moderate-level walking tour covers approximately 10-15km per day through some of Italy's most beautiful countryside. You'll have detailed route notes and GPS navigation via our Headwater app, giving you the freedom to explore at your own pace.
+              </p>
+            </div>
+          </section>
+
+          <!-- Quick Facts (using Stats component without section header) -->
+          <section>
+            <div class="grid grid-cols-2 @md:grid-cols-4 gap-6">
+              <div class="text-center">
+                <div class="text-5xl font-bold text-primary-600 mb-2">7</div>
+                <div class="text-sm text-gray-600">Days</div>
+              </div>
+              <div class="text-center">
+                <div class="text-5xl font-bold text-primary-600 mb-2">★★★</div>
+                <div class="text-sm text-gray-600">Moderate</div>
+              </div>
+              <div class="text-center">
+                <div class="text-5xl font-bold text-primary-600 mb-2">10-15</div>
+                <div class="text-sm text-gray-600">km per day</div>
+              </div>
+              <div class="text-center">
+                <div class="text-5xl font-bold text-primary-600 mb-2">♾</div>
+                <div class="text-sm text-gray-600">Self-guided</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Day-by-Day Itinerary -->
+          <section>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Day-by-Day Itinerary</h2>
+
+            <div class="space-y-6">
+              <!-- Day 1 -->
+              <Card variant="flat">
+                <div class="flex flex-col @md:flex-row items-start justify-between gap-4 mb-4">
+                  <div>
+                    <div class="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-2">Day 1</div>
+                    <h3 class="text-xl font-semibold text-gray-900">Arrive in San Gimignano</h3>
+                  </div>
+                  <div class="inline-flex items-center px-3 py-1 rounded-sm bg-gray-200 text-xs font-medium text-gray-700">
+                    No walking
+                  </div>
+                </div>
+                <p class="text-base text-gray-600 leading-relaxed mb-4">
+                  Arrive in the medieval hilltop town of San Gimignano, known as the 'Manhattan of Tuscany' for its tower houses. Check into your hotel and explore the historic center at leisure.
+                </p>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-gray-600">
+                  <span>🏨 Hotel: San Gimignano Center</span>
+                </div>
+              </Card>
+
+              <!-- Day 2 -->
+              <Card variant="flat">
+                <div class="flex flex-col @md:flex-row items-start justify-between gap-4 mb-4">
+                  <div>
+                    <div class="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-2">Day 2</div>
+                    <h3 class="text-xl font-semibold text-gray-900">San Gimignano to Colle di Val d'Elsa</h3>
+                  </div>
+                  <div class="inline-flex items-center px-3 py-1 rounded-sm bg-gray-200 text-xs font-medium text-gray-700">
+                    12km · 4-5 hours
+                  </div>
+                </div>
+                <p class="text-base text-gray-600 leading-relaxed mb-4">
+                  Walk through rolling vineyards and olive groves to reach Colle di Val d'Elsa, a charming town divided into upper and lower sections. The route offers stunning views of the Tuscan countryside.
+                </p>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-gray-600">
+                  <span>🏨 Hotel: Colle Alta</span>
+                  <span aria-hidden="true">·</span>
+                  <span>🍽️ Breakfast included</span>
+                </div>
+              </Card>
+
+              <!-- Day 3 -->
+              <Card variant="flat">
+                <div class="flex flex-col @md:flex-row items-start justify-between gap-4 mb-4">
+                  <div>
+                    <div class="text-xs font-semibold text-primary-600 uppercase tracking-wide mb-2">Day 3</div>
+                    <h3 class="text-xl font-semibold text-gray-900">Colle di Val d'Elsa to Monteriggioni</h3>
+                  </div>
+                  <div class="inline-flex items-center px-3 py-1 rounded-sm bg-gray-200 text-xs font-medium text-gray-700">
+                    14km · 5 hours
+                  </div>
+                </div>
+                <p class="text-base text-gray-600 leading-relaxed mb-4">
+                  Today's walk takes you through the Via Francigena pilgrimage route to the perfectly preserved medieval walled village of Monteriggioni, featured in Dante's Inferno.
+                </p>
+                <div class="flex flex-wrap items-center gap-3 text-sm text-gray-600">
+                  <span>🏨 Hotel: Monteriggioni Castle View</span>
+                  <span aria-hidden="true">·</span>
+                  <span>🍽️ Breakfast & dinner included</span>
+                </div>
+              </Card>
+
+              <!-- Collapsed days indicator -->
+              <button class="w-full bg-gray-100 border border-gray-200 rounded-lg px-6 py-4 text-base font-semibold text-gray-700 hover:bg-gray-200 transition-colors duration-fast">
+                + Show Days 4-7
+              </button>
+            </div>
+          </section>
+
+          <!-- What's Included -->
+          <section>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">What's Included</h2>
+
+            <div class="grid grid-cols-1 @md:grid-cols-2 gap-8">
+              <!-- Included -->
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">✓ Included</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-base text-gray-700">
+                    <div class="w-5 h-5 text-primary-600 shrink-0 mt-0.5">
+                      <CheckCircle size={20} />
+                    </div>
+                    <span>6 nights accommodation in hand-picked hotels</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-base text-gray-700">
+                    <div class="w-5 h-5 text-primary-600 shrink-0 mt-0.5">
+                      <CheckCircle size={20} />
+                    </div>
+                    <span>Daily breakfast</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-base text-gray-700">
+                    <div class="w-5 h-5 text-primary-600 shrink-0 mt-0.5">
+                      <CheckCircle size={20} />
+                    </div>
+                    <span>GPS navigation app & detailed route notes</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-base text-gray-700">
+                    <div class="w-5 h-5 text-primary-600 shrink-0 mt-0.5">
+                      <CheckCircle size={20} />
+                    </div>
+                    <span>Luggage transfers between hotels</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-base text-gray-700">
+                    <div class="w-5 h-5 text-primary-600 shrink-0 mt-0.5">
+                      <CheckCircle size={20} />
+                    </div>
+                    <span>24/7 local support</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Not Included -->
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">✕ Not Included</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-base text-gray-600">
+                    <span class="text-gray-400 shrink-0">✕</span>
+                    <span>Flights or travel to start point</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-base text-gray-600">
+                    <span class="text-gray-400 shrink-0">✕</span>
+                    <span>Lunches and most dinners</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-base text-gray-600">
+                    <span class="text-gray-400 shrink-0">✕</span>
+                    <span>Travel insurance</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-base text-gray-600">
+                    <span class="text-gray-400 shrink-0">✕</span>
+                    <span>Personal expenses</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Accommodation -->
+          <section>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Accommodation</h2>
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              We've carefully selected charming 3-star hotels in historic town centers, each offering authentic Italian hospitality, comfortable rooms, and local cuisine. All hotels feature en-suite bathrooms, Wi-Fi, and traditional Tuscan character.
+            </p>
+            <div class="grid grid-cols-2 @md:grid-cols-3 gap-4">
+              <img
+                src="https://placehold.co/400x160/5a8d68/f5f5f0?text=Hotel+Courtyard"
+                alt="Traditional Tuscan hotel courtyard with terracotta pots and stone archways"
+                class="rounded-md h-40 w-full object-cover"
+              />
+              <img
+                src="https://placehold.co/400x160/4a7c59/f5f5f0?text=Guest+Room"
+                alt="Comfortable guest room with traditional Tuscan decor"
+                class="rounded-md h-40 w-full object-cover"
+              />
+              <img
+                src="https://placehold.co/400x160/5a8d68/f5f5f0?text=Dining+Room"
+                alt="Hotel dining room serving local Tuscan cuisine"
+                class="rounded-md h-40 w-full object-cover"
+              />
+            </div>
+          </section>
+
+          <!-- Guest Reviews -->
+          <section>
+            <div class="flex items-center justify-between mb-8">
+              <h2 class="text-3xl font-bold text-gray-900">Guest Reviews</h2>
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 text-accent-500">
+                  <Star size={24} variant="filled" />
+                </div>
+                <span class="text-3xl font-bold text-gray-900">4.8</span>
+                <span class="text-base text-gray-600">(127 reviews)</span>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <TestimonialCard
+                quote="Outstanding organization and attention to detail. The route notes were perfect, hotels were charming, and the Tuscan countryside exceeded our expectations. Headwater made our anniversary trip truly special."
+                name="Sarah M."
+                location="London, UK"
+                rating={5}
+              />
+
+              <TestimonialCard
+                quote="Perfect balance of walking and free time. The GPS app was incredibly helpful, and luggage transfers meant we only carried a daypack. Food and wine were exceptional throughout."
+                name="James P."
+                location="Manchester, UK"
+                rating={5}
+              />
+
+              <button class="w-full bg-gray-100 border border-gray-200 rounded-lg px-6 py-4 text-base font-semibold text-gray-700 hover:bg-gray-200 transition-colors duration-fast">
+                View All 127 Reviews
+              </button>
+            </div>
+          </section>
+
+          <!-- FAQ -->
+          <section>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+            <div class="border-t border-gray-200">
+              <FAQ
+                question="What fitness level do I need?"
+                answer="This is a moderate-level walking holiday suitable for anyone with a reasonable level of fitness. Daily walks range from 10-15km (6-9 miles) with some gentle hills. You should be comfortable walking for 4-5 hours per day, though you can always shorten routes or take rest days."
+              />
+              <FAQ
+                question="When is the best time to go?"
+                answer="The best times to visit Tuscany for walking are April-May and September-October. Spring brings wildflowers and mild temperatures, while autumn offers harvest season, wine festivals, and beautiful colors. Summer (June-August) can be hot for walking, though early morning starts help."
+              />
+              <FAQ
+                question="Can I extend my stay?"
+                answer="Yes, we offer pre- and post-trip extensions in Florence, Siena, or other Tuscan cities. Contact our team to discuss options and pricing for extra nights at the start or end of your holiday."
+              />
+            </div>
+          </section>
+
+          <!-- Similar Holidays -->
+          <section>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Similar Holidays</h2>
+
+            <div class="grid grid-cols-1 @md:grid-cols-3 gap-6">
+              <!-- Trip 1 -->
+              <Card variant="elevated" padding={false}>
+                <img
+                  src="https://placehold.co/400x192/3d6a50/f5f5f0?text=Dolomites+Trek"
+                  alt="Dramatic mountain peaks of the Dolomites"
+                  class="h-48 w-full object-cover"
+                />
+                <div class="p-6 space-y-3">
+                  <h3 class="text-lg font-semibold text-gray-900">Dolomites Trek</h3>
+                  <p class="text-sm text-gray-600">Italy · 6 days · Challenging</p>
+                  <div class="flex items-center justify-between pt-2">
+                    <span class="text-lg font-bold text-gray-900">from £1,495</span>
+                    <div class="flex items-center gap-1 text-sm text-gray-600">
+                      <div class="w-4 h-4 text-accent-500">
+                        <Star size={16} variant="filled" />
+                      </div>
+                      <span>4.7</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              <!-- Trip 2 -->
+              <Card variant="elevated" padding={false}>
+                <img
+                  src="https://placehold.co/400x192/4a7c59/f5f5f0?text=Amalfi+Coast"
+                  alt="Scenic coastal path along the Amalfi Coast"
+                  class="h-48 w-full object-cover"
+                />
+                <div class="p-6 space-y-3">
+                  <h3 class="text-lg font-semibold text-gray-900">Amalfi Coast Walk</h3>
+                  <p class="text-sm text-gray-600">Italy · 7 days · Moderate</p>
+                  <div class="flex items-center justify-between pt-2">
+                    <span class="text-lg font-bold text-gray-900">from £1,345</span>
+                    <div class="flex items-center gap-1 text-sm text-gray-600">
+                      <div class="w-4 h-4 text-accent-500">
+                        <Star size={16} variant="filled" />
+                      </div>
+                      <span>4.9</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              <!-- Trip 3 -->
+              <Card variant="elevated" padding={false}>
+                <img
+                  src="https://placehold.co/400x192/5a8d68/f5f5f0?text=Cinque+Terre"
+                  alt="Colorful hillside village of Cinque Terre overlooking the sea"
+                  class="h-48 w-full object-cover"
+                />
+                <div class="p-6 space-y-3">
+                  <h3 class="text-lg font-semibold text-gray-900">Cinque Terre Walking</h3>
+                  <p class="text-sm text-gray-600">Italy · 5 days · Easy</p>
+                  <div class="flex items-center justify-between pt-2">
+                    <span class="text-lg font-bold text-gray-900">from £995</span>
+                    <div class="flex items-center gap-1 text-sm text-gray-600">
+                      <div class="w-4 h-4 text-accent-500">
+                        <Star size={16} variant="filled" />
+                      </div>
+                      <span>4.8</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </section>
+
+        </main>
+
+        <!-- Sticky Booking Sidebar -->
+        <aside>
+          <div class="sticky top-6">
+            <Card variant="default">
+              <!-- Price -->
+              <div class="mb-6">
+                <div class="flex items-baseline gap-2 mb-2">
+                  <span class="text-4xl font-bold text-gray-900">£1,245</span>
+                  <span class="text-base text-gray-600">per person</span>
+                </div>
+                <p class="text-sm text-gray-600">Based on 2 people sharing</p>
+              </div>
+
+              <!-- Date Selector -->
+              <div class="mb-6">
+                <label class="text-sm font-semibold text-gray-700 block mb-3">Select dates</label>
+                <button class="w-full bg-white border border-gray-300 rounded-md px-4 py-3 flex items-center justify-between text-base text-gray-700 hover:border-gray-400 transition-colors duration-fast">
+                  <span>Choose departure date</span>
+                  <span>📅</span>
+                </button>
+              </div>
+
+              <!-- Guests -->
+              <div class="mb-6">
+                <label class="text-sm font-semibold text-gray-700 block mb-3">Number of guests</label>
+                <div class="flex items-center justify-between bg-white border border-gray-300 rounded-md px-4 py-3">
+                  <button class="w-10 h-10 flex items-center justify-center bg-gray-100 border border-gray-300 rounded-sm text-gray-700 hover:bg-gray-200 transition-colors duration-fast">−</button>
+                  <span class="text-base font-semibold text-gray-900">2 guests</span>
+                  <button class="w-10 h-10 flex items-center justify-center bg-gray-100 border border-gray-300 rounded-sm text-gray-700 hover:bg-gray-200 transition-colors duration-fast">+</button>
+                </div>
+              </div>
+
+              <!-- CTAs -->
+              <div class="space-y-3 mb-6">
+                <Button variant="primary" size="lg">Book Now</Button>
+                <Button variant="secondary" size="lg">Request Callback</Button>
+              </div>
+
+              <!-- Trust Signals -->
+              <div class="pt-6 border-t border-gray-200 space-y-3 mb-6">
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                  <div class="w-4 h-4 text-primary-600">
+                    <CheckCircle size={16} />
+                  </div>
+                  <span>ABTA & ATOL protected</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                  <div class="w-4 h-4 text-primary-600">
+                    <CheckCircle size={16} />
+                  </div>
+                  <span>Free cancellation up to 60 days</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                  <div class="w-4 h-4 text-primary-600">
+                    <CheckCircle size={16} />
+                  </div>
+                  <span>Expert support 7 days a week</span>
+                </div>
+              </div>
+
+              <!-- Contact -->
+              <div class="pt-6 border-t border-gray-200">
+                <p class="text-sm font-semibold text-gray-700 mb-3">Need help deciding?</p>
+                <div class="flex items-center gap-2 text-base text-gray-900 mb-2">
+                  <span>📞</span>
+                  <a href="tel:01606720199" class="font-semibold hover:text-primary-600 transition-colors duration-fast">01606 720199</a>
+                </div>
+                <p class="text-sm text-gray-600">We're open until 7pm today</p>
+              </div>
+            </Card>
+
+            <!-- Download Brochure -->
+            <Card variant="flat" class="mt-6">
+              <div>
+                <h3 class="text-base font-semibold text-gray-900 mb-2">Trip Brochure</h3>
+                <p class="text-sm text-gray-600 mb-4">Download detailed information about this holiday</p>
+                <Button variant="secondary" size="md">📄 Download PDF</Button>
+              </div>
+            </Card>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <CTA
+      variant="simple"
+      heading="Ready to explore Tuscany?"
+      subheading="Join hundreds of travelers who've discovered the beauty of self-guided walking holidays with Headwater."
+      primaryCta="Find a Holiday"
+      primaryHref="/find-holiday"
+      secondaryCta="Request Brochure"
+      secondaryHref="/brochure"
+    />
+
+    <!-- Footer -->
+    <Footer variant="standard" />
+  </div>
+</FullScreenLayout>

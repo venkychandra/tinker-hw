@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* Spacing */
+  /* Spacing — base 8px, ~25% jumps */
   --spacing-1: 4px;
   --spacing-2: 8px;
   --spacing-3: 12px;
@@ -14,8 +15,8 @@
   --spacing-24: 96px;
   --spacing-32: 128px;
 
-  /* Typography */
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  /* Typography — Outfit: geometric sans with warm, open letterforms */
+  --font-sans: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --text-xs: 12px;
   --text-xs--line-height: 1.75;
   --text-sm: 14px;
@@ -28,9 +29,9 @@
   --text-xl--line-height: 1.5;
   /* 2xl–7xl use clamp() with cqi (container query inline units) so heading
      and display text scales fluidly with the container width. Requires a
-     @container ancestor — all sections already have one.
+     @container ancestor — all gallery pages and sections have one.
      Formula: clamp(mobile-floor, Xcqi, desktop-max)
-     where Xcqi = desktop-max ÷ 12 (hits max at 1200px container). */
+     where Xcqi = desktop-max / 12 (hits max at 1200px container). */
   --text-2xl: clamp(20px, 2cqi, 24px);
   --text-2xl--line-height: 1.2;
   --text-3xl: clamp(22px, 2.5cqi, 30px);
@@ -50,42 +51,66 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.75;
 
-  /* Colors — Grey (cool, hue 220) */
-  --color-gray-50: hsl(220, 20%, 98%);
-  --color-gray-100: hsl(220, 18%, 96%);
-  --color-gray-200: hsl(220, 16%, 90%);
-  --color-gray-300: hsl(220, 14%, 82%);
-  --color-gray-400: hsl(220, 12%, 64%);
-  --color-gray-500: hsl(220, 10%, 46%);
-  --color-gray-600: hsl(220, 14%, 34%);
-  --color-gray-700: hsl(220, 18%, 24%);
-  --color-gray-800: hsl(220, 22%, 16%);
-  --color-gray-900: hsl(220, 25%, 10%);
-  --color-gray-950: hsl(220, 30%, 6%);
+  /* Colors — Grey (warm, hue ~30, earthy)
+     Saturated with orange/yellow for warmth. Hue drifts from 36 (light)
+     to 20 (dark). Saturation increases at the extremes. */
+  --color-gray-50: hsl(36, 20%, 98%);
+  --color-gray-100: hsl(34, 16%, 95%);
+  --color-gray-200: hsl(32, 13%, 89%);
+  --color-gray-300: hsl(30, 10%, 80%);
+  --color-gray-400: hsl(28, 8%, 62%);
+  --color-gray-500: hsl(26, 7%, 46%);
+  --color-gray-600: hsl(24, 10%, 34%);
+  --color-gray-700: hsl(22, 14%, 23%);
+  --color-gray-800: hsl(21, 18%, 16%);
+  --color-gray-900: hsl(20, 22%, 10%);
+  --color-gray-950: hsl(20, 25%, 6%);
 
-  /* Colors — Primary (blue) */
-  --color-primary-50: hsl(220, 80%, 97%);
-  --color-primary-100: hsl(220, 78%, 93%);
-  --color-primary-200: hsl(220, 76%, 85%);
-  --color-primary-300: hsl(220, 74%, 74%);
-  --color-primary-400: hsl(220, 72%, 62%);
-  --color-primary-500: hsl(220, 70%, 52%);
-  --color-primary-600: hsl(220, 72%, 44%);
-  --color-primary-700: hsl(220, 74%, 36%);
-  --color-primary-800: hsl(220, 76%, 28%);
-  --color-primary-900: hsl(220, 78%, 20%);
-  --color-primary-950: hsl(220, 80%, 12%);
+  /* Colors — Primary (forest green, hue ~152)
+     Pine forests, alpine meadows, trail markers. Hue rotates toward
+     cyan (160+) to lighten, toward green (142) to darken. Base at 500
+     passes 4.5:1 contrast with white text. */
+  --color-primary-50: hsl(162, 38%, 96%);
+  --color-primary-100: hsl(160, 34%, 90%);
+  --color-primary-200: hsl(158, 30%, 82%);
+  --color-primary-300: hsl(156, 28%, 68%);
+  --color-primary-400: hsl(154, 32%, 50%);
+  --color-primary-500: hsl(152, 38%, 36%);
+  --color-primary-600: hsl(150, 42%, 30%);
+  --color-primary-700: hsl(148, 46%, 24%);
+  --color-primary-800: hsl(146, 50%, 18%);
+  --color-primary-900: hsl(144, 55%, 13%);
+  --color-primary-950: hsl(142, 60%, 8%);
 
-  /* Shadows (two-part: direct light + ambient occlusion) */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  /* Colors — Accent (terracotta, hue ~14)
+     Trail marker accent — Mediterranean paths, Tuscan clay, sun-warmed
+     stone. The signature element. Hue rotates toward yellow (24) to
+     lighten, toward red (4) to darken. */
+  --color-accent-50: hsl(24, 60%, 96%);
+  --color-accent-100: hsl(22, 55%, 90%);
+  --color-accent-200: hsl(20, 48%, 82%);
+  --color-accent-300: hsl(18, 44%, 70%);
+  --color-accent-400: hsl(16, 48%, 56%);
+  --color-accent-500: hsl(14, 55%, 44%);
+  --color-accent-600: hsl(12, 60%, 36%);
+  --color-accent-700: hsl(10, 64%, 29%);
+  --color-accent-800: hsl(8, 68%, 22%);
+  --color-accent-900: hsl(6, 72%, 16%);
+  --color-accent-950: hsl(4, 76%, 10%);
 
-  /* Radius */
+  /* Shadows — two-part (direct light + ambient occlusion), warm-tinted.
+     Five levels. Firm shadows with less blur than typical — grounded,
+     like solid earth underfoot. Shadow color from warm dark (≈ gray-900). */
+  --shadow-sm: 0 1px 2px rgba(31, 22, 20, 0.06), 0 1px 2px rgba(31, 22, 20, 0.04);
+  --shadow-md: 0 3px 8px -1px rgba(31, 22, 20, 0.1), 0 2px 3px -2px rgba(31, 22, 20, 0.06);
+  --shadow-lg: 0 8px 16px -3px rgba(31, 22, 20, 0.1), 0 4px 6px -4px rgba(31, 22, 20, 0.06);
+  --shadow-xl: 0 16px 28px -5px rgba(31, 22, 20, 0.12), 0 8px 10px -6px rgba(31, 22, 20, 0.06);
+  --shadow-2xl: 0 24px 48px -10px rgba(31, 22, 20, 0.14), 0 12px 16px -8px rgba(31, 22, 20, 0.08);
+
+  /* Radius — confident, not playful. 6px default feels grounded. */
   --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
   --radius-full: 9999px;
 
   /* Transition */
@@ -117,7 +142,7 @@
  */
 @utility page-flow {
   & > * + * {
-    margin-top: var(--section-gap, 64px);
+    margin-top: var(--section-gap, 48px);
   }
   & > [data-seamless] + [data-seamless] {
     margin-top: 0;

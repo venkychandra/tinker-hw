@@ -1,7 +1,18 @@
 ---
 import GalleryLayout from '../layouts/GalleryLayout.astro';
 import ArrowRight from '../components/icons/ArrowRight.astro';
+import ChevronDown from '../components/icons/ChevronDown.astro';
 import Close from '../components/icons/Close.astro';
+import Menu from '../components/icons/Menu.astro';
+import Search from '../components/icons/Search.astro';
+import MapPin from '../components/icons/MapPin.astro';
+import Calendar from '../components/icons/Calendar.astro';
+import Phone from '../components/icons/Phone.astro';
+import Mail from '../components/icons/Mail.astro';
+import Star from '../components/icons/Star.astro';
+import Walking from '../components/icons/Walking.astro';
+import Cycling from '../components/icons/Cycling.astro';
+import Mountain from '../components/icons/Mountain.astro';
 ---
 
 <GalleryLayout title="Icons" description="Inline SVG icons using currentColor. Each icon is an Astro component with a size prop, plus a downloadable SVG in public/icons/.">
@@ -13,24 +24,97 @@ import Close from '../components/icons/Close.astro';
       Each icon renders as inline SVG with <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">stroke="currentColor"</code>, so it inherits the parent's text color. Default size is <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">24px</code>.
     </p>
     <div class="border border-gray-200 rounded-lg p-8">
-      <div class="grid grid-cols-2 gap-6" style="max-width: 400px;">
-        <div class="flex items-center gap-4">
+      <div class="grid grid-cols-4 gap-6" style="max-width: 600px;">
+        <div class="flex flex-col items-center gap-2">
           <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
             <ArrowRight />
           </div>
-          <div>
-            <p class="text-sm font-medium text-gray-900">ArrowRight</p>
-            <a href="/icons/arrow-right.svg" download class="text-xs text-primary-500 hover:text-primary-600">Download SVG</a>
-          </div>
+          <p class="text-xs font-medium text-gray-900">ArrowRight</p>
+          <a href="/icons/arrow-right.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <ChevronDown />
+          </div>
+          <p class="text-xs font-medium text-gray-900">ChevronDown</p>
+          <a href="/icons/chevron-down.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
           <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
             <Close />
           </div>
-          <div>
-            <p class="text-sm font-medium text-gray-900">Close</p>
-            <a href="/icons/close.svg" download class="text-xs text-primary-500 hover:text-primary-600">Download SVG</a>
+          <p class="text-xs font-medium text-gray-900">Close</p>
+          <a href="/icons/close.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <Menu />
           </div>
+          <p class="text-xs font-medium text-gray-900">Menu</p>
+          <a href="/icons/menu.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <Search />
+          </div>
+          <p class="text-xs font-medium text-gray-900">Search</p>
+          <a href="/icons/search.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <MapPin />
+          </div>
+          <p class="text-xs font-medium text-gray-900">MapPin</p>
+          <a href="/icons/map-pin.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <Calendar />
+          </div>
+          <p class="text-xs font-medium text-gray-900">Calendar</p>
+          <a href="/icons/calendar.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <Phone />
+          </div>
+          <p class="text-xs font-medium text-gray-900">Phone</p>
+          <a href="/icons/phone.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <Mail />
+          </div>
+          <p class="text-xs font-medium text-gray-900">Mail</p>
+          <a href="/icons/mail.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <Star />
+          </div>
+          <p class="text-xs font-medium text-gray-900">Star</p>
+          <a href="/icons/star.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <Walking />
+          </div>
+          <p class="text-xs font-medium text-gray-900">Walking</p>
+          <a href="/icons/walking.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <Cycling />
+          </div>
+          <p class="text-xs font-medium text-gray-900">Cycling</p>
+          <a href="/icons/cycling.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-lg">
+            <Mountain />
+          </div>
+          <p class="text-xs font-medium text-gray-900">Mountain</p>
+          <a href="/icons/mountain.svg" download class="text-[11px] text-primary-500 hover:text-primary-600">Download SVG</a>
         </div>
       </div>
     </div>
@@ -46,36 +130,66 @@ import Close from '../components/icons/Close.astro';
       <table class="w-full">
         <thead>
           <tr class="border-b border-gray-200 bg-gray-50">
-            <th class="text-left py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wide">Size</th>
-            <th class="text-center py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wide">ArrowRight</th>
-            <th class="text-center py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wide">Close</th>
-            <th class="text-left py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wide">Use case</th>
+            <th class="text-left py-3 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Size</th>
+            <th class="text-center py-3 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">ArrowRight</th>
+            <th class="text-center py-3 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Close</th>
+            <th class="text-center py-3 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Search</th>
+            <th class="text-center py-3 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">MapPin</th>
+            <th class="text-center py-3 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Calendar</th>
+            <th class="text-center py-3 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Star</th>
+            <th class="text-center py-3 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Walking</th>
+            <th class="text-center py-3 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Mountain</th>
+            <th class="text-left py-3 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">Use case</th>
           </tr>
         </thead>
         <tbody>
           <tr class="border-b border-gray-100">
-            <td class="py-4 px-6 font-mono text-xs text-gray-500">16px</td>
-            <td class="py-4 px-6 text-center"><ArrowRight size={16} /></td>
-            <td class="py-4 px-6 text-center"><Close size={16} /></td>
-            <td class="py-4 px-6 text-sm text-gray-600">Small buttons, inline text, badges</td>
+            <td class="py-4 px-4 font-mono text-xs text-gray-500">16px</td>
+            <td class="py-4 px-3 text-center"><ArrowRight size={16} /></td>
+            <td class="py-4 px-3 text-center"><Close size={16} /></td>
+            <td class="py-4 px-3 text-center"><Search size={16} /></td>
+            <td class="py-4 px-3 text-center"><MapPin size={16} /></td>
+            <td class="py-4 px-3 text-center"><Calendar size={16} /></td>
+            <td class="py-4 px-3 text-center"><Star size={16} /></td>
+            <td class="py-4 px-3 text-center"><Walking size={16} /></td>
+            <td class="py-4 px-3 text-center"><Mountain size={16} /></td>
+            <td class="py-4 px-4 text-sm text-gray-600">Small buttons, inline text, badges</td>
           </tr>
           <tr class="border-b border-gray-100">
-            <td class="py-4 px-6 font-mono text-xs text-gray-500">20px</td>
-            <td class="py-4 px-6 text-center"><ArrowRight size={20} /></td>
-            <td class="py-4 px-6 text-center"><Close size={20} /></td>
-            <td class="py-4 px-6 text-sm text-gray-600">Default buttons, form elements, nav items</td>
+            <td class="py-4 px-4 font-mono text-xs text-gray-500">20px</td>
+            <td class="py-4 px-3 text-center"><ArrowRight size={20} /></td>
+            <td class="py-4 px-3 text-center"><Close size={20} /></td>
+            <td class="py-4 px-3 text-center"><Search size={20} /></td>
+            <td class="py-4 px-3 text-center"><MapPin size={20} /></td>
+            <td class="py-4 px-3 text-center"><Calendar size={20} /></td>
+            <td class="py-4 px-3 text-center"><Star size={20} /></td>
+            <td class="py-4 px-3 text-center"><Walking size={20} /></td>
+            <td class="py-4 px-3 text-center"><Mountain size={20} /></td>
+            <td class="py-4 px-4 text-sm text-gray-600">Default buttons, form elements, nav items</td>
           </tr>
           <tr class="border-b border-gray-100">
-            <td class="py-4 px-6 font-mono text-xs text-gray-500">24px</td>
-            <td class="py-4 px-6 text-center"><ArrowRight size={24} /></td>
-            <td class="py-4 px-6 text-center"><Close size={24} /></td>
-            <td class="py-4 px-6 text-sm text-gray-600">Default (standalone), large buttons, headings</td>
+            <td class="py-4 px-4 font-mono text-xs text-gray-500">24px</td>
+            <td class="py-4 px-3 text-center"><ArrowRight size={24} /></td>
+            <td class="py-4 px-3 text-center"><Close size={24} /></td>
+            <td class="py-4 px-3 text-center"><Search size={24} /></td>
+            <td class="py-4 px-3 text-center"><MapPin size={24} /></td>
+            <td class="py-4 px-3 text-center"><Calendar size={24} /></td>
+            <td class="py-4 px-3 text-center"><Star size={24} /></td>
+            <td class="py-4 px-3 text-center"><Walking size={24} /></td>
+            <td class="py-4 px-3 text-center"><Mountain size={24} /></td>
+            <td class="py-4 px-4 text-sm text-gray-600">Default (standalone), large buttons, headings</td>
           </tr>
           <tr>
-            <td class="py-4 px-6 font-mono text-xs text-gray-500">32px</td>
-            <td class="py-4 px-6 text-center"><ArrowRight size={32} /></td>
-            <td class="py-4 px-6 text-center"><Close size={32} /></td>
-            <td class="py-4 px-6 text-sm text-gray-600">Feature icons, hero accents, empty states</td>
+            <td class="py-4 px-4 font-mono text-xs text-gray-500">32px</td>
+            <td class="py-4 px-3 text-center"><ArrowRight size={32} /></td>
+            <td class="py-4 px-3 text-center"><Close size={32} /></td>
+            <td class="py-4 px-3 text-center"><Search size={32} /></td>
+            <td class="py-4 px-3 text-center"><MapPin size={32} /></td>
+            <td class="py-4 px-3 text-center"><Calendar size={32} /></td>
+            <td class="py-4 px-3 text-center"><Star size={32} /></td>
+            <td class="py-4 px-3 text-center"><Walking size={32} /></td>
+            <td class="py-4 px-3 text-center"><Mountain size={32} /></td>
+            <td class="py-4 px-4 text-sm text-gray-600">Feature icons, hero accents, empty states</td>
           </tr>
         </tbody>
       </table>
@@ -89,30 +203,51 @@ import Close from '../components/icons/Close.astro';
       Icons use <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">currentColor</code> for stroke — set the parent's <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">color</code> via Tailwind text color classes. No separate icon color prop needed.
     </p>
     <div class="border border-gray-200 rounded-lg p-8">
-      <div class="flex flex-wrap gap-8 items-center">
-        <div class="flex flex-col items-center gap-3 text-gray-900">
-          <ArrowRight size={28} />
+      <div class="flex flex-wrap gap-8 items-start">
+        <!-- gray-900 -->
+        <div class="flex flex-col items-center gap-4 text-gray-900">
+          <div class="flex items-center gap-3">
+            <ArrowRight size={28} />
+            <MapPin size={28} />
+            <Star size={28} />
+          </div>
           <span class="text-xs font-mono text-gray-400">gray-900</span>
         </div>
-        <div class="flex flex-col items-center gap-3 text-gray-600">
-          <ArrowRight size={28} />
+        <!-- gray-600 -->
+        <div class="flex flex-col items-center gap-4 text-gray-600">
+          <div class="flex items-center gap-3">
+            <ArrowRight size={28} />
+            <MapPin size={28} />
+            <Star size={28} />
+          </div>
           <span class="text-xs font-mono text-gray-400">gray-600</span>
         </div>
-        <div class="flex flex-col items-center gap-3 text-gray-400">
-          <ArrowRight size={28} />
+        <!-- gray-400 -->
+        <div class="flex flex-col items-center gap-4 text-gray-400">
+          <div class="flex items-center gap-3">
+            <ArrowRight size={28} />
+            <MapPin size={28} />
+            <Star size={28} />
+          </div>
           <span class="text-xs font-mono text-gray-400">gray-400</span>
         </div>
-        <div class="flex flex-col items-center gap-3 text-primary-500">
-          <ArrowRight size={28} />
+        <!-- primary-500 -->
+        <div class="flex flex-col items-center gap-4 text-primary-500">
+          <div class="flex items-center gap-3">
+            <ArrowRight size={28} />
+            <MapPin size={28} />
+            <Star size={28} />
+          </div>
           <span class="text-xs font-mono text-gray-400">primary-500</span>
         </div>
-        <div class="flex flex-col items-center gap-3 text-red-500">
-          <ArrowRight size={28} />
-          <span class="text-xs font-mono text-gray-400">red-500</span>
-        </div>
-        <div class="flex flex-col items-center gap-3 text-green-500">
-          <ArrowRight size={28} />
-          <span class="text-xs font-mono text-gray-400">green-500</span>
+        <!-- accent-500 -->
+        <div class="flex flex-col items-center gap-4 text-accent-500">
+          <div class="flex items-center gap-3">
+            <ArrowRight size={28} />
+            <MapPin size={28} />
+            <Star size={28} />
+          </div>
+          <span class="text-xs font-mono text-gray-400">accent-500</span>
         </div>
       </div>
     </div>
@@ -128,31 +263,37 @@ import Close from '../components/icons/Close.astro';
       <div class="flex flex-wrap gap-6 items-center">
         <div class="flex flex-col items-center gap-3">
           <div class="w-10 h-10 flex items-center justify-center bg-primary-50 text-primary-500 rounded-lg">
-            <ArrowRight size={20} />
+            <MapPin size={20} />
           </div>
           <span class="text-xs font-mono text-gray-400">tinted bg</span>
         </div>
         <div class="flex flex-col items-center gap-3">
           <div class="w-10 h-10 flex items-center justify-center bg-primary-500 text-white rounded-lg">
-            <ArrowRight size={20} />
+            <Calendar size={20} />
           </div>
           <span class="text-xs font-mono text-gray-400">solid bg</span>
         </div>
         <div class="flex flex-col items-center gap-3">
+          <div class="w-10 h-10 flex items-center justify-center bg-accent-50 text-accent-500 rounded-lg">
+            <Walking size={20} />
+          </div>
+          <span class="text-xs font-mono text-gray-400">accent tinted</span>
+        </div>
+        <div class="flex flex-col items-center gap-3">
           <div class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-600 rounded-full">
-            <Close size={20} />
+            <Cycling size={20} />
           </div>
           <span class="text-xs font-mono text-gray-400">circle</span>
         </div>
         <div class="flex flex-col items-center gap-3">
           <div class="w-12 h-12 flex items-center justify-center bg-gray-900 text-white rounded-lg">
-            <ArrowRight size={24} />
+            <Mountain size={24} />
           </div>
-          <span class="text-xs font-mono text-gray-400">dark lg</span>
+          <span class="text-xs font-mono text-gray-400">dark</span>
         </div>
         <div class="flex flex-col items-center gap-3">
           <div class="w-14 h-14 flex items-center justify-center bg-primary-50 text-primary-500 rounded-xl">
-            <ArrowRight size={28} />
+            <Star size={28} />
           </div>
           <span class="text-xs font-mono text-gray-400">feature xl</span>
         </div>
@@ -160,7 +301,7 @@ import Close from '../components/icons/Close.astro';
     </div>
   </section>
 
-  <!-- Usage with Text -->
+  <!-- Inline with Text -->
   <section class="specimen-section">
     <h2>Inline with Text</h2>
     <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
@@ -169,25 +310,25 @@ import Close from '../components/icons/Close.astro';
     <div class="border border-gray-200 rounded-lg p-8">
       <div class="flex flex-col gap-6">
         <div class="flex flex-wrap gap-8 items-center">
-          <span class="inline-flex items-center gap-1.5 text-sm text-gray-600">
-            <ArrowRight size={14} /> <span>Small link</span>
+          <span class="inline-flex items-center gap-2 text-sm text-primary-500">
+            <span>View itinerary</span> <ArrowRight size={14} />
           </span>
-          <span class="inline-flex items-center gap-2 text-base text-gray-900">
-            <ArrowRight size={16} /> <span>Body text</span>
+          <span class="inline-flex items-center gap-2 text-sm text-gray-700">
+            <Calendar size={16} /> <span>7 nights</span>
           </span>
-          <span class="inline-flex items-center gap-2 text-lg font-semibold text-gray-900">
-            <ArrowRight size={20} /> <span>Heading text</span>
+          <span class="inline-flex items-center gap-2 text-sm text-gray-700">
+            <MapPin size={16} /> <span>Provence, France</span>
           </span>
         </div>
         <div class="flex flex-wrap gap-8 items-center">
-          <span class="inline-flex items-center gap-1.5 text-sm text-red-500">
-            <Close size={14} /> <span>Remove item</span>
+          <span class="inline-flex items-center gap-2 text-sm text-gray-700">
+            <Walking size={16} /> <span>Walking holiday</span>
           </span>
-          <span class="inline-flex items-center gap-2 text-sm text-gray-500">
-            <span>Next page</span> <ArrowRight size={14} />
+          <span class="inline-flex items-center gap-2 text-sm text-gray-700">
+            <Cycling size={16} /> <span>Cycling tour</span>
           </span>
-          <span class="inline-flex items-center gap-2 text-sm text-primary-500">
-            <span>Learn more</span> <ArrowRight size={14} />
+          <span class="inline-flex items-center gap-1.5 text-sm text-accent-500">
+            <Star size={14} /> <span>4.8 rating</span>
           </span>
         </div>
       </div>

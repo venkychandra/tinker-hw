@@ -1,0 +1,310 @@
+---
+import GalleryLayout from '../layouts/GalleryLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import Card from '../components/Card.astro';
+import Testimonials from '../components/Testimonials.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import Walking from '../components/icons/Walking.astro';
+import Hotel from '../components/icons/Hotel.astro';
+import Utensils from '../components/icons/Utensils.astro';
+import MapPin from '../components/icons/MapPin.astro';
+import Shield from '../components/icons/Shield.astro';
+import CheckCircle from '../components/icons/CheckCircle.astro';
+
+// FAQ items
+const faqs = [
+  {
+    question: "What level of fitness do I need for Tuscany walking holidays?",
+    answer: "Our Tuscany routes are graded from gentle to moderate. Most walks cover 10-15km per day on well-maintained paths. If you can comfortably walk for 4-5 hours with breaks, you'll be fine. We provide detailed grade information for each route."
+  },
+  {
+    question: "When is the best time to visit Tuscany for walking?",
+    answer: "April-May and September-October offer the best conditions — mild temperatures (15-25°C), fewer crowds, and stunning spring wildflowers or autumn colours. Summer (June-August) is warmer but still manageable with early morning starts."
+  },
+  {
+    question: "How does the luggage transfer work?",
+    answer: "We arrange for your luggage to be transferred to your next hotel each day, so you only carry a daypack with essentials. Your main bags arrive at your accommodation before you do."
+  },
+  {
+    question: "Are the routes suitable for solo travelers?",
+    answer: "Absolutely. Our self-guided format gives you complete independence while our 24/7 support ensures you're never truly alone. Many of our guests travel solo and love the flexibility."
+  },
+  {
+    question: "What's included in the holiday price?",
+    answer: "All accommodation (hand-picked 3-4 star hotels), daily breakfast, detailed route notes, GPS navigation files, luggage transfers, 24/7 phone support, and ABTA/ATOL protection. Flights and some meals are not included."
+  }
+];
+---
+
+<GalleryLayout
+  title="Destination"
+  description="Complete destination page assembled from approved components — hero, stats, feature grids, testimonials, FAQ, and CTA. All images filled with high-quality travel photography."
+  section="layouts"
+  fullscreenHref="/view/destination"
+>
+  <div class="gallery-specimen">
+    <div class="@container page-flow">
+      <!-- Hero with transparent nav overlay -->
+      <div class="relative" data-seamless>
+        <div class="absolute top-0 left-0 right-0 z-10">
+          <Nav variant="transparent" />
+        </div>
+        <Hero
+          variant="image"
+          eyebrow="Italy"
+          heading="Tuscany Walking Holidays"
+          subheading="Discover rolling hills, medieval villages, vineyards, and authentic Italian culture on award-winning self-guided routes."
+          primaryCta="View Trips"
+          primaryHref="/trips/tuscany"
+          secondaryCta="Request Brochure"
+          secondaryHref="/request-brochure"
+          imageSrc="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=1600&h=900&fit=crop"
+          imageAlt="Tuscany countryside with rolling hills and cypress trees"
+        />
+      </div>
+
+      <!-- Stats -->
+      <Stats
+        columns={4}
+        eyebrow="By the numbers"
+        heading="Tuscany at a glance"
+      >
+        <div class="text-center">
+          <div class="text-5xl font-bold text-primary-600 mb-2">12</div>
+          <div class="text-sm text-gray-600">Walking routes</div>
+        </div>
+
+        <div class="text-center">
+          <div class="text-5xl font-bold text-primary-600 mb-2">45+</div>
+          <div class="text-sm text-gray-600">Hand-picked hotels</div>
+        </div>
+
+        <div class="text-center">
+          <div class="text-5xl font-bold text-primary-600 mb-2">10-15km</div>
+          <div class="text-sm text-gray-600">Daily distance</div>
+        </div>
+
+        <div class="text-center">
+          <div class="text-5xl font-bold text-primary-600 mb-2">4.9★</div>
+          <div class="text-sm text-gray-600">Guest rating</div>
+        </div>
+      </Stats>
+
+      <!-- Featured routes with images -->
+      <FeatureGrid
+        variant="default"
+        columns={3}
+        heading="Popular Tuscany routes"
+        subheading="Award-winning itineraries through the heart of Italy"
+      >
+        <div class="group">
+          <div class="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=600&h=450&fit=crop&q=80"
+              alt="Florence to Siena countryside"
+              class="w-full h-full object-cover transition-transform duration-normal ease-default group-hover:scale-105"
+            />
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Florence to Siena</h3>
+          <p class="text-sm text-gray-600 mb-3">7 nights • Moderate • Spring/Autumn</p>
+          <p class="text-sm text-gray-700 leading-relaxed">Walk through Chianti vineyards, medieval hilltop villages, and sun-drenched valleys between two of Italy's most beautiful Renaissance cities.</p>
+        </div>
+
+        <div class="group">
+          <div class="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&h=450&fit=crop&q=80"
+              alt="Val d'Orcia hills"
+              class="w-full h-full object-cover transition-transform duration-normal ease-default group-hover:scale-105"
+            />
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Val d'Orcia</h3>
+          <p class="text-sm text-gray-600 mb-3">5 nights • Gentle • Year-round</p>
+          <p class="text-sm text-gray-700 leading-relaxed">UNESCO World Heritage landscapes of rolling hills, cypress-lined roads, thermal springs, and Renaissance towns. Perfect for first-time walkers.</p>
+        </div>
+
+        <div class="group">
+          <div class="relative aspect-[4/3] overflow-hidden rounded-lg mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1529260830199-42c24126f198?w=600&h=450&fit=crop"
+              alt="San Gimignano towers"
+              class="w-full h-full object-cover transition-transform duration-normal ease-default group-hover:scale-105"
+            />
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">San Gimignano Circuit</h3>
+          <p class="text-sm text-gray-600 mb-3">6 nights • Moderate • Spring/Autumn</p>
+          <p class="text-sm text-gray-700 leading-relaxed">Circle the medieval towers of San Gimignano, exploring vineyards, olive groves, Etruscan ruins, and walled hilltop towns.</p>
+        </div>
+      </FeatureGrid>
+
+      <!-- What makes Tuscany special -->
+      <FeatureGrid
+        variant="centered"
+        columns={3}
+        dark={true}
+        eyebrow="Why Tuscany?"
+        heading="What makes this destination special"
+        subheading="The perfect blend of active travel, culture, and authentic Italian experiences"
+      >
+        <Card variant="elevated">
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-full mb-4">
+              <Walking size={32} class="text-primary-600" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Award-winning trails</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Walk ancient pilgrimage routes, vineyard paths, and forest trails tested by our team. Every route includes detailed GPS navigation and comprehensive route notes.</p>
+          </div>
+        </Card>
+
+        <Card variant="elevated">
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-50 rounded-full mb-4">
+              <Hotel size={32} class="text-accent-600" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Hand-picked hotels</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Stay in family-run agriturismi, converted monasteries, and boutique hotels. Every property is personally inspected and chosen for character, location, and hospitality.</p>
+          </div>
+        </Card>
+
+        <Card variant="elevated">
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-50 rounded-full mb-4">
+              <Utensils size={32} class="text-accent-600" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Authentic cuisine</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Savor traditional Tuscan dishes, local wines, and farm-to-table ingredients. Our route notes include recommendations for family-owned trattorias and wine estates.</p>
+          </div>
+        </Card>
+
+        <Card variant="elevated">
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-full mb-4">
+              <MapPin size={32} class="text-primary-600" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Cultural immersion</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Explore Renaissance art in Florence, medieval towers in San Gimignano, thermal baths in Bagno Vignoni, and UNESCO World Heritage sites throughout the region.</p>
+          </div>
+        </Card>
+
+        <Card variant="elevated">
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-50 rounded-full mb-4">
+              <CheckCircle size={32} class="text-accent-600" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Luggage-free walking</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Your bags travel ahead to your next hotel each day. Walk with just a daypack carrying essentials. We handle all logistics so you can focus on the journey.</p>
+          </div>
+        </Card>
+
+        <Card variant="elevated">
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-full mb-4">
+              <Shield size={32} class="text-primary-600" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">24/7 support</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">ABTA/ATOL protected holidays with round-the-clock phone support. Our local team in Tuscany knows every route and hotel, ready to help if you need anything.</p>
+          </div>
+        </Card>
+      </FeatureGrid>
+
+      <!-- Testimonials with photos -->
+      <Testimonials
+        variant="default"
+        heading="What our guests say about Tuscany"
+        subheading="Real experiences from recent walking holidays"
+      >
+        <TestimonialCard
+          quote="The Val d'Orcia route exceeded all expectations. Every morning we'd wake up to stunning views, walk through vineyards, and end the day in a charming agriturismo. The route notes were flawless and the GPS made navigation effortless."
+          name="Sarah & James Mitchell"
+          location="Winchester, UK"
+          rating={5}
+          photo="https://i.pravatar.cc/150?img=47"
+        />
+        <TestimonialCard
+          quote="Our third Headwater holiday and Tuscany was the best yet. The hotels were exceptional — one night we stayed in a converted 12th-century monastery. The walking was challenging enough to feel accomplished but not exhausting."
+          name="Margaret Wilson"
+          location="Edinburgh, Scotland"
+          rating={5}
+          photo="https://i.pravatar.cc/150?img=32"
+        />
+        <TestimonialCard
+          quote="As solo travelers, we felt safe and well-supported throughout. The luggage transfers worked perfectly, the restaurants recommended were authentic gems, and meeting other walkers on the trails created a real sense of community."
+          name="David Chen"
+          location="London, UK"
+          rating={5}
+          photo="https://i.pravatar.cc/150?img=12"
+        />
+      </Testimonials>
+
+      <!-- FAQ Section -->
+      <section class="@container bg-gray-50" data-seamless>
+        <div class="max-w-[var(--container-max)] mx-auto px-6 py-20 @md:py-24 @lg:py-32">
+          <div class="max-w-2xl mb-12 @md:mb-16">
+            <p data-role="eyebrow" class="text-sm font-semibold uppercase tracking-wide text-accent-500 mb-3">
+              Common questions
+            </p>
+            <h2 class="text-4xl font-bold tracking-tight text-gray-900 mb-4">
+              Everything you need to know
+            </h2>
+            <p class="text-lg text-gray-600">
+              Planning your Tuscany walking holiday? Here are answers to the most common questions.
+            </p>
+          </div>
+
+          <div class="max-w-3xl">
+            {faqs.map(({ question, answer }) => (
+              <details class="group border-b border-gray-200 py-6 transition-colors duration-[var(--duration-normal)] hover:border-gray-300">
+                <summary class="flex cursor-pointer items-start justify-between gap-6 text-left list-none select-none">
+                  <span class="text-lg font-semibold text-gray-900 leading-normal transition-colors duration-[var(--duration-normal)] group-hover:text-primary-700">
+                    {question}
+                  </span>
+                  <svg
+                    class="shrink-0 w-6 h-6 text-accent-500 transition-transform duration-[var(--duration-normal)] group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    aria-hidden="true"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div class="pt-4 pr-12 text-base text-gray-600 leading-relaxed max-w-[75ch]">
+                  {answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA with image -->
+      <CTA
+        variant="image"
+        heading="Ready to explore Tuscany?"
+        subheading="Request a free brochure or speak to our Italy specialist today"
+        primaryCta="View Trips"
+        primaryHref="/trips/tuscany"
+        secondaryCta="Request Brochure"
+        secondaryHref="/request-brochure"
+        imageSrc="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=1600&h=900&fit=crop"
+        imageAlt="Sunset over Tuscan vineyards"
+      />
+
+      <!-- Footer -->
+      <Footer variant="standard" />
+    </div>
+  </div>
+
+  <style>
+    /* Remove default marker */
+    summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</GalleryLayout>

@@ -1,0 +1,342 @@
+---
+import GalleryLayout from '../layouts/GalleryLayout.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import Walking from '../components/icons/Walking.astro';
+import Cycling from '../components/icons/Cycling.astro';
+import Mountain from '../components/icons/Mountain.astro';
+import MapPin from '../components/icons/MapPin.astro';
+import Calendar from '../components/icons/Calendar.astro';
+import Star from '../components/icons/Star.astro';
+---
+
+<GalleryLayout title="Feature Grid" description="Section component for showcasing features and benefits. Three variants: default (clean), cards (bordered containers), and centered. Slot-based — feature items follow a consistent markup pattern." fullscreenHref="/view/features">
+
+  <!-- Default variant — 3 columns -->
+  <section class="specimen-section">
+    <h2>Default — 3 Columns</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Clean feature items with icon, title, and description. No container borders — items breathe in the grid. Icons use accent-50 background with accent-500 stroke as the trail marker signature.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <FeatureGrid
+        eyebrow="Why choose Headwater"
+        heading="Over 40 years creating exceptional active holidays"
+        subheading="Experts in self-guided walking and cycling since 1985."
+      >
+        <div>
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+            <Star size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Hand-picked Hotels</h3>
+          <p class="text-base text-gray-600 max-w-[45ch]">Carefully sourced accommodations since 1985. Quality over quantity, with personal inspection of every property.</p>
+        </div>
+        <div>
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+            <MapPin size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Headwater Navigation</h3>
+          <p class="text-base text-gray-600 max-w-[45ch]">GPS route app and detailed route notes for most holidays. Easy to follow, designed for self-guided exploration.</p>
+        </div>
+        <div>
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+            <Walking size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Fine Food & Wine</h3>
+          <p class="text-base text-gray-600 max-w-[45ch]">Authentic local culinary experiences. Regional specialties and genuine dining, not tourist traps.</p>
+        </div>
+      </FeatureGrid>
+    </div>
+  </section>
+
+  <!-- Cards variant -->
+  <section class="specimen-section">
+    <h2>Cards Variant</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Feature items wrapped in bordered card containers for more visual separation. Uses the system's default border + shadow treatment. Good when features need to feel more distinct.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <FeatureGrid
+        variant="cards"
+        eyebrow="What's Included"
+        heading="Your Trip, Sorted"
+        subheading="Every Headwater holiday includes these essentials."
+      >
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+            <Calendar size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Flexible Dates</h3>
+          <p class="text-base text-gray-600">Start any day you choose between April and October. No fixed departures — your trip, your timeline.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+            <Cycling size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Quality Bikes</h3>
+          <p class="text-base text-gray-600">Lightweight hybrid or e-bike included. Fitted to your height, with helmet, lock, and repair kit.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+            <Mountain size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Local Support</h3>
+          <p class="text-base text-gray-600">Our local team is a phone call away. Route advice, restaurant tips, or emergency pickup — we've got you.</p>
+        </div>
+      </FeatureGrid>
+    </div>
+  </section>
+
+  <!-- Centered variant -->
+  <section class="specimen-section">
+    <h2>Centered Variant</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Center-aligned items and section header. Works well for fewer, more prominent features or when symmetry matters.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <FeatureGrid
+        variant="centered"
+        heading="The Headwater Difference"
+        subheading="What sets our holidays apart from the rest."
+      >
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+            <Walking size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Expert Routes</h3>
+          <p class="text-base text-gray-600 max-w-[40ch] mx-auto">Every route walked and refined by our team. We know every shortcut, viewpoint, and lunch stop.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+            <MapPin size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Off the Beaten Path</h3>
+          <p class="text-base text-gray-600 max-w-[40ch] mx-auto">We avoid the tourist trails. Our routes follow local paths through villages, vineyards, and valleys.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+            <Star size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">98% Would Recommend</h3>
+          <p class="text-base text-gray-600 max-w-[40ch] mx-auto">Three decades of five-star reviews. Our guests come back year after year.</p>
+        </div>
+      </FeatureGrid>
+    </div>
+  </section>
+
+  <!-- Dark variant -->
+  <section class="specimen-section">
+    <h2>Dark Background</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      The <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">dark</code> prop inverts the section background and text colors. Eyebrow shifts to accent-300. Feature items need inverted text classes.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <FeatureGrid
+        dark
+        eyebrow="The Details"
+        heading="Crafted for Comfort"
+        subheading="We handle the logistics so you can focus on the landscape."
+      >
+        <div>
+          <div class="w-12 h-12 rounded-md bg-accent-900/30 flex items-center justify-center text-accent-300 mb-4">
+            <Walking size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Daily Distances</h3>
+          <p class="text-base text-gray-400 max-w-[45ch]">Choose easy, moderate, or challenging routes. Most days are 10–20 km with options to extend or shorten.</p>
+        </div>
+        <div>
+          <div class="w-12 h-12 rounded-md bg-accent-900/30 flex items-center justify-center text-accent-300 mb-4">
+            <MapPin size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Transfers Included</h3>
+          <p class="text-base text-gray-400 max-w-[45ch]">Airport pickup, luggage transport between hotels, and return transfer. All sorted before you arrive.</p>
+        </div>
+        <div>
+          <div class="w-12 h-12 rounded-md bg-accent-900/30 flex items-center justify-center text-accent-300 mb-4">
+            <Calendar size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Flexible Booking</h3>
+          <p class="text-base text-gray-400 max-w-[45ch]">Free changes up to 30 days out. We understand plans evolve — your booking should too.</p>
+        </div>
+      </FeatureGrid>
+    </div>
+  </section>
+
+  <!-- 2 columns -->
+  <section class="specimen-section">
+    <h2>2 Columns</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      The <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">columns</code> prop controls grid layout. 2-column works for deeper feature descriptions or when you have fewer items.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <FeatureGrid
+        columns={2}
+        heading="Walking vs Cycling"
+        subheading="Both are fully supported. Choose what suits you."
+      >
+        <div>
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+            <Walking size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Walking Holidays</h3>
+          <p class="text-base text-gray-600 max-w-[50ch]">Trails from 8 to 22 km per day. Route notes with turn-by-turn directions, altitude profiles, and points of interest. Suitable for anyone who can walk on uneven terrain for 3–6 hours.</p>
+        </div>
+        <div>
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+            <Cycling size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Cycling Holidays</h3>
+          <p class="text-base text-gray-600 max-w-[50ch]">Routes from 30 to 70 km per day on quiet roads and dedicated cycle paths. Quality hybrid or e-bike included. Flat, rolling, or hilly — we grade every route clearly.</p>
+        </div>
+      </FeatureGrid>
+    </div>
+  </section>
+
+  <!-- 4 columns -->
+  <section class="specimen-section">
+    <h2>4 Columns</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      4-column grid for shorter feature items — stats, quick benefits, or icon-led summaries. Items should be concise at this density.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <FeatureGrid columns={4} variant="centered">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+            <Walking size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">120+ Routes</h3>
+          <p class="text-sm text-gray-600">Across 25 countries</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+            <Star size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">4.9 Rating</h3>
+          <p class="text-sm text-gray-600">From 12,000+ reviews</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+            <Calendar size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">30 Years</h3>
+          <p class="text-sm text-gray-600">Crafting adventures</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+            <MapPin size={24} />
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Local Teams</h3>
+          <p class="text-sm text-gray-600">In every destination</p>
+        </div>
+      </FeatureGrid>
+    </div>
+  </section>
+
+  <!-- Responsive behavior -->
+  <section class="specimen-section">
+    <h2>Responsive Behavior</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Grid collapses to single column at narrow widths, 2 columns at <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">@sm:</code> (640px), and full columns at <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">@lg:</code> (1024px). Section padding tightens proportionally.
+    </p>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Narrow (~320px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+      <div style="max-width: 320px; margin: 0 auto;">
+        <FeatureGrid heading="On the Trail">
+          <div>
+            <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+              <Walking size={24} />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Self-Guided</h3>
+            <p class="text-base text-gray-600">Walk at your own pace with detailed route notes.</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+              <MapPin size={24} />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Luggage Transfers</h3>
+            <p class="text-base text-gray-600">Your bags move ahead while you walk light.</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+              <Star size={24} />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Handpicked Hotels</h3>
+            <p class="text-base text-gray-600">Charming properties in every village.</p>
+          </div>
+        </FeatureGrid>
+      </div>
+    </div>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Medium (~768px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div style="max-width: 768px; margin: 0 auto;">
+        <FeatureGrid heading="On the Trail">
+          <div>
+            <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+              <Walking size={24} />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Self-Guided</h3>
+            <p class="text-base text-gray-600">Walk at your own pace with detailed route notes.</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+              <MapPin size={24} />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Luggage Transfers</h3>
+            <p class="text-base text-gray-600">Your bags move ahead while you walk light.</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+              <Star size={24} />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Handpicked Hotels</h3>
+            <p class="text-base text-gray-600">Charming properties in every village.</p>
+          </div>
+        </FeatureGrid>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature item pattern -->
+  <section class="specimen-section">
+    <h2>Feature Item Pattern</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Each feature item follows a consistent markup pattern. The icon container uses the terracotta trail marker accent — <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">bg-accent-50 text-accent-500</code> on light, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">bg-accent-900/30 text-accent-300</code> on dark.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div class="p-6">
+        <div class="flex flex-col gap-3 text-sm">
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Icon box</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Title</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-lg font-semibold text-gray-900 mb-2</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Description</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-base text-gray-600, max-w-[45ch] for readability</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Card wrap</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">bg-white border border-gray-200 rounded-lg p-6 shadow-sm</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Dark icon box</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">bg-accent-900/30 text-accent-300</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Grid</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">grid-cols-1 @sm:grid-cols-2 @lg:grid-cols-{2|3|4} gap-8 @lg:gap-12</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Section pad</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">py-20 @md:py-24 @lg:py-32</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</GalleryLayout>

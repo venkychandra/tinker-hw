@@ -1,0 +1,473 @@
+---
+import GalleryLayout from '../../layouts/GalleryLayout.astro';
+---
+
+<GalleryLayout title="Destination" description="Visual wireframe for destination overview page — region intro, holidays available, travel info." section="wireframes">
+  <div class="gallery-specimen @container">
+    <div class="max-w-[var(--container-max)] mx-auto space-y-12">
+
+      <!-- Navigation -->
+      <div class="bg-gray-100 border border-gray-300 rounded-md p-4 flex justify-between items-center">
+        <span class="text-base font-semibold text-gray-700">Headwater</span>
+        <div class="flex gap-6 text-sm text-gray-600">
+          <span>Walking</span>
+          <span>Cycling</span>
+          <span>Holiday Types</span>
+          <span class="font-semibold text-primary-600">Destinations</span>
+        </div>
+        <div class="flex gap-3 items-center">
+          <div class="bg-gray-200 border border-gray-400 rounded px-3 py-1 text-xs text-gray-600">Search</div>
+          <div class="text-xs text-gray-600">Contact</div>
+        </div>
+      </div>
+
+      <!-- Breadcrumbs -->
+      <div class="text-xs text-gray-500 flex gap-2">
+        <span>Home</span>
+        <span>›</span>
+        <span>Destinations</span>
+        <span>›</span>
+        <span>Italy</span>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="relative">
+        <div class="bg-gray-300 border border-gray-400 rounded-lg h-[400px] flex items-center justify-center text-gray-500 relative overflow-hidden">
+          [ Hero Image: Italian countryside ]
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-12 text-white space-y-3">
+            <h1 class="text-5xl font-bold">Walking & Cycling in Italy</h1>
+            <p class="text-xl">Discover ancient paths, rolling vineyards, and coastal trails across Italy's most beautiful regions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Stats Bar -->
+      <div class="grid grid-cols-2 @md:grid-cols-4 gap-4">
+        <div class="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center space-y-1">
+          <p class="text-2xl font-bold text-gray-800">24</p>
+          <p class="text-xs text-gray-600">Holidays available</p>
+        </div>
+        <div class="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center space-y-1">
+          <p class="text-2xl font-bold text-gray-800">8</p>
+          <p class="text-xs text-gray-600">Regions covered</p>
+        </div>
+        <div class="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center space-y-1">
+          <p class="text-2xl font-bold text-gray-800">★ 4.8</p>
+          <p class="text-xs text-gray-600">Average rating</p>
+        </div>
+        <div class="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center space-y-1">
+          <p class="text-2xl font-bold text-gray-800">40+</p>
+          <p class="text-xs text-gray-600">Years experience</p>
+        </div>
+      </div>
+
+      <!-- Overview Section -->
+      <section class="space-y-4">
+        <h2 class="text-3xl font-bold text-gray-800">Why choose Italy?</h2>
+        <div class="grid grid-cols-1 @md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <p class="text-base text-gray-600 leading-relaxed">
+              From the dramatic peaks of the Dolomites to the sun-drenched trails of the Amalfi Coast, Italy offers some of Europe's most rewarding walking and cycling routes. Our self-guided holidays take you through UNESCO World Heritage sites, medieval hill towns, and vineyard-covered valleys.
+            </p>
+            <p class="text-base text-gray-600 leading-relaxed">
+              Experience authentic Italian hospitality in hand-picked hotels, savor regional cuisine and local wines, and explore at your own pace with our detailed route notes and GPS navigation.
+            </p>
+          </div>
+          <div class="bg-gray-200 border border-gray-400 rounded-lg h-64 flex items-center justify-center text-gray-500 text-sm">
+            [ Destination highlights image/map ]
+          </div>
+        </div>
+      </section>
+
+      <!-- Holiday Types in This Destination -->
+      <section class="space-y-6">
+        <h2 class="text-3xl font-bold text-gray-800">Explore Italy your way</h2>
+        <div class="grid grid-cols-1 @md:grid-cols-3 gap-6">
+
+          <!-- Walking -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden">
+            <div class="bg-gray-300 border-b border-gray-400 h-48 flex items-center justify-center text-gray-500 text-sm">
+              [ Walking holidays image ]
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl font-semibold text-gray-800">Walking Holidays</h3>
+              <p class="text-sm text-gray-600">Explore Italy on foot through mountain trails, coastal paths, and pilgrimage routes.</p>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-300">
+                <span class="text-sm text-gray-600">18 holidays</span>
+                <button class="bg-primary-500 text-white rounded px-4 py-2 text-xs font-semibold">
+                  View All
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cycling -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden">
+            <div class="bg-gray-300 border-b border-gray-400 h-48 flex items-center justify-center text-gray-500 text-sm">
+              [ Cycling holidays image ]
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl font-semibold text-gray-800">Cycling Holidays</h3>
+              <p class="text-sm text-gray-600">Pedal through vineyard valleys, lakeside routes, and historic Italian countryside.</p>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-300">
+                <span class="text-sm text-gray-600">12 holidays</span>
+                <button class="bg-gray-200 border border-gray-400 rounded px-4 py-2 text-xs font-semibold text-gray-700">
+                  View All
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Multi-Activity -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden">
+            <div class="bg-gray-300 border-b border-gray-400 h-48 flex items-center justify-center text-gray-500 text-sm">
+              [ Multi-activity image ]
+            </div>
+            <div class="p-6 space-y-3">
+              <h3 class="text-xl font-semibold text-gray-800">Multi-Activity</h3>
+              <p class="text-sm text-gray-600">Combine walking and cycling to experience the best of Italy's diverse landscapes.</p>
+              <div class="flex items-center justify-between pt-3 border-t border-gray-300">
+                <span class="text-sm text-gray-600">4 holidays</span>
+                <button class="bg-gray-200 border border-gray-400 rounded px-4 py-2 text-xs font-semibold text-gray-700">
+                  View All
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Featured Holidays -->
+      <section class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-3xl font-bold text-gray-800">Popular holidays in Italy</h2>
+          <button class="text-sm text-primary-600 font-semibold">View all 24 holidays →</button>
+        </div>
+
+        <div class="grid grid-cols-1 @md:grid-cols-3 gap-6">
+
+          <!-- Holiday Card 1 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+            <div class="bg-gray-300 border-b border-gray-400 h-48 flex items-center justify-center text-gray-500 text-sm relative">
+              [ Holiday Image ]
+              <span class="absolute top-3 right-3 bg-accent-500 text-white px-2 py-1 rounded text-xs font-semibold">Bestseller</span>
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div class="space-y-1">
+                  <p class="text-sm font-semibold text-gray-800">Tuscany Walking</p>
+                  <p class="text-xs text-gray-600">Self-Guided Walking</p>
+                </div>
+                <div class="text-xs text-gray-600 flex items-center gap-1">
+                  <span class="text-accent-500">★</span>
+                  <span class="font-semibold">4.8</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-600 line-clamp-2">Rolling hills, medieval villages, and world-class wine regions...</p>
+              <div class="flex items-center justify-between pt-2 border-t border-gray-300">
+                <div class="text-xs text-gray-600">
+                  <span class="font-semibold">7 days</span> · Moderate
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-600">from</p>
+                  <p class="text-base font-bold text-gray-800">£1,245</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Holiday Card 2 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden">
+            <div class="bg-gray-300 border-b border-gray-400 h-48 flex items-center justify-center text-gray-500 text-sm">
+              [ Holiday Image ]
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div class="space-y-1">
+                  <p class="text-sm font-semibold text-gray-800">Amalfi Coast Walk</p>
+                  <p class="text-xs text-gray-600">Self-Guided Walking</p>
+                </div>
+                <div class="text-xs text-gray-600 flex items-center gap-1">
+                  <span class="text-accent-500">★</span>
+                  <span class="font-semibold">4.9</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-600 line-clamp-2">Spectacular coastal paths with dramatic cliffs and azure waters...</p>
+              <div class="flex items-center justify-between pt-2 border-t border-gray-300">
+                <div class="text-xs text-gray-600">
+                  <span class="font-semibold">7 days</span> · Moderate
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-600">from</p>
+                  <p class="text-base font-bold text-gray-800">£1,345</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Holiday Card 3 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden">
+            <div class="bg-gray-300 border-b border-gray-400 h-48 flex items-center justify-center text-gray-500 text-sm">
+              [ Holiday Image ]
+            </div>
+            <div class="p-4 space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div class="space-y-1">
+                  <p class="text-sm font-semibold text-gray-800">Dolomites Trek</p>
+                  <p class="text-xs text-gray-600">Self-Guided Walking</p>
+                </div>
+                <div class="text-xs text-gray-600 flex items-center gap-1">
+                  <span class="text-accent-500">★</span>
+                  <span class="font-semibold">4.7</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-600 line-clamp-2">Mountain walking through dramatic alpine scenery and rifugios...</p>
+              <div class="flex items-center justify-between pt-2 border-t border-gray-300">
+                <div class="text-xs text-gray-600">
+                  <span class="font-semibold">6 days</span> · Challenging
+                </div>
+                <div class="text-right">
+                  <p class="text-xs text-gray-600">from</p>
+                  <p class="text-base font-bold text-gray-800">£1,495</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Regions Within Destination -->
+      <section class="space-y-6">
+        <h2 class="text-3xl font-bold text-gray-800">Explore Italian regions</h2>
+        <div class="grid grid-cols-2 @md:grid-cols-4 gap-4">
+
+          <!-- Region 1 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden hover:shadow-sm transition-shadow cursor-pointer">
+            <div class="bg-gray-300 border-b border-gray-400 h-32 flex items-center justify-center text-gray-500 text-xs">
+              [ Region Image ]
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Tuscany</p>
+              <p class="text-xs text-gray-600">8 holidays</p>
+            </div>
+          </div>
+
+          <!-- Region 2 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden hover:shadow-sm transition-shadow cursor-pointer">
+            <div class="bg-gray-300 border-b border-gray-400 h-32 flex items-center justify-center text-gray-500 text-xs">
+              [ Region Image ]
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Amalfi Coast</p>
+              <p class="text-xs text-gray-600">4 holidays</p>
+            </div>
+          </div>
+
+          <!-- Region 3 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden hover:shadow-sm transition-shadow cursor-pointer">
+            <div class="bg-gray-300 border-b border-gray-400 h-32 flex items-center justify-center text-gray-500 text-xs">
+              [ Region Image ]
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Dolomites</p>
+              <p class="text-xs text-gray-600">5 holidays</p>
+            </div>
+          </div>
+
+          <!-- Region 4 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden hover:shadow-sm transition-shadow cursor-pointer">
+            <div class="bg-gray-300 border-b border-gray-400 h-32 flex items-center justify-center text-gray-500 text-xs">
+              [ Region Image ]
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Lake District</p>
+              <p class="text-xs text-gray-600">3 holidays</p>
+            </div>
+          </div>
+
+          <!-- Region 5 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden hover:shadow-sm transition-shadow cursor-pointer">
+            <div class="bg-gray-300 border-b border-gray-400 h-32 flex items-center justify-center text-gray-500 text-xs">
+              [ Region Image ]
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Puglia</p>
+              <p class="text-xs text-gray-600">2 holidays</p>
+            </div>
+          </div>
+
+          <!-- Region 6 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden hover:shadow-sm transition-shadow cursor-pointer">
+            <div class="bg-gray-300 border-b border-gray-400 h-32 flex items-center justify-center text-gray-500 text-xs">
+              [ Region Image ]
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Sicily</p>
+              <p class="text-xs text-gray-600">3 holidays</p>
+            </div>
+          </div>
+
+          <!-- Region 7 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden hover:shadow-sm transition-shadow cursor-pointer">
+            <div class="bg-gray-300 border-b border-gray-400 h-32 flex items-center justify-center text-gray-500 text-xs">
+              [ Region Image ]
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Umbria</p>
+              <p class="text-xs text-gray-600">2 holidays</p>
+            </div>
+          </div>
+
+          <!-- Region 8 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden hover:shadow-sm transition-shadow cursor-pointer">
+            <div class="bg-gray-300 border-b border-gray-400 h-32 flex items-center justify-center text-gray-500 text-xs">
+              [ Region Image ]
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-sm font-semibold text-gray-800">Piedmont</p>
+              <p class="text-xs text-gray-600">1 holiday</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Things to Know -->
+      <section class="bg-gray-50 border border-gray-300 rounded-lg p-8 space-y-6">
+        <h2 class="text-3xl font-bold text-gray-800">Good to know</h2>
+        <div class="grid grid-cols-1 @md:grid-cols-3 gap-8">
+
+          <!-- Best Time to Visit -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-2xl">🗓️</span>
+              <h3 class="text-lg font-semibold text-gray-800">Best time to visit</h3>
+            </div>
+            <p class="text-sm text-gray-600">
+              April-June and September-October offer ideal walking weather. July-August can be hot, particularly in southern regions.
+            </p>
+          </div>
+
+          <!-- Getting There -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-2xl">✈️</span>
+              <h3 class="text-lg font-semibold text-gray-800">Getting there</h3>
+            </div>
+            <p class="text-sm text-gray-600">
+              Direct flights to Rome, Milan, and regional airports. Train connections throughout the country. We can arrange your travel.
+            </p>
+          </div>
+
+          <!-- Language & Culture -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-2xl">🇮🇹</span>
+              <h3 class="text-lg font-semibold text-gray-800">Language & culture</h3>
+            </div>
+            <p class="text-sm text-gray-600">
+              Italian is the main language, though English is widely spoken in tourist areas. Warm hospitality and exceptional food culture.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Travel Guide / Inspiration -->
+      <section class="space-y-6">
+        <h2 class="text-3xl font-bold text-gray-800">Italy travel inspiration</h2>
+        <div class="grid grid-cols-1 @md:grid-cols-2 gap-6">
+
+          <!-- Blog Post 1 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden flex gap-4">
+            <div class="bg-gray-300 border-r border-gray-400 w-48 flex-shrink-0 flex items-center justify-center text-gray-500 text-xs">
+              [ Article Image ]
+            </div>
+            <div class="p-4 space-y-2">
+              <span class="text-xs text-primary-600 font-semibold uppercase">Travel Guide</span>
+              <h3 class="text-base font-semibold text-gray-800">10 Must-Try Foods on Your Italian Walking Holiday</h3>
+              <p class="text-sm text-gray-600">From Tuscan ribollita to Sicilian arancini, discover the regional specialties...</p>
+              <button class="text-xs text-primary-600 font-semibold">Read more →</button>
+            </div>
+          </div>
+
+          <!-- Blog Post 2 -->
+          <div class="bg-gray-100 border border-gray-300 rounded-lg overflow-hidden flex gap-4">
+            <div class="bg-gray-300 border-r border-gray-400 w-48 flex-shrink-0 flex items-center justify-center text-gray-500 text-xs">
+              [ Article Image ]
+            </div>
+            <div class="p-4 space-y-2">
+              <span class="text-xs text-primary-600 font-semibold uppercase">Packing Tips</span>
+              <h3 class="text-base font-semibold text-gray-800">What to Pack for Walking in Italy</h3>
+              <p class="text-sm text-gray-600">Essential gear and clothing recommendations for Italian trails...</p>
+              <button class="text-xs text-primary-600 font-semibold">Read more →</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <div class="bg-gray-200 border border-gray-400 rounded-lg p-12 text-center space-y-4">
+        <p class="text-2xl font-bold text-gray-800">Ready to explore Italy?</p>
+        <p class="text-base text-gray-600">Browse our full collection of Italian walking and cycling holidays</p>
+        <div class="flex gap-3 justify-center">
+          <button class="bg-primary-500 text-white px-8 py-3 rounded-md text-sm font-semibold">
+            View All Italy Holidays
+          </button>
+          <button class="bg-gray-100 border border-gray-400 px-8 py-3 rounded-md text-sm font-semibold text-gray-700">
+            Request Brochure
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="bg-gray-100 border border-gray-300 rounded-lg p-8">
+        <div class="grid grid-cols-2 @md:grid-cols-4 gap-6 mb-6">
+          <div class="space-y-2">
+            <p class="text-base font-bold text-gray-800">Headwater</p>
+            <p class="text-xs text-gray-600">Est. 1985</p>
+            <div class="flex gap-2 text-xs text-gray-500">
+              <span>ABTA</span>
+              <span>ATOL</span>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm font-semibold text-gray-700">Destinations</p>
+            <div class="space-y-1 text-xs text-gray-600">
+              <p>Walking</p>
+              <p>Cycling</p>
+              <p>Multi-Activity</p>
+              <p>View All</p>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm font-semibold text-gray-700">About</p>
+            <div class="space-y-1 text-xs text-gray-600">
+              <p>Our Story</p>
+              <p>Team</p>
+              <p>Reviews</p>
+              <p>Press</p>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm font-semibold text-gray-700">Contact</p>
+            <div class="space-y-1 text-xs text-gray-600">
+              <p>01606 720199</p>
+              <p>sales@headwater.com</p>
+              <p>Brochure</p>
+              <p>FAQ</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-300 pt-4 text-center text-xs text-gray-500">
+          © 2026 Headwater Holidays Ltd
+        </div>
+      </div>
+
+    </div>
+  </div>
+</GalleryLayout>

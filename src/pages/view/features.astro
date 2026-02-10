@@ -1,0 +1,135 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import FeatureGrid from '../../components/FeatureGrid.astro';
+import Walking from '../../components/icons/Walking.astro';
+import Cycling from '../../components/icons/Cycling.astro';
+import Mountain from '../../components/icons/Mountain.astro';
+import MapPin from '../../components/icons/MapPin.astro';
+import Calendar from '../../components/icons/Calendar.astro';
+import Star from '../../components/icons/Star.astro';
+---
+
+<FullScreenLayout title="Feature Grid">
+
+  <!-- Default 3-column -->
+  <FeatureGrid
+    eyebrow="Why Headwater"
+    heading="Everything for the Trail"
+    subheading="Thirty years of experience, distilled into every trip we create."
+  >
+    <div>
+      <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+        <Walking size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">Self-Guided Freedom</h3>
+      <p class="text-base text-gray-600 max-w-[45ch]">Walk at your own pace with detailed route notes, maps, and GPS tracks. No group schedules, no waiting around.</p>
+    </div>
+    <div>
+      <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+        <MapPin size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">Luggage Transfers</h3>
+      <p class="text-base text-gray-600 max-w-[45ch]">Your bags move ahead to the next hotel while you walk with just a daypack. Arrive to find your luggage waiting.</p>
+    </div>
+    <div>
+      <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+        <Star size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">Handpicked Hotels</h3>
+      <p class="text-base text-gray-600 max-w-[45ch]">Every hotel personally inspected. Charming family-run properties in the heart of each village.</p>
+    </div>
+  </FeatureGrid>
+
+  <!-- Cards variant -->
+  <FeatureGrid
+    variant="cards"
+    eyebrow="What's Included"
+    heading="Your Trip, Sorted"
+    subheading="Every Headwater holiday includes these essentials."
+  >
+    <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+      <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+        <Calendar size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">Flexible Dates</h3>
+      <p class="text-base text-gray-600">Start any day you choose. No fixed departures — your trip, your timeline.</p>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+      <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+        <Cycling size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">Quality Bikes</h3>
+      <p class="text-base text-gray-600">Lightweight hybrid or e-bike included. Fitted to your height, with all gear.</p>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+      <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4">
+        <Mountain size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">Local Support</h3>
+      <p class="text-base text-gray-600">Our local team is a phone call away. Route advice, tips, or emergency pickup.</p>
+    </div>
+  </FeatureGrid>
+
+  <!-- Dark -->
+  <FeatureGrid
+    dark
+    eyebrow="The Details"
+    heading="Crafted for Comfort"
+    subheading="We handle the logistics so you can focus on the landscape."
+  >
+    <div>
+      <div class="w-12 h-12 rounded-md bg-accent-900/30 flex items-center justify-center text-accent-300 mb-4">
+        <Walking size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-white mb-2">Daily Distances</h3>
+      <p class="text-base text-gray-400 max-w-[45ch]">Choose easy, moderate, or challenging. Most days are 10–20 km with options to extend or shorten.</p>
+    </div>
+    <div>
+      <div class="w-12 h-12 rounded-md bg-accent-900/30 flex items-center justify-center text-accent-300 mb-4">
+        <MapPin size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-white mb-2">Transfers Included</h3>
+      <p class="text-base text-gray-400 max-w-[45ch]">Airport pickup, luggage transport, and return transfer. All sorted before you arrive.</p>
+    </div>
+    <div>
+      <div class="w-12 h-12 rounded-md bg-accent-900/30 flex items-center justify-center text-accent-300 mb-4">
+        <Calendar size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-white mb-2">Flexible Booking</h3>
+      <p class="text-base text-gray-400 max-w-[45ch]">Free changes up to 30 days out. We understand plans evolve.</p>
+    </div>
+  </FeatureGrid>
+
+  <!-- Centered 4-column -->
+  <FeatureGrid columns={4} variant="centered">
+    <div class="text-center">
+      <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+        <Walking size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">120+ Routes</h3>
+      <p class="text-sm text-gray-600">Across 25 countries</p>
+    </div>
+    <div class="text-center">
+      <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+        <Star size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">4.9 Rating</h3>
+      <p class="text-sm text-gray-600">From 12,000+ reviews</p>
+    </div>
+    <div class="text-center">
+      <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+        <Calendar size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">30 Years</h3>
+      <p class="text-sm text-gray-600">Crafting adventures</p>
+    </div>
+    <div class="text-center">
+      <div class="w-12 h-12 rounded-md bg-accent-50 flex items-center justify-center text-accent-500 mb-4 mx-auto">
+        <MapPin size={24} />
+      </div>
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">Local Teams</h3>
+      <p class="text-sm text-gray-600">In every destination</p>
+    </div>
+  </FeatureGrid>
+
+</FullScreenLayout>

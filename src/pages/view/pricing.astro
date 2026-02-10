@@ -1,0 +1,109 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import PricingTable from '../../components/PricingTable.astro';
+import PricingCard from '../../components/PricingCard.astro';
+---
+
+<FullScreenLayout title="Pricing">
+
+  <!-- Light -->
+  <PricingTable
+    eyebrow="Choose Your Adventure"
+    heading="Trip Packages"
+    subheading="Three levels of comfort and support. Every package includes route notes, maps, and 24/7 local support."
+  >
+    <PricingCard
+      name="Trail"
+      price="£895"
+      description="The essentials for independent walkers."
+      features={[
+        'Handpicked B&Bs and guesthouses',
+        'Detailed route notes and maps',
+        'GPS tracks for your phone',
+        'Luggage transfers between stops',
+        '24/7 local support line',
+      ]}
+      ctaLabel="Choose Trail"
+    />
+    <PricingCard
+      name="Summit"
+      price="£1,295"
+      featured
+      description="Our most popular package. Better hotels, more flexibility."
+      features={[
+        'Boutique hotels and character inns',
+        'Detailed route notes and maps',
+        'GPS tracks for your phone',
+        'Luggage transfers between stops',
+        '24/7 local support line',
+        'Welcome dinner at a local restaurant',
+        'Flexible rest day built into itinerary',
+      ]}
+      ctaLabel="Choose Summit"
+    />
+    <PricingCard
+      name="Ridge"
+      price="£1,795"
+      description="The premium experience. Every detail taken care of."
+      features={[
+        'Luxury hotels and historic properties',
+        'Detailed route notes and maps',
+        'GPS tracks for your phone',
+        'Private airport transfers',
+        'Dedicated trip coordinator',
+        'Welcome and farewell dinners',
+        'Flexible rest days',
+        'Upgrade to e-bike (cycling trips)',
+      ]}
+      ctaLabel="Choose Ridge"
+    />
+  </PricingTable>
+
+  <!-- Dark -->
+  <PricingTable
+    dark
+    eyebrow="Pricing"
+    heading="Find Your Level"
+    subheading="All packages include the essentials. Choose the comfort that suits you."
+  >
+    <PricingCard
+      name="Trail"
+      price="£895"
+      features={[
+        'Guesthouses and B&Bs',
+        'Route notes and maps',
+        'Luggage transfers',
+        'Local support line',
+      ]}
+      ctaLabel="Choose Trail"
+    />
+    <PricingCard
+      name="Summit"
+      price="£1,295"
+      featured
+      features={[
+        'Boutique hotels',
+        'Route notes and maps',
+        'Luggage transfers',
+        'Local support line',
+        'Welcome dinner',
+        'Rest day included',
+      ]}
+      ctaLabel="Choose Summit"
+    />
+    <PricingCard
+      name="Ridge"
+      price="£1,795"
+      features={[
+        'Luxury hotels',
+        'Route notes and maps',
+        'Private transfers',
+        'Dedicated coordinator',
+        'Two dinners included',
+        'E-bike upgrade',
+      ]}
+      ctaLabel="Choose Ridge"
+    />
+  </PricingTable>
+
+</FullScreenLayout>

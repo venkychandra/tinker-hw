@@ -1,0 +1,98 @@
+---
+import GalleryLayout from '../layouts/GalleryLayout.astro';
+import LogoCloud from '../components/LogoCloud.astro';
+
+// Placeholder logos with various aspect ratios to demonstrate layout
+const placeholderLogos = [
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="140" height="50" viewBox="0 0 140 50"%3E%3Crect width="140" height="50" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12" font-weight="600"%3EABTA%3C/text%3E%3C/svg%3E',
+    alt: 'ABTA Member',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="120" height="60" viewBox="0 0 120 60"%3E%3Crect width="120" height="60" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12" font-weight="600"%3EATOL%3C/text%3E%3C/svg%3E',
+    alt: 'ATOL Protected',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="50" viewBox="0 0 100 50"%3E%3Crect width="100" height="50" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="600"%3EWanderlust%3C/text%3E%3C/svg%3E',
+    alt: 'Wanderlust Award Winner',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="130" height="45" viewBox="0 0 130 45"%3E%3Crect width="130" height="45" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11" font-weight="600"%3EThe Guardian%3C/text%3E%3C/svg%3E',
+    alt: 'As featured in The Guardian',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="110" height="55" viewBox="0 0 110 55"%3E%3Crect width="110" height="55" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="600"%3ECondé Nast%3C/text%3E%3C/svg%3E',
+    alt: 'Condé Nast Traveller Recommended',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="95" height="50" viewBox="0 0 95 50"%3E%3Crect width="95" height="50" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11" font-weight="600"%3ETelegraph%3C/text%3E%3C/svg%3E',
+    alt: 'Telegraph Travel Partner',
+  },
+];
+
+const linkedLogos = placeholderLogos.map(logo => ({
+  ...logo,
+  href: '#',
+}));
+---
+
+<GalleryLayout title="Logo Cloud" fullscreenHref="/view/logo-cloud">
+  <div class="@container">
+    <!-- Default State (Static Logos) -->
+    <section class="mb-16">
+      <h2 class="gallery-label">Static Logos</h2>
+      <div class="gallery-specimen bg-gray-50">
+        <LogoCloud
+          eyebrow="Trusted by"
+          heading="Industry-leading certifications and partnerships"
+          logos={placeholderLogos}
+        />
+      </div>
+    </section>
+
+    <!-- Linked Logos (Interactive) -->
+    <section class="mb-16">
+      <h2 class="gallery-label">Linked Logos (Hover to see interaction)</h2>
+      <div class="gallery-specimen bg-white">
+        <LogoCloud
+          heading="As featured in"
+          logos={linkedLogos}
+        />
+      </div>
+    </section>
+
+    <!-- Without Heading -->
+    <section class="mb-16">
+      <h2 class="gallery-label">Minimal (No Heading)</h2>
+      <div class="gallery-specimen bg-gray-50">
+        <LogoCloud logos={placeholderLogos.slice(0, 4)} />
+      </div>
+    </section>
+
+    <!-- Narrow Container (~375px) -->
+    <section class="mb-16">
+      <h2 class="gallery-label">Narrow Container (~375px)</h2>
+      <div class="gallery-specimen">
+        <div class="max-w-[375px] mx-auto bg-white">
+          <LogoCloud
+            eyebrow="Partners"
+            heading="Trusted travel organizations"
+            logos={placeholderLogos}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Wide Container -->
+    <section class="mb-16">
+      <h2 class="gallery-label">Wide Container (Full Width)</h2>
+      <div class="gallery-specimen bg-gray-50">
+        <LogoCloud
+          eyebrow="Recognized by"
+          heading="Award-winning adventure travel experiences"
+          logos={placeholderLogos}
+        />
+      </div>
+    </section>
+  </div>
+</GalleryLayout>

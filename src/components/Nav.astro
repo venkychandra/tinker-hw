@@ -1,0 +1,79 @@
+---
+interface Props {
+  variant?: 'light' | 'transparent';
+  mobileOpen?: boolean;
+}
+
+const { variant = 'light', mobileOpen = false } = Astro.props;
+
+const isTransparent = variant === 'transparent';
+
+const navBg = isTransparent ? '' : 'bg-white shadow-sm';
+const logoColor = isTransparent ? 'text-white' : 'text-gray-900';
+const linkColor = isTransparent
+  ? 'text-white/80 hover:text-white'
+  : 'text-gray-600 hover:text-gray-900';
+const linkBase = 'text-sm font-semibold active:opacity-80 transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2';
+const ctaClasses = isTransparent
+  ? 'inline-flex items-center justify-center gap-2 font-semibold cursor-pointer text-sm px-4 py-2 rounded-sm bg-white text-primary-600 hover:bg-primary-50 active:bg-primary-100 active:translate-y-px focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 transition-colors duration-fast ease-default'
+  : 'inline-flex items-center justify-center gap-2 font-semibold cursor-pointer text-sm px-4 py-2 rounded-sm bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 active:translate-y-px focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2 transition-colors duration-fast ease-default';
+const hamburgerColor = isTransparent
+  ? 'text-white hover:bg-white/10'
+  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900';
+const mobileBg = isTransparent ? 'bg-gray-900' : 'bg-white';
+const mobileLinkColor = isTransparent
+  ? 'text-white/80 hover:text-white hover:bg-white/10'
+  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50';
+const mobileBorder = isTransparent ? 'border-white/10' : 'border-gray-200';
+---
+
+<nav class={`@container ${navBg}`}>
+  <div class="max-w-[var(--container-max)] mx-auto px-6 flex items-center justify-between h-16">
+    <!-- Logo -->
+    <a href="/" class={`text-xl font-bold tracking-tight ${logoColor} transition-colors duration-fast ease-default`}>
+      Headwater
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden @lg:flex items-center gap-8">
+      <a href="/walking" class={`${linkBase} ${linkColor}`}>Walking</a>
+      <a href="/cycling" class={`${linkBase} ${linkColor}`}>Cycling</a>
+      <a href="/destinations" class={`${linkBase} ${linkColor}`}>Destinations</a>
+      <a href="/offers" class={`${linkBase} ${linkColor}`}>Offers</a>
+    </div>
+
+    <!-- CTA + hamburger -->
+    <div class="flex items-center gap-3">
+      <a href="/find-holiday" class={`hidden @lg:inline-flex ${ctaClasses}`}>Find a Holiday</a>
+      <button class={`@lg:hidden inline-flex items-center justify-center p-3 rounded-sm cursor-pointer ${hamburgerColor} transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2`} aria-label="Menu">
+        {mobileOpen ? (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        ) : (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        )}
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  {mobileOpen && (
+    <div class={`@lg:hidden ${mobileBg} border-t ${mobileBorder}`}>
+      <div class="max-w-[var(--container-max)] mx-auto px-6 py-4 flex flex-col gap-1">
+        <a href="/walking" class={`${linkBase} ${mobileLinkColor} block px-3 py-3 rounded-sm`}>Walking</a>
+        <a href="/cycling" class={`${linkBase} ${mobileLinkColor} block px-3 py-3 rounded-sm`}>Cycling</a>
+        <a href="/destinations" class={`${linkBase} ${mobileLinkColor} block px-3 py-3 rounded-sm`}>Destinations</a>
+        <a href="/offers" class={`${linkBase} ${mobileLinkColor} block px-3 py-3 rounded-sm`}>Offers</a>
+        <div class={`pt-3 mt-2 border-t ${mobileBorder}`}>
+          <a href="/find-holiday" class={`${ctaClasses} w-full text-center`}>Find a Holiday</a>
+        </div>
+      </div>
+    </div>
+  )}
+</nav>

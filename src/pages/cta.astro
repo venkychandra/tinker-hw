@@ -1,0 +1,221 @@
+---
+import GalleryLayout from '../layouts/GalleryLayout.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<GalleryLayout title="CTA" description="Call-to-action sections designed to convert at key decision points. Three variants: simple (solid background), bordered (card treatment), and image (backdrop photo). More compact and urgent than hero sections." fullscreenHref="/view/cta">
+
+  <!-- Simple variant — light -->
+  <section class="specimen-section">
+    <h2>Simple — Light Background</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Centered on a primary-50 tint. The lightest terracotta wash grounds the CTA without overwhelming. Good for mid-page conversion points.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <CTA
+        variant="simple"
+        eyebrow="Start Your Adventure"
+        heading="Ready for your next adventure?"
+        subheading="Browse our collection of hand-picked walking and cycling holidays, or talk to our team about tailor-made travel."
+        primaryCta="Find a Holiday"
+        primaryHref="/find-holiday"
+        secondaryCta="Contact Us"
+        secondaryHref="/contact"
+      />
+    </div>
+  </section>
+
+  <!-- Simple variant — dark -->
+  <section class="specimen-section">
+    <h2>Simple — Dark Background</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Forest green background (primary-600) with white text. The dark version feels more urgent and anchored. Use at the end of a page or as a strong conversion moment.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <CTA
+        variant="simple"
+        dark
+        eyebrow="Experts in active holidays"
+        heading="Your Next Trail Starts Here"
+        subheading="Join thousands of travelers who've discovered Europe's most beautiful landscapes with Headwater since 1985."
+        primaryCta="Find a Holiday"
+        primaryHref="/find-holiday"
+        secondaryCta="Request a Brochure"
+        secondaryHref="/request-brochure"
+      />
+    </div>
+  </section>
+
+  <!-- Bordered variant -->
+  <section class="specimen-section">
+    <h2>Bordered Variant</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Card treatment with shadow-xl and border. Feels contained and premium. Good for embedded CTAs within page content where the section needs to stand apart.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <CTA
+        variant="bordered"
+        eyebrow="Special Offer"
+        heading="Save 15% on Early Bookings"
+        subheading="Reserve your 2026 walking holiday before March 31st and save. Limited availability on our most popular routes."
+        primaryCta="See Availability"
+        primaryHref="/availability"
+        secondaryCta="Learn More"
+        secondaryHref="/offers"
+      />
+    </div>
+  </section>
+
+  <!-- Image variant -->
+  <section class="specimen-section">
+    <h2>Image Variant</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Full-bleed backdrop photo with uniform overlay (bg-gray-950/60). More visually rich than simple, more compact than a hero. The photo creates emotion while the overlay keeps text readable.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <CTA
+        variant="image"
+        eyebrow="Limited Spaces"
+        heading="Walk the Camino This Summer"
+        subheading="Join our guided group departure on the Camino de Santiago. June 15-25, 2026."
+        primaryCta="Reserve Your Spot"
+        primaryHref="/trips/camino"
+        secondaryCta="View Itinerary"
+        secondaryHref="/trips/camino/itinerary"
+        imageSrc="https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1400&h=600&fit=crop"
+        imageAlt="Pilgrims walking the Camino de Santiago trail"
+      />
+    </div>
+  </section>
+
+  <!-- Image variant — alternate photo -->
+  <section class="specimen-section">
+    <h2>Image — Alternate Content</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Same variant with different photography. Single CTA also works — sometimes "less choice" increases conversion.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <CTA
+        variant="image"
+        eyebrow="New Route"
+        heading="Discover the Via Alpina"
+        subheading="A new 8-day walking route through Switzerland's alpine passes, launching summer 2026."
+        primaryCta="Be the First to Book"
+        primaryHref="/trips/via-alpina"
+        imageSrc="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&h=600&fit=crop"
+        imageAlt="Swiss Alps mountain landscape"
+      />
+    </div>
+  </section>
+
+  <!-- Responsive behavior -->
+  <section class="specimen-section">
+    <h2>Responsive Behavior</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Typography scales via <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">clamp()</code>/<code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">cqi</code> tokens. Vertical padding tightens at narrow widths. Buttons wrap on narrow viewports.
+    </p>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Simple — Narrow (~320px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+      <div style="max-width: 320px; margin: 0 auto;">
+        <CTA
+          variant="simple"
+          eyebrow="Start Your Adventure"
+          heading="Ready to Hit the Trail?"
+          subheading="Browse trips or talk to our team."
+          primaryCta="Browse Trips"
+          secondaryCta="Contact"
+        />
+      </div>
+    </div>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Bordered — Medium (~768px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+      <div style="max-width: 768px;">
+        <CTA
+          variant="bordered"
+          eyebrow="Special Offer"
+          heading="Save 15% on Early Bookings"
+          subheading="Reserve your 2026 walking holiday before March 31st and save."
+          primaryCta="See Availability"
+          secondaryCta="Learn More"
+        />
+      </div>
+    </div>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Image — Wide (~1280px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div style="max-width: 1280px;">
+        <CTA
+          variant="image"
+          eyebrow="Limited Spaces"
+          heading="Walk the Camino This Summer"
+          subheading="Join our guided group departure on the Camino de Santiago. June 15-25, 2026."
+          primaryCta="Reserve Your Spot"
+          secondaryCta="View Itinerary"
+          imageSrc="https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1400&h=600&fit=crop"
+          imageAlt="Camino trail"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Anatomy -->
+  <section class="specimen-section">
+    <h2>Anatomy</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Props and class construction breakdown.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div class="p-6">
+        <div class="flex flex-col gap-3 text-sm">
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Variants</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">"simple" | "bordered" | "image"</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Eyebrow</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-sm font-semibold uppercase tracking-wide, accent-500 (light) / accent-300 (dark)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Heading</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-4xl font-bold tracking-tight — clamp(24px, 3cqi, 36px)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Subheading</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-lg, gray-600 (light) / white/80 (dark), max-w-[55ch]</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">CTAs</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">Button lg pattern as &lt;a&gt; — primary fill + secondary outline</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Simple bg</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">bg-primary-50 (light) / bg-primary-600 (dark)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Bordered</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">bg-white border-gray-200 shadow-xl rounded-lg, max-w-4xl container</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Image overlay</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">bg-gray-950/60 — darker than hero (more urgency)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Padding</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">py-16 @md:py-20 — tighter than hero (more compact)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">dark prop</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">Only affects simple variant — bg-primary-600, white text, inverted buttons</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">data-seamless</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">Simple and image variants use data-seamless for page-flow stacking</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</GalleryLayout>

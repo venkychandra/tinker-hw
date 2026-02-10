@@ -1,0 +1,241 @@
+---
+import GalleryLayout from '../layouts/GalleryLayout.astro';
+import Stats from '../components/Stats.astro';
+---
+
+<GalleryLayout title="Stats" description="Key metrics and achievements displayed in responsive grids. Stats component wraps stat items in 2/3/4 column layouts. Stat items use centered text with number, label, and optional description." fullscreenHref="/view/stats">
+
+  <!-- Default — 3 column grid -->
+  <section class="specimen-section">
+    <h2>Default — 3 Column Grid</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Three-column grid with numbers in primary-500 (forest green), labels in gray-900, optional descriptions in gray-600. Numbers use text-6xl clamp() tokens for fluid scaling. Items are centered.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Stats
+        eyebrow="By the Numbers"
+        heading="Experts in Active Holidays"
+        subheading="Over 40 years of creating exceptional walking and cycling holidays across Europe and beyond."
+      >
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">40+</div>
+          <div class="text-lg text-gray-900">Years Experience</div>
+          <p class="text-sm text-gray-600 mt-2 max-w-[30ch] mx-auto">Creating active holidays since 1985</p>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">35+</div>
+          <div class="text-lg text-gray-900">European Destinations</div>
+          <p class="text-sm text-gray-600 mt-2 max-w-[30ch] mx-auto">Plus adventures in Africa, Americas, and Asia</p>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">ATOL</div>
+          <div class="text-lg text-gray-900">Protected</div>
+          <p class="text-sm text-gray-600 mt-2 max-w-[30ch] mx-auto">ATOL 9957 and ABTA bonded for your peace of mind</p>
+        </div>
+      </Stats>
+    </div>
+  </section>
+
+  <!-- 2 column variant -->
+  <section class="specimen-section">
+    <h2>2 Column Variant</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Use <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">columns={2}</code> for a two-column grid. Grid stacks to single column at narrow widths via <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">@md:</code>.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Stats
+        columns={2}
+        heading="Our Reach"
+      >
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">50+</div>
+          <div class="text-lg text-gray-900">Destinations</div>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">12,000+</div>
+          <div class="text-lg text-gray-900">Happy Travelers</div>
+        </div>
+      </Stats>
+    </div>
+  </section>
+
+  <!-- 4 column variant -->
+  <section class="specimen-section">
+    <h2>4 Column Variant</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Use <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">columns={4}</code> for a four-column grid. Stacks 4→2→1 via <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">@sm:</code> and <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">@lg:</code>.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Stats
+        columns={4}
+        heading="At a Glance"
+      >
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">500+</div>
+          <div class="text-lg text-gray-900">Trips</div>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">50+</div>
+          <div class="text-lg text-gray-900">Destinations</div>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">98%</div>
+          <div class="text-lg text-gray-900">Satisfaction</div>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">25</div>
+          <div class="text-lg text-gray-900">Years</div>
+        </div>
+      </Stats>
+    </div>
+  </section>
+
+  <!-- Without descriptions -->
+  <section class="specimen-section">
+    <h2>Without Descriptions</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Stats work with just number and label. Descriptions are optional. Simpler for hero sections or tight layouts.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Stats
+        heading="Simple Stats"
+      >
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">15,000+</div>
+          <div class="text-lg text-gray-900">Miles Walked</div>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">8</div>
+          <div class="text-lg text-gray-900">Countries</div>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">365</div>
+          <div class="text-lg text-gray-900">Days a Year</div>
+        </div>
+      </Stats>
+    </div>
+  </section>
+
+  <!-- Dark background -->
+  <section class="specimen-section">
+    <h2>Dark Background</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      The <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">dark</code> prop inverts the section background to gray-900. Numbers stay primary-500 (readable on dark), labels become white, descriptions become gray-400.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Stats
+        dark
+        eyebrow="Our Track Record"
+        heading="Results That Matter"
+        subheading="Real numbers from real travelers. We've been perfecting the art of self-guided European travel for over two decades."
+      >
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">500+</div>
+          <div class="text-lg text-white">Guided Trips</div>
+          <p class="text-sm text-gray-400 mt-2 max-w-[30ch] mx-auto">From coastal paths to alpine passes</p>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">98%</div>
+          <div class="text-lg text-white">Satisfaction Rate</div>
+          <p class="text-sm text-gray-400 mt-2 max-w-[30ch] mx-auto">Post-trip survey results</p>
+        </div>
+        <div class="text-center">
+          <div class="text-6xl font-bold text-primary-500 mb-2">25</div>
+          <div class="text-lg text-white">Years Experience</div>
+          <p class="text-sm text-gray-400 mt-2 max-w-[30ch] mx-auto">Since 1999</p>
+        </div>
+      </Stats>
+    </div>
+  </section>
+
+  <!-- Responsive behavior -->
+  <section class="specimen-section">
+    <h2>Responsive Behavior</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Grid collapses from 3→2→1 columns. Numbers use text-6xl with clamp() so they scale fluidly. Gap tightens from gap-16 to gap-12 to gap-8 at smaller containers.
+    </p>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Narrow (~320px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+      <div style="max-width: 320px; margin: 0 auto;">
+        <Stats heading="Key Stats">
+          <div class="text-center">
+            <div class="text-6xl font-bold text-primary-500 mb-2">500+</div>
+            <div class="text-lg text-gray-900">Trips</div>
+          </div>
+          <div class="text-center">
+            <div class="text-6xl font-bold text-primary-500 mb-2">98%</div>
+            <div class="text-lg text-gray-900">Satisfaction</div>
+          </div>
+          <div class="text-center">
+            <div class="text-6xl font-bold text-primary-500 mb-2">25</div>
+            <div class="text-lg text-gray-900">Years</div>
+          </div>
+        </Stats>
+      </div>
+    </div>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Medium (~768px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div style="max-width: 768px; margin: 0 auto;">
+        <Stats heading="Key Stats">
+          <div class="text-center">
+            <div class="text-6xl font-bold text-primary-500 mb-2">500+</div>
+            <div class="text-lg text-gray-900">Trips</div>
+          </div>
+          <div class="text-center">
+            <div class="text-6xl font-bold text-primary-500 mb-2">98%</div>
+            <div class="text-lg text-gray-900">Satisfaction</div>
+          </div>
+          <div class="text-center">
+            <div class="text-6xl font-bold text-primary-500 mb-2">25</div>
+            <div class="text-lg text-gray-900">Years</div>
+          </div>
+        </Stats>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anatomy -->
+  <section class="specimen-section">
+    <h2>Anatomy</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Stat item pattern and class construction breakdown. Items are centered text blocks placed inside the Stats grid slot.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div class="p-6">
+        <div class="flex flex-col gap-3 text-sm">
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Pattern</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">&lt;div class="text-center"&gt; number + label + description &lt;/div&gt;</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Number</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-6xl font-bold text-primary-500 mb-2 (forest green signature)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Label</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-lg text-gray-900 (light) / text-white (dark)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Description</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-sm text-gray-600 (light) / text-gray-400 (dark) mt-2 max-w-[30ch] mx-auto</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Grid (3-col)</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">grid-cols-1 @md:grid-cols-2 @lg:grid-cols-3 gap-8 @md:gap-12 @lg:gap-16</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Grid (2-col)</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">grid-cols-1 @md:grid-cols-2 gap-8 @md:gap-12 @lg:gap-16</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Grid (4-col)</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">grid-cols-1 @sm:grid-cols-2 @lg:grid-cols-4 gap-8 @md:gap-12 @lg:gap-16</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</GalleryLayout>

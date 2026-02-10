@@ -1,0 +1,73 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const faqs = [
+  {
+    question: "What fitness level do I need for a walking tour?",
+    answer: "Our walking tours are graded from gentle to challenging. Gentle tours average 3-5 miles per day on mostly flat terrain. Moderate tours cover 5-8 miles with some hills. Challenging tours involve 8+ miles daily with significant elevation changes. Each tour listing includes a detailed fitness guide to help you choose the right level."
+  },
+  {
+    question: "What's included in the tour price?",
+    answer: "All tours include accommodation, daily breakfast, detailed route notes, GPS navigation files, and luggage transfers between hotels. Many tours also include some evening meals. International flights, travel insurance, and personal expenses are not included. Check each tour's 'What's Included' section for specifics."
+  },
+  {
+    question: "How do I get to the starting point?",
+    answer: "Each tour provides detailed travel instructions including recommended airports, train stations, and transfer options. Most tours start in towns with good public transport links. We can arrange airport transfers for an additional fee if you prefer door-to-door service."
+  },
+  {
+    question: "Can I extend my trip or add rest days?",
+    answer: "Yes, most tours can be customized with additional nights at the start, middle, or end of your journey. Contact us at least 8 weeks before departure to arrange extensions. Some popular locations may have limited availability during peak season."
+  },
+  {
+    question: "What happens if the weather is bad?",
+    answer: "Walking tours operate rain or shine—we provide weatherproof route notes and our local teams monitor conditions. Accommodation and luggage transfers are guaranteed regardless of weather. We recommend packing layers and waterproofs. If severe weather makes routes unsafe, we'll provide alternative suggestions or transport to the next stop."
+  },
+  {
+    question: "Do you offer single traveler options?",
+    answer: "Yes, solo travelers are welcome on all tours. Single room supplements apply to guarantee your own room. Some tours offer 'willing to share' options where we'll match you with another solo traveler of the same gender to avoid the supplement, subject to availability."
+  },
+  {
+    question: "Is travel insurance required?",
+    answer: "Yes, comprehensive travel insurance is mandatory for all tours. Your policy must cover medical expenses, trip cancellation, and emergency evacuation. We recommend policies that also cover missed connections and baggage delays."
+  },
+  {
+    question: "Can I bring my own bike on cycling tours?",
+    answer: "You're welcome to bring your own bike, but we recommend using our rental bikes for convenience. Our bikes are maintained to high standards and come with panniers, repair kits, and local route optimization. If bringing your own, confirm airline policies and bike box requirements well in advance."
+  }
+];
+---
+
+<FullScreenLayout title="FAQ">
+  <div class="@container min-h-screen bg-gray-50 py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="text-6xl font-bold text-gray-900 leading-tight mb-4">Frequently Asked Questions</h1>
+        <p class="text-xl text-gray-600 max-w-[65ch] mx-auto">Everything you need to know about planning your adventure with Headwater.</p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-md p-8 @sm:p-12">
+        {faqs.map(faq => (
+          <FAQ question={faq.question} answer={faq.answer} />
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-base text-gray-600 mb-6">Still have questions?</p>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white font-semibold rounded-md shadow-sm hover:bg-primary-600 active:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 transition-colors duration-[var(--duration-normal)]"
+        >
+          Contact Our Team
+        </a>
+      </div>
+    </div>
+  </div>
+</FullScreenLayout>
+
+<style>
+  /* Remove default marker */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

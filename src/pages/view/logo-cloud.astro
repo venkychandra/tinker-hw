@@ -1,0 +1,121 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import LogoCloud from '../../components/LogoCloud.astro';
+
+const certifications = [
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="140" height="50" viewBox="0 0 140 50"%3E%3Crect width="140" height="50" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12" font-weight="600"%3EABTA%3C/text%3E%3C/svg%3E',
+    alt: 'ABTA Member',
+    href: '#',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="120" height="60" viewBox="0 0 120 60"%3E%3Crect width="120" height="60" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12" font-weight="600"%3EATOL%3C/text%3E%3C/svg%3E',
+    alt: 'ATOL Protected',
+    href: '#',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="50" viewBox="0 0 100 50"%3E%3Crect width="100" height="50" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="600"%3EWanderlust%3C/text%3E%3C/svg%3E',
+    alt: 'Wanderlust Award Winner',
+    href: '#',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="110" height="50" viewBox="0 0 110 50"%3E%3Crect width="110" height="50" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11" font-weight="600"%3EAITO%3C/text%3E%3C/svg%3E',
+    alt: 'AITO Member',
+    href: '#',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="55" viewBox="0 0 100 55"%3E%3Crect width="100" height="55" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="600"%3EGreen Key%3C/text%3E%3C/svg%3E',
+    alt: 'Green Key Certified',
+    href: '#',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="120" height="50" viewBox="0 0 120 50"%3E%3Crect width="120" height="50" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="600"%3ETravelife%3C/text%3E%3C/svg%3E',
+    alt: 'Travelife Partner',
+    href: '#',
+  },
+];
+
+const mediaLogos = [
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="130" height="45" viewBox="0 0 130 45"%3E%3Crect width="130" height="45" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11" font-weight="600"%3EThe Guardian%3C/text%3E%3C/svg%3E',
+    alt: 'As featured in The Guardian',
+    href: '#',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="110" height="55" viewBox="0 0 110 55"%3E%3Crect width="110" height="55" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="600"%3ECondé Nast%3C/text%3E%3C/svg%3E',
+    alt: 'Condé Nast Traveller Recommended',
+    href: '#',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="95" height="50" viewBox="0 0 95 50"%3E%3Crect width="95" height="50" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11" font-weight="600"%3ETelegraph%3C/text%3E%3C/svg%3E',
+    alt: 'Telegraph Travel Partner',
+    href: '#',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="105" height="50" viewBox="0 0 105 50"%3E%3Crect width="105" height="50" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="600"%3ENat Geo%3C/text%3E%3C/svg%3E',
+    alt: 'National Geographic Recommended',
+    href: '#',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="115" height="48" viewBox="0 0 115 48"%3E%3Crect width="115" height="48" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="10" font-weight="600"%3ELonely Planet%3C/text%3E%3C/svg%3E',
+    alt: 'Lonely Planet Featured',
+    href: '#',
+  },
+  {
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="52" viewBox="0 0 100 52"%3E%3Crect width="100" height="52" fill="%23374151"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="sans-serif" font-size="11" font-weight="600"%3EBBC%3C/text%3E%3C/svg%3E',
+    alt: 'BBC Travel',
+    href: '#',
+  },
+];
+---
+
+<FullScreenLayout title="Logo Cloud">
+  <div class="@container min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="py-20 px-6 text-center bg-gray-50" data-seamless>
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-6xl font-bold text-gray-900 leading-tight mb-4">
+          Trusted expertise since 1992
+        </h1>
+        <p class="text-xl text-gray-600 max-w-[65ch] mx-auto">
+          Award-winning adventure travel experiences, backed by industry-leading certifications and recognized by the world's most trusted publications.
+        </p>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <LogoCloud
+      eyebrow="Protected & Certified"
+      heading="Industry-leading memberships and certifications"
+      logos={certifications}
+    />
+
+    <!-- Divider -->
+    <div class="border-t border-gray-200 my-16 max-w-[var(--container-max)] mx-auto"></div>
+
+    <!-- Media Mentions -->
+    <LogoCloud
+      eyebrow="As featured in"
+      heading="Recognized by the world's leading travel publications"
+      logos={mediaLogos}
+    />
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 text-center bg-primary-50 mt-20" data-seamless>
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-4xl font-bold text-gray-900 leading-tight mb-4">
+          Ready to start your adventure?
+        </h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Browse our collection of expertly crafted walking and cycling tours across Europe.
+        </p>
+        <a
+          href="/tours"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white font-semibold rounded-md shadow-sm hover:bg-primary-600 active:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 transition-colors duration-[var(--duration-normal)]"
+        >
+          Browse Tours
+        </a>
+      </div>
+    </section>
+  </div>
+</FullScreenLayout>

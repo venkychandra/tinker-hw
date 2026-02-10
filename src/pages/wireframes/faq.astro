@@ -1,0 +1,382 @@
+---
+import GalleryLayout from '../../layouts/GalleryLayout.astro';
+---
+
+<GalleryLayout title="FAQ" description="Visual wireframe for FAQ page — searchable questions organized by category with accordion UI." section="wireframes">
+  <div class="gallery-specimen @container">
+    <div class="max-w-[var(--container-max)] mx-auto space-y-12">
+
+      <!-- Navigation -->
+      <div class="bg-gray-100 border border-gray-300 rounded-md p-4 flex justify-between items-center">
+        <span class="text-base font-semibold text-gray-700">Headwater</span>
+        <div class="flex gap-6 text-sm text-gray-600">
+          <span>Walking</span>
+          <span>Cycling</span>
+          <span>Holiday Types</span>
+          <span>Destinations</span>
+          <span>About</span>
+        </div>
+        <div class="flex gap-3 items-center">
+          <div class="bg-gray-200 border border-gray-400 rounded px-3 py-1 text-xs text-gray-600">Search</div>
+          <div class="text-xs text-gray-600">Contact</div>
+        </div>
+      </div>
+
+      <!-- Breadcrumbs -->
+      <div class="text-xs text-gray-500 flex gap-2">
+        <span>Home</span>
+        <span>›</span>
+        <span>Help</span>
+        <span>›</span>
+        <span>FAQs</span>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="text-center space-y-6 py-8">
+        <h1 class="text-5xl font-bold text-gray-800">Frequently Asked Questions</h1>
+        <p class="text-xl text-gray-600 max-w-[65ch] mx-auto">
+          Find answers to common questions about our holidays, bookings, and services
+        </p>
+
+        <!-- Search Box -->
+        <div class="max-w-2xl mx-auto">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search for answers..."
+              class="w-full bg-white border-2 border-gray-300 rounded-lg px-6 py-4 pr-12 text-base text-gray-700"
+            />
+            <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
+              🔍
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Navigation -->
+      <nav class="flex gap-3 justify-center flex-wrap pb-6 border-b border-gray-300">
+        <button class="bg-primary-500 text-white px-6 py-2 rounded-full text-sm font-semibold">
+          All Questions
+        </button>
+        <button class="bg-gray-100 border border-gray-300 text-gray-700 px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-200">
+          Booking
+        </button>
+        <button class="bg-gray-100 border border-gray-300 text-gray-700 px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-200">
+          Holidays
+        </button>
+        <button class="bg-gray-100 border border-gray-300 text-gray-700 px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-200">
+          Planning
+        </button>
+        <button class="bg-gray-100 border border-gray-300 text-gray-700 px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-200">
+          During Your Trip
+        </button>
+        <button class="bg-gray-100 border border-gray-300 text-gray-700 px-6 py-2 rounded-full text-sm font-semibold hover:bg-gray-200">
+          Payments
+        </button>
+      </nav>
+
+      <!-- Main Content: FAQ Sections -->
+      <div class="grid grid-cols-1 @lg:grid-cols-[1fr_320px] gap-12">
+
+        <!-- FAQ List -->
+        <main class="space-y-12">
+
+          <!-- Booking Questions -->
+          <section class="space-y-4">
+            <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+              📅 Booking Your Holiday
+            </h2>
+
+            <!-- FAQ Item 1 (Open) -->
+            <div class="bg-white border-2 border-primary-300 rounded-lg">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">How do I book a holiday?</span>
+                <span class="text-primary-600 text-xl flex-shrink-0">▲</span>
+              </button>
+              <div class="px-6 pb-6 space-y-3">
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  You can book online through our website, call us on 01606 720199, or request a callback. Our team will guide you through the process, help you choose the right holiday, and answer any questions you have.
+                </p>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  When booking, you'll need to provide traveler details, select your departure date, and pay a deposit (usually 20% of the total cost). Full payment is due 8 weeks before departure.
+                </p>
+                <div class="flex gap-3 pt-2">
+                  <button class="text-sm text-primary-600 font-semibold">Book a holiday →</button>
+                  <button class="text-sm text-primary-600 font-semibold">Contact us →</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">What deposit do I need to pay?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+            <!-- FAQ Item 3 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">Can I change or cancel my booking?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+            <!-- FAQ Item 4 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">Is my booking financially protected?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+          </section>
+
+          <!-- Holiday Questions -->
+          <section class="space-y-4">
+            <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+              🥾 About Our Holidays
+            </h2>
+
+            <!-- FAQ Item 5 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">What fitness level do I need?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+            <!-- FAQ Item 6 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">What's included in the price?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+            <!-- FAQ Item 7 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">Can you tailor-make a holiday for me?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+            <!-- FAQ Item 8 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">Are your holidays suitable for solo travelers?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+          </section>
+
+          <!-- Planning Questions -->
+          <section class="space-y-4">
+            <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+              🗺️ Planning Your Trip
+            </h2>
+
+            <!-- FAQ Item 9 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">When is the best time to travel?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+            <!-- FAQ Item 10 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">Do I need travel insurance?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+            <!-- FAQ Item 11 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">What should I pack?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+            <!-- FAQ Item 12 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">How do I get to the start point?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+          </section>
+
+          <!-- During Trip Questions -->
+          <section class="space-y-4">
+            <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
+              🧳 During Your Holiday
+            </h2>
+
+            <!-- FAQ Item 13 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">How does luggage transfer work?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+            <!-- FAQ Item 14 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">What if I have a problem during my trip?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+            <!-- FAQ Item 15 (Closed) -->
+            <div class="bg-white border border-gray-300 rounded-lg hover:border-gray-400">
+              <button class="w-full p-6 flex items-center justify-between text-left">
+                <span class="text-base font-semibold text-gray-800 pr-4">How does GPS navigation work?</span>
+                <span class="text-gray-500 text-xl flex-shrink-0">▼</span>
+              </button>
+            </div>
+
+          </section>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6">
+
+          <!-- Popular Questions -->
+          <div class="bg-gray-50 border border-gray-300 rounded-lg p-6 space-y-4">
+            <h3 class="text-lg font-semibold text-gray-800">Popular Questions</h3>
+            <div class="space-y-3">
+              <a href="#" class="block text-sm text-primary-600 hover:underline">
+                → What fitness level do I need?
+              </a>
+              <a href="#" class="block text-sm text-primary-600 hover:underline">
+                → What's included in the price?
+              </a>
+              <a href="#" class="block text-sm text-primary-600 hover:underline">
+                → How do luggage transfers work?
+              </a>
+              <a href="#" class="block text-sm text-primary-600 hover:underline">
+                → Can I travel solo?
+              </a>
+              <a href="#" class="block text-sm text-primary-600 hover:underline">
+                → Do I need travel insurance?
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="bg-gray-50 border border-gray-300 rounded-lg p-6 space-y-4">
+            <h3 class="text-lg font-semibold text-gray-800">Helpful Resources</h3>
+            <div class="space-y-3">
+              <a href="#" class="block text-sm text-gray-700 hover:text-primary-600">
+                📄 Booking Conditions
+              </a>
+              <a href="#" class="block text-sm text-gray-700 hover:text-primary-600">
+                🛡️ Travel Insurance Guide
+              </a>
+              <a href="#" class="block text-sm text-gray-700 hover:text-primary-600">
+                🧳 Packing List
+              </a>
+              <a href="#" class="block text-sm text-gray-700 hover:text-primary-600">
+                📱 GPS App Guide
+              </a>
+              <a href="#" class="block text-sm text-gray-700 hover:text-primary-600">
+                🌍 Destination Guides
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Card -->
+          <div class="bg-primary-50 border border-primary-200 rounded-lg p-6 space-y-4">
+            <h3 class="text-lg font-semibold text-gray-800">Still have questions?</h3>
+            <p class="text-sm text-gray-600">
+              Our team is here to help. Get in touch and we'll respond within 24 hours.
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-center gap-2 text-sm text-gray-700">
+                <span>📞</span>
+                <span class="font-semibold">01606 720199</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-gray-700">
+                <span>✉️</span>
+                <span class="font-semibold">sales@headwater.com</span>
+              </div>
+              <button class="w-full bg-primary-500 text-white rounded px-4 py-2 text-sm font-semibold">
+                Contact Us
+              </button>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+
+      <!-- CTA Section -->
+      <div class="bg-gray-200 border border-gray-400 rounded-lg p-12 text-center space-y-4">
+        <p class="text-2xl font-bold text-gray-800">Can't find what you're looking for?</p>
+        <p class="text-base text-gray-600">Our expert team is ready to help you plan your perfect active holiday</p>
+        <div class="flex gap-3 justify-center">
+          <button class="bg-primary-500 text-white px-8 py-3 rounded-md text-sm font-semibold">
+            Contact Us
+          </button>
+          <button class="bg-gray-100 border border-gray-400 px-8 py-3 rounded-md text-sm font-semibold text-gray-700">
+            Browse Holidays
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="bg-gray-100 border border-gray-300 rounded-lg p-8">
+        <div class="grid grid-cols-2 @md:grid-cols-4 gap-6 mb-6">
+          <div class="space-y-2">
+            <p class="text-base font-bold text-gray-800">Headwater</p>
+            <p class="text-xs text-gray-600">Est. 1985</p>
+            <div class="flex gap-2 text-xs text-gray-500">
+              <span>ABTA</span>
+              <span>ATOL</span>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm font-semibold text-gray-700">Destinations</p>
+            <div class="space-y-1 text-xs text-gray-600">
+              <p>Walking</p>
+              <p>Cycling</p>
+              <p>Multi-Activity</p>
+              <p>View All</p>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm font-semibold text-gray-700">About</p>
+            <div class="space-y-1 text-xs text-gray-600">
+              <p>Our Story</p>
+              <p>Team</p>
+              <p>Reviews</p>
+              <p>Press</p>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <p class="text-sm font-semibold text-gray-700">Contact</p>
+            <div class="space-y-1 text-xs text-gray-600">
+              <p>01606 720199</p>
+              <p>sales@headwater.com</p>
+              <p>Brochure</p>
+              <p>FAQ</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-300 pt-4 text-center text-xs text-gray-500">
+          © 2026 Headwater Holidays Ltd
+        </div>
+      </div>
+
+    </div>
+  </div>
+</GalleryLayout>

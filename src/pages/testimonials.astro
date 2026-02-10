@@ -1,0 +1,268 @@
+---
+import GalleryLayout from '../layouts/GalleryLayout.astro';
+import Testimonials from '../components/Testimonials.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+---
+
+<GalleryLayout title="Testimonials" description="Customer testimonials with quotes, ratings, and attribution. Testimonials component wraps TestimonialCards in a responsive grid. Featured variant centers a single spotlight quote." fullscreenHref="/view/testimonials">
+
+  <!-- Default — 3 column grid -->
+  <section class="specimen-section">
+    <h2>Default — Grid Layout</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Grid of testimonial cards with 5-star ratings (terracotta accent-500 fill), quote text, name, location, and optional photo. Cards use white background with subtle border and shadow.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Testimonials
+        eyebrow="Guest Reviews"
+        heading="What our travelers say"
+        subheading="Thousands of walkers and cyclists have discovered Europe with Headwater since 1985."
+      >
+        <TestimonialCard
+          quote="The Amalfi Coast walk was magical. Headwater's route notes were perfect — we never got lost, and every lunch stop was a gem. The luggage transfers meant we could walk light and enjoy the trail."
+          name="Sarah Mitchell"
+          location="Manchester, UK"
+          rating={5}
+          photo="https://i.pravatar.cc/150?img=5"
+        />
+        <TestimonialCard
+          quote="We've done three Headwater trips now. The hotels are always charming, the routes are well thought out, and the local support is reassuring. Wouldn't book with anyone else."
+          name="David & Claire Thompson"
+          location="Edinburgh, Scotland"
+          rating={5}
+          photo="https://i.pravatar.cc/150?img=33"
+        />
+        <TestimonialCard
+          quote="Cycling through Provence at our own pace was exactly what we needed. No rush, no group pressure. Just beautiful scenery, great wine, and excellent route planning."
+          name="James Carter"
+          location="Bristol, UK"
+          rating={5}
+          photo="https://i.pravatar.cc/150?img=12"
+        />
+      </Testimonials>
+    </div>
+  </section>
+
+  <!-- Featured variant -->
+  <section class="specimen-section">
+    <h2>Featured Variant</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Single spotlight testimonial, centered. Use <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">variant="featured"</code> for a hero quote or above-the-fold social proof. Header also centers.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Testimonials
+        variant="featured"
+        heading="Why We Trust Headwater"
+      >
+        <TestimonialCard
+          quote="We've walked all over Europe with Headwater — the Dolomites, the Pyrenees, the Welsh coast. Every trip has been flawlessly organized. The routes are stunning, the hotels are handpicked, and we've never had a single issue. Headwater doesn't just book trips — they craft experiences."
+          name="Margaret & Peter Lawson"
+          location="York, UK"
+          rating={5}
+          photo="https://i.pravatar.cc/150?img=60"
+        />
+      </Testimonials>
+    </div>
+  </section>
+
+  <!-- Without photos -->
+  <section class="specimen-section">
+    <h2>Without Photos</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Testimonials work without photos. The attribution section stacks name and location only.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Testimonials
+        heading="More Reviews"
+      >
+        <TestimonialCard
+          quote="The route notes were outstanding. Clear, detailed, and accurate. We felt confident every day."
+          name="Helen Richardson"
+          location="London, UK"
+          rating={5}
+        />
+        <TestimonialCard
+          quote="Luggage transfers worked perfectly. Our bags were always waiting when we arrived."
+          name="Tom Hughes"
+          location="Cardiff, Wales"
+          rating={5}
+        />
+        <TestimonialCard
+          quote="Best cycling holiday we've ever done. The bikes were excellent and the support was fantastic."
+          name="Emma Davies"
+          location="Birmingham, UK"
+          rating={5}
+        />
+      </Testimonials>
+    </div>
+  </section>
+
+  <!-- 4-star rating -->
+  <section class="specimen-section">
+    <h2>Rating Variants</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      The <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">rating</code> prop controls star fill. Filled stars use accent-500 (terracotta), empty use gray-300. Defaults to 5 stars.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden p-8">
+      <div class="@container">
+        <div class="grid grid-cols-1 @md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <TestimonialCard
+            quote="The trip was brilliant, though one hotel was below standard. Headwater sorted it immediately."
+            name="Robert Green"
+            location="Leeds, UK"
+            rating={4}
+          />
+          <TestimonialCard
+            quote="Absolutely flawless from start to finish. Cannot fault a single thing."
+            name="Anna Williams"
+            location="Oxford, UK"
+            rating={5}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark background -->
+  <section class="specimen-section">
+    <h2>Dark Background</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      The <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">dark</code> prop inverts the section background. Cards remain white and pop against the dark surface.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Testimonials
+        dark
+        eyebrow="Testimonials"
+        heading="Trusted by Thousands"
+        subheading="Our travelers come back year after year."
+      >
+        <TestimonialCard
+          quote="The Amalfi Coast walk was the highlight of our year. Perfect organization from start to finish."
+          name="Sarah Mitchell"
+          location="Manchester, UK"
+          rating={5}
+          photo="https://i.pravatar.cc/150?img=5"
+        />
+        <TestimonialCard
+          quote="Three trips with Headwater, each one better than the last. The attention to detail is unmatched."
+          name="David Thompson"
+          location="Edinburgh, Scotland"
+          rating={5}
+          photo="https://i.pravatar.cc/150?img=33"
+        />
+        <TestimonialCard
+          quote="Provence by bike was stunning. The routes were quiet, scenic, and perfectly paced."
+          name="James Carter"
+          location="Bristol, UK"
+          rating={5}
+          photo="https://i.pravatar.cc/150?img=12"
+        />
+      </Testimonials>
+    </div>
+  </section>
+
+  <!-- Responsive behavior -->
+  <section class="specimen-section">
+    <h2>Responsive Behavior</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Grid stacks single-column at narrow, 2-column at <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">@md:</code> (768px), 3-column at <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">@lg:</code> (1024px). Card padding tightens from p-8 to p-6 via <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">@md:</code>.
+    </p>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Narrow (~320px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+      <div style="max-width: 320px; margin: 0 auto;">
+        <Testimonials heading="Reviews">
+          <TestimonialCard
+            quote="Perfect organization. We felt looked after the whole way."
+            name="Sarah Mitchell"
+            location="Manchester, UK"
+            rating={5}
+          />
+          <TestimonialCard
+            quote="The hotels were beautiful and the routes were stunning."
+            name="David Thompson"
+            location="Edinburgh, Scotland"
+            rating={5}
+          />
+        </Testimonials>
+      </div>
+    </div>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Medium (~768px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div style="max-width: 768px; margin: 0 auto;">
+        <Testimonials heading="Reviews">
+          <TestimonialCard
+            quote="Perfect organization. We felt looked after the whole way."
+            name="Sarah Mitchell"
+            location="Manchester, UK"
+            rating={5}
+          />
+          <TestimonialCard
+            quote="The hotels were beautiful and the routes were stunning."
+            name="David Thompson"
+            location="Edinburgh, Scotland"
+            rating={5}
+          />
+          <TestimonialCard
+            quote="Best cycling holiday we've ever done. Excellent support throughout."
+            name="James Carter"
+            location="Bristol, UK"
+            rating={5}
+          />
+        </Testimonials>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anatomy -->
+  <section class="specimen-section">
+    <h2>Anatomy</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Props and class construction breakdown.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div class="p-6">
+        <div class="flex flex-col gap-3 text-sm">
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Grid</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">grid-cols-1 @md:grid-cols-2 @lg:grid-cols-3 gap-6 @lg:gap-8</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Card</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">bg-white border border-gray-200 rounded-lg p-6 @md:p-8 shadow-sm</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Stars filled</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">w-5 h-5 text-accent-500 fill-current (terracotta trail marker)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Stars empty</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">w-5 h-5 text-gray-400 fill-current</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Quote</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">blockquote text-base text-gray-700 leading-relaxed</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Photo</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">w-12 h-12 rounded-full object-cover (48px)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Name</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-sm font-semibold text-gray-900</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Location</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-sm text-gray-500</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Featured</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">max-w-3xl mx-auto — single centered card, no grid</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</GalleryLayout>

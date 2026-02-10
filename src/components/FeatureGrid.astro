@@ -1,0 +1,66 @@
+---
+interface Props {
+  variant?: 'default' | 'cards' | 'centered';
+  columns?: 2 | 3 | 4;
+  dark?: boolean;
+  eyebrow?: string;
+  heading?: string;
+  subheading?: string;
+}
+
+const {
+  variant = 'default',
+  columns = 3,
+  dark = false,
+  eyebrow,
+  heading,
+  subheading,
+} = Astro.props;
+
+const isCentered = variant === 'centered';
+
+// --- Colors ---
+const sectionBg = dark ? 'bg-gray-900' : '';
+const eyebrowColor = dark ? 'text-accent-300' : 'text-accent-500';
+const headingColor = dark ? 'text-white' : 'text-gray-900';
+const subColor = dark ? 'text-gray-400' : 'text-gray-600';
+
+// --- Grid columns ---
+const colMap: Record<number, string> = {
+  2: 'grid-cols-1 @sm:grid-cols-2',
+  3: 'grid-cols-1 @sm:grid-cols-2 @lg:grid-cols-3',
+  4: 'grid-cols-1 @sm:grid-cols-2 @lg:grid-cols-4',
+};
+const gridCols = colMap[columns];
+---
+
+<section class={`@container ${sectionBg}`} data-seamless={dark || undefined}>
+  <div class={`max-w-[var(--container-max)] mx-auto px-6 py-12 @md:py-16 @lg:py-20 ${isCentered ? 'text-center' : ''}`}>
+
+    {/* Section header */}
+    {(eyebrow || heading || subheading) && (
+      <div class={`mb-12 @md:mb-16 ${isCentered ? 'max-w-2xl mx-auto' : 'max-w-2xl'}`}>
+        {eyebrow && (
+          <p data-role="eyebrow" class={`text-sm font-semibold uppercase tracking-wide ${eyebrowColor} mb-3`}>
+            {eyebrow}
+          </p>
+        )}
+        {heading && (
+          <h2 class={`text-4xl font-bold tracking-tight ${headingColor}`}>
+            {heading}
+          </h2>
+        )}
+        {subheading && (
+          <p class={`text-lg ${subColor} mt-4 max-w-[60ch] ${isCentered ? 'mx-auto' : ''}`}>
+            {subheading}
+          </p>
+        )}
+      </div>
+    )}
+
+    {/* Grid */}
+    <div class={`grid ${gridCols} gap-8 @lg:gap-12`}>
+      <slot />
+    </div>
+  </div>
+</section>

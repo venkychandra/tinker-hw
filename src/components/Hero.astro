@@ -1,0 +1,153 @@
+---
+interface Props {
+  variant?: 'image' | 'split' | 'simple';
+  dark?: boolean;
+  eyebrow?: string;
+  heading: string;
+  subheading?: string;
+  primaryCta?: string;
+  primaryHref?: string;
+  secondaryCta?: string;
+  secondaryHref?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+const {
+  variant = 'simple',
+  dark = false,
+  eyebrow,
+  heading,
+  subheading,
+  primaryCta,
+  primaryHref = '#',
+  secondaryCta,
+  secondaryHref = '#',
+  imageSrc,
+  imageAlt = '',
+} = Astro.props;
+
+// --- Color schemes ---
+const isOnDark = variant === 'image' || dark;
+
+const eyebrowColor = isOnDark ? 'text-accent-300' : 'text-accent-500';
+const headingColor = isOnDark ? 'text-white' : 'text-gray-900';
+const subColor = isOnDark ? 'text-white/80' : 'text-gray-600';
+
+// --- CTA button classes (matches Button lg pattern, rendered as <a>) ---
+const primaryBtnBase = 'inline-flex items-center justify-center gap-2 font-semibold cursor-pointer text-lg px-8 py-4 rounded-md transition-colors duration-fast ease-default active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2';
+const primaryBtn = isOnDark
+  ? `${primaryBtnBase} bg-white text-primary-600 hover:bg-primary-50 active:bg-primary-100 focus-visible:outline-white`
+  : `${primaryBtnBase} bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 focus-visible:outline-primary-300`;
+const secondaryBtnBase = 'inline-flex items-center justify-center gap-2 font-semibold cursor-pointer text-lg px-8 py-4 rounded-md transition-colors duration-fast ease-default active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2';
+const secondaryBtn = isOnDark
+  ? `${secondaryBtnBase} bg-transparent text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)] hover:bg-white/10 active:bg-white/15 focus-visible:outline-white`
+  : `${secondaryBtnBase} bg-transparent text-gray-900 shadow-[inset_0_0_0_1px_var(--color-gray-200)] hover:bg-gray-50 active:bg-gray-100 focus-visible:outline-primary-300`;
+
+// --- Section background ---
+const simpleBg = dark ? 'bg-gray-900' : 'bg-white';
+---
+
+{variant === 'image' && (
+  <section class="@container relative overflow-hidden" data-seamless>
+    <!-- Backdrop image -->
+    <img
+      src={imageSrc}
+      alt={imageAlt}
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <!-- Subtle uniform overlay — NOT a gradient -->
+    <div class="absolute inset-0 bg-gray-950/50"></div>
+
+    <div class="relative max-w-[var(--container-max)] mx-auto px-6 py-24 @md:py-32 @lg:py-40">
+      <div class="max-w-2xl">
+        {eyebrow && (
+          <p data-role="eyebrow" class={`text-sm font-semibold uppercase tracking-wide ${eyebrowColor} mb-4`}>
+            {eyebrow}
+          </p>
+        )}
+        <h1 class={`text-6xl font-bold tracking-tight ${headingColor}`}>
+          {heading}
+        </h1>
+        {subheading && (
+          <p class={`text-xl ${subColor} mt-6 max-w-[50ch]`}>
+            {subheading}
+          </p>
+        )}
+        {(primaryCta || secondaryCta) && (
+          <div class="flex flex-wrap gap-4 mt-8">
+            {primaryCta && <a href={primaryHref} class={primaryBtn}>{primaryCta}</a>}
+            {secondaryCta && <a href={secondaryHref} class={secondaryBtn}>{secondaryCta}</a>}
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+)}
+
+{variant === 'split' && (
+  <section class="@container overflow-hidden" data-seamless>
+    <div class={`grid grid-cols-1 @lg:grid-cols-2 ${dark ? 'bg-gray-900' : 'bg-white'}`}>
+      <!-- Text side -->
+      <div class="flex flex-col justify-center px-6 py-16 @md:py-20 @lg:py-24 @lg:px-16">
+        <div class="max-w-xl @lg:max-w-lg">
+          {eyebrow && (
+            <p data-role="eyebrow" class={`text-sm font-semibold uppercase tracking-wide ${eyebrowColor} mb-4`}>
+              {eyebrow}
+            </p>
+          )}
+          <h1 class={`text-6xl font-bold tracking-tight ${headingColor}`}>
+            {heading}
+          </h1>
+          {subheading && (
+            <p class={`text-xl ${subColor} mt-6 max-w-[50ch]`}>
+              {subheading}
+            </p>
+          )}
+          {(primaryCta || secondaryCta) && (
+            <div class="flex flex-wrap gap-4 mt-8">
+              {primaryCta && <a href={primaryHref} class={primaryBtn}>{primaryCta}</a>}
+              {secondaryCta && <a href={secondaryHref} class={secondaryBtn}>{secondaryCta}</a>}
+            </div>
+          )}
+        </div>
+      </div>
+      <!-- Image side -->
+      <div class="relative min-h-80 @lg:min-h-0 order-first @lg:order-last">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+)}
+
+{variant === 'simple' && (
+  <section class={`@container ${simpleBg}`} data-seamless>
+    <div class="max-w-[var(--container-max)] mx-auto px-6 py-24 @md:py-32 @lg:py-40 text-center">
+      <div class="max-w-3xl mx-auto">
+        {eyebrow && (
+          <p data-role="eyebrow" class={`text-sm font-semibold uppercase tracking-wide ${eyebrowColor} mb-4`}>
+            {eyebrow}
+          </p>
+        )}
+        <h1 class={`text-6xl font-bold tracking-tight ${headingColor}`}>
+          {heading}
+        </h1>
+        {subheading && (
+          <p class={`text-xl ${subColor} mt-6 max-w-[55ch] mx-auto`}>
+            {subheading}
+          </p>
+        )}
+        {(primaryCta || secondaryCta) && (
+          <div class="flex flex-wrap gap-4 justify-center mt-8">
+            {primaryCta && <a href={primaryHref} class={primaryBtn}>{primaryCta}</a>}
+            {secondaryCta && <a href={secondaryHref} class={secondaryBtn}>{secondaryCta}</a>}
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+)}

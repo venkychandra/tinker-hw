@@ -1,0 +1,299 @@
+---
+interface Props {
+  variant?: 'simple' | 'standard' | 'newsletter';
+  dark?: boolean;
+}
+
+const { variant = 'standard', dark = false } = Astro.props;
+
+// --- Color schemes ---
+const bg = dark ? 'bg-gray-900' : 'bg-gray-50';
+const borderColor = dark ? 'border-gray-700' : 'border-gray-200';
+const brandColor = dark ? 'text-white' : 'text-gray-900';
+const linkColor = dark
+  ? 'text-gray-300 hover:text-white'
+  : 'text-gray-600 hover:text-gray-900';
+const headingColor = dark ? 'text-white' : 'text-gray-900';
+const copyrightColor = dark ? 'text-gray-400' : 'text-gray-500';
+const inputBg = dark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-300';
+const inputText = dark ? 'text-white placeholder:text-gray-400' : 'text-gray-900 placeholder:text-gray-500';
+const inputFocus = dark
+  ? 'focus:border-primary-400 focus:ring-primary-400/20'
+  : 'focus:border-primary-500 focus:ring-primary-500/20';
+
+const linkBase = 'text-sm transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2';
+const socialBase = 'inline-flex items-center justify-center w-10 h-10 rounded-md transition-colors duration-fast ease-default focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2';
+const socialLink = dark
+  ? `${socialBase} text-gray-300 hover:text-white hover:bg-gray-800`
+  : `${socialBase} text-gray-600 hover:text-gray-900 hover:bg-gray-100`;
+---
+
+{variant === 'simple' && (
+  <footer class={`@container ${bg} border-t ${borderColor}`}>
+    <div class="max-w-[var(--container-max)] mx-auto px-6 py-8">
+      <div class="flex flex-col @sm:flex-row items-center justify-between gap-4">
+        <!-- Copyright -->
+        <p class={`text-sm ${copyrightColor}`}>
+          © {new Date().getFullYear()} Headwater Holidays. All rights reserved.
+        </p>
+
+        <!-- Links -->
+        <nav class="flex flex-wrap items-center justify-center gap-6">
+          <a href="/privacy-notice" class={`${linkBase} ${linkColor}`}>Privacy Notice</a>
+          <a href="/terms-conditions" class={`${linkBase} ${linkColor}`}>Terms & Conditions</a>
+          <a href="/contact" class={`${linkBase} ${linkColor}`}>Contact us</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+)}
+
+{variant === 'standard' && (
+  <footer class={`@container ${bg} border-t ${borderColor}`} data-seamless>
+    <div class="max-w-[var(--container-max)] mx-auto px-6 py-12 @md:py-16">
+      <!-- Main footer grid -->
+      <div class="grid grid-cols-1 @sm:grid-cols-2 @lg:grid-cols-6 gap-8 @lg:gap-12">
+        <!-- Brand column -->
+        <div class="@lg:col-span-2">
+          <a href="/" class={`text-xl font-bold tracking-tight ${brandColor} transition-colors duration-fast ease-default`}>
+            Headwater
+          </a>
+          <p class={`text-sm ${dark ? 'text-gray-400' : 'text-gray-600'} mt-4 max-w-[45ch]`}>
+            Experts in active holidays since 1985. Self-guided walking and cycling adventures with hand-picked hotels and award-winning routes.
+          </p>
+          <!-- Contact info -->
+          <div class={`text-sm ${dark ? 'text-gray-400' : 'text-gray-600'} mt-6 space-y-2`}>
+            <p>Phone: <a href="tel:01606720199" class={`${linkColor} font-medium transition-colors duration-fast`}>01606 720199</a></p>
+            <p>Email: <a href="mailto:sales@headwater.com" class={`${linkColor} font-medium transition-colors duration-fast`}>sales@headwater.com</a></p>
+          </div>
+          <!-- Social links -->
+          <div class="flex flex-wrap items-center gap-2 mt-6">
+            <a href="https://facebook.com" aria-label="Facebook" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" aria-label="Instagram" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://twitter.com" aria-label="X (Twitter)" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.46 6c-.85.38-1.78.64-2.75.76a4.8 4.8 0 0 0 2.1-2.66c-.92.55-1.95.95-3.03 1.16A4.75 4.75 0 0 0 11.32 9.3a13.47 13.47 0 0 1-9.78-4.96a4.75 4.75 0 0 0 1.47 6.34c-.77-.02-1.5-.23-2.13-.58v.06a4.75 4.75 0 0 0 3.8 4.65c-.7.19-1.44.23-2.15.08a4.75 4.75 0 0 0 4.43 3.3A9.53 9.53 0 0 1 2 19.54a13.44 13.44 0 0 0 7.29 2.14c8.75 0 13.54-7.25 13.54-13.54 0-.21 0-.41-.01-.61A9.65 9.65 0 0 0 22.46 6z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" aria-label="YouTube" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://pinterest.com" aria-label="Pinterest" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" aria-label="LinkedIn" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Link columns -->
+        <div>
+          <h3 class={`text-sm font-semibold ${headingColor} mb-4`}>Customer Service</h3>
+          <nav class="flex flex-col gap-3">
+            <a href="/contact" class={`${linkBase} ${linkColor}`}>Contact us</a>
+            <a href="/request-brochure" class={`${linkBase} ${linkColor}`}>Request a brochure</a>
+            <a href="/terms-conditions" class={`${linkBase} ${linkColor}`}>Terms & Conditions</a>
+            <a href="/booking-conditions" class={`${linkBase} ${linkColor}`}>Booking Conditions</a>
+            <a href="/privacy-notice" class={`${linkBase} ${linkColor}`}>Privacy Notice</a>
+            <a href="/travel-insurance" class={`${linkBase} ${linkColor}`}>Travel Insurance</a>
+          </nav>
+        </div>
+
+        <div>
+          <h3 class={`text-sm font-semibold ${headingColor} mb-4`}>About Us</h3>
+          <nav class="flex flex-col gap-3">
+            <a href="/our-story" class={`${linkBase} ${linkColor}`}>Our Story</a>
+            <a href="/meet-team" class={`${linkBase} ${linkColor}`}>Meet the Team</a>
+            <a href="/hand-picked-hotels" class={`${linkBase} ${linkColor}`}>Hand Picked Hotels</a>
+            <a href="/fine-food-wine" class={`${linkBase} ${linkColor}`}>Fine Food & Wine</a>
+            <a href="/sustainable-travel" class={`${linkBase} ${linkColor}`}>Sustainable Travel</a>
+            <a href="/blog" class={`${linkBase} ${linkColor}`}>Our Blog</a>
+          </nav>
+        </div>
+
+        <div>
+          <h3 class={`text-sm font-semibold ${headingColor} mb-4`}>Here to Help</h3>
+          <nav class="flex flex-col gap-3">
+            <a href="/how-to-book" class={`${linkBase} ${linkColor}`}>How to Book</a>
+            <a href="/planning-holiday" class={`${linkBase} ${linkColor}`}>Planning Your Holiday</a>
+            <a href="/faq" class={`${linkBase} ${linkColor}`}>FAQ</a>
+            <a href="/support-overseas" class={`${linkBase} ${linkColor}`}>Support Overseas</a>
+            <a href="/careers" class={`${linkBase} ${linkColor}`}>Careers</a>
+          </nav>
+        </div>
+
+        <div>
+          <h3 class={`text-sm font-semibold ${headingColor} mb-4`}>Holidays</h3>
+          <nav class="flex flex-col gap-3">
+            <a href="/walking" class={`${linkBase} ${linkColor}`}>Walking</a>
+            <a href="/cycling" class={`${linkBase} ${linkColor}`}>Cycling</a>
+            <a href="/destinations" class={`${linkBase} ${linkColor}`}>Destinations</a>
+            <a href="/offers" class={`${linkBase} ${linkColor}`}>Offers</a>
+            <a href="/loyalty-club" class={`${linkBase} ${linkColor}`}>Loyalty Club</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class={`mt-12 pt-8 border-t ${borderColor}`}>
+        <p class={`text-sm ${copyrightColor} text-center @sm:text-left`}>
+          © {new Date().getFullYear()} Headwater Holidays. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+)}
+
+{variant === 'newsletter' && (
+  <footer class={`@container ${bg} border-t ${borderColor}`} data-seamless>
+    <div class="max-w-[var(--container-max)] mx-auto px-6 py-12 @md:py-16">
+      <!-- Newsletter section -->
+      <div class={`pb-12 mb-12 border-b ${borderColor}`}>
+        <div class="max-w-xl mx-auto text-center">
+          <h2 class={`text-2xl font-bold ${headingColor}`}>Stay on the trail</h2>
+          <p class={`text-base ${dark ? 'text-gray-400' : 'text-gray-600'} mt-3`}>
+            Get trip ideas, route inspiration, and exclusive offers delivered to your inbox.
+          </p>
+          <form class="flex flex-col @sm:flex-row gap-3 mt-6">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class={`flex-1 px-4 py-3 text-sm rounded-md border ${inputBg} ${inputText} ${inputFocus} focus:outline-none focus:ring-2 transition-colors duration-fast ease-default`}
+              required
+            />
+            <button
+              type="submit"
+              class="inline-flex items-center justify-center gap-2 font-semibold cursor-pointer text-sm px-6 py-3 rounded-md bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700 active:translate-y-px focus-visible:outline-2 focus-visible:outline-primary-300 focus-visible:outline-offset-2 transition-colors duration-fast ease-default"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Main footer grid -->
+      <div class="grid grid-cols-1 @sm:grid-cols-2 @lg:grid-cols-6 gap-8 @lg:gap-12">
+        <!-- Brand column -->
+        <div class="@lg:col-span-2">
+          <a href="/" class={`text-xl font-bold tracking-tight ${brandColor} transition-colors duration-fast ease-default`}>
+            Headwater
+          </a>
+          <p class={`text-sm ${dark ? 'text-gray-400' : 'text-gray-600'} mt-4 max-w-[45ch]`}>
+            Experts in active holidays since 1985. Self-guided walking and cycling adventures with hand-picked hotels and award-winning routes.
+          </p>
+          <!-- Contact info -->
+          <div class={`text-sm ${dark ? 'text-gray-400' : 'text-gray-600'} mt-6 space-y-2`}>
+            <p>Phone: <a href="tel:01606720199" class={`${linkColor} font-medium transition-colors duration-fast`}>01606 720199</a></p>
+            <p>Email: <a href="mailto:sales@headwater.com" class={`${linkColor} font-medium transition-colors duration-fast`}>sales@headwater.com</a></p>
+          </div>
+          <!-- Social links -->
+          <div class="flex flex-wrap items-center gap-2 mt-6">
+            <a href="https://facebook.com" aria-label="Facebook" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01 Z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" aria-label="Instagram" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://twitter.com" aria-label="X (Twitter)" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.46 6c-.85.38-1.78.64-2.75.76a4.8 4.8 0 0 0 2.1-2.66c-.92.55-1.95.95-3.03 1.16A4.75 4.75 0 0 0 11.32 9.3a13.47 13.47 0 0 1-9.78-4.96a4.75 4.75 0 0 0 1.47 6.34c-.77-.02-1.5-.23-2.13-.58v.06a4.75 4.75 0 0 0 3.8 4.65c-.7.19-1.44.23-2.15.08a4.75 4.75 0 0 0 4.43 3.3A9.53 9.53 0 0 1 2 19.54a13.44 13.44 0 0 0 7.29 2.14c8.75 0 13.54-7.25 13.54-13.54 0-.21 0-.41-.01-.61A9.65 9.65 0 0 0 22.46 6z" />
+              </svg>
+            </a>
+            <a href="https://youtube.com" aria-label="YouTube" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://pinterest.com" aria-label="Pinterest" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" aria-label="LinkedIn" class={socialLink}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Link columns -->
+        <div>
+          <h3 class={`text-sm font-semibold ${headingColor} mb-4`}>Customer Service</h3>
+          <nav class="flex flex-col gap-3">
+            <a href="/contact" class={`${linkBase} ${linkColor}`}>Contact us</a>
+            <a href="/request-brochure" class={`${linkBase} ${linkColor}`}>Request a brochure</a>
+            <a href="/terms-conditions" class={`${linkBase} ${linkColor}`}>Terms & Conditions</a>
+            <a href="/booking-conditions" class={`${linkBase} ${linkColor}`}>Booking Conditions</a>
+            <a href="/privacy-notice" class={`${linkBase} ${linkColor}`}>Privacy Notice</a>
+            <a href="/travel-insurance" class={`${linkBase} ${linkColor}`}>Travel Insurance</a>
+          </nav>
+        </div>
+
+        <div>
+          <h3 class={`text-sm font-semibold ${headingColor} mb-4`}>About Us</h3>
+          <nav class="flex flex-col gap-3">
+            <a href="/our-story" class={`${linkBase} ${linkColor}`}>Our Story</a>
+            <a href="/meet-team" class={`${linkBase} ${linkColor}`}>Meet the Team</a>
+            <a href="/hand-picked-hotels" class={`${linkBase} ${linkColor}`}>Hand Picked Hotels</a>
+            <a href="/fine-food-wine" class={`${linkBase} ${linkColor}`}>Fine Food & Wine</a>
+            <a href="/sustainable-travel" class={`${linkBase} ${linkColor}`}>Sustainable Travel</a>
+            <a href="/blog" class={`${linkBase} ${linkColor}`}>Our Blog</a>
+          </nav>
+        </div>
+
+        <div>
+          <h3 class={`text-sm font-semibold ${headingColor} mb-4`}>Here to Help</h3>
+          <nav class="flex flex-col gap-3">
+            <a href="/how-to-book" class={`${linkBase} ${linkColor}`}>How to Book</a>
+            <a href="/planning-holiday" class={`${linkBase} ${linkColor}`}>Planning Your Holiday</a>
+            <a href="/faq" class={`${linkBase} ${linkColor}`}>FAQ</a>
+            <a href="/support-overseas" class={`${linkBase} ${linkColor}`}>Support Overseas</a>
+            <a href="/careers" class={`${linkBase} ${linkColor}`}>Careers</a>
+          </nav>
+        </div>
+
+        <div>
+          <h3 class={`text-sm font-semibold ${headingColor} mb-4`}>Holidays</h3>
+          <nav class="flex flex-col gap-3">
+            <a href="/walking" class={`${linkBase} ${linkColor}`}>Walking</a>
+            <a href="/cycling" class={`${linkBase} ${linkColor}`}>Cycling</a>
+            <a href="/destinations" class={`${linkBase} ${linkColor}`}>Destinations</a>
+            <a href="/offers" class={`${linkBase} ${linkColor}`}>Offers</a>
+            <a href="/loyalty-club" class={`${linkBase} ${linkColor}`}>Loyalty Club</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class={`mt-12 pt-8 border-t ${borderColor}`}>
+        <p class={`text-sm ${copyrightColor} text-center @sm:text-left`}>
+          © {new Date().getFullYear()} Headwater Holidays. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+)}

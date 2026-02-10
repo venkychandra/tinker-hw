@@ -1,0 +1,245 @@
+---
+import GalleryLayout from '../layouts/GalleryLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<GalleryLayout title="Hero" description="Three hero variants for marketing pages: full-bleed image backdrop, split (text + image side-by-side), and simple (no image). All support eyebrow, heading, subheading, and CTA pair." fullscreenHref="/view/hero">
+
+  <!-- Image variant -->
+  <section class="specimen-section">
+    <h2>Image Variant</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Full-bleed backdrop photo with a subtle uniform overlay (not a gradient — respects the anti-pattern). White text, left-aligned. The photography breathes while text stays readable. Terracotta eyebrow is the trail marker accent.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Hero
+        variant="image"
+        eyebrow="Experts in active holidays"
+        heading="We plan the routes. You enjoy discovering them."
+        subheading="Self-guided walking and cycling adventures across Europe and beyond. Hand-picked hotels and award-winning routes since 1985."
+        primaryCta="Find a Holiday"
+        primaryHref="/find-holiday"
+        secondaryCta="Request a Brochure"
+        secondaryHref="/request-brochure"
+        imageSrc="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&h=700&fit=crop"
+        imageAlt="Mountain trail winding through alpine meadows"
+      />
+    </div>
+  </section>
+
+  <!-- Image variant — alternate photo -->
+  <section class="specimen-section">
+    <h2>Image — Alternate Content</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Same variant with different photography and content. The overlay keeps text readable regardless of image brightness. Single CTA also works.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Hero
+        variant="image"
+        eyebrow="Cycling Holidays"
+        heading="Ride Through Provence"
+        subheading="Lavender fields, medieval villages, and vineyard-lined roads. Self-guided cycling with hand-picked hotels and GPS navigation."
+        primaryCta="View Trip"
+        primaryHref="/cycling/provence"
+        imageSrc="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1400&h=700&fit=crop"
+        imageAlt="Scenic cycling route through rolling hills"
+      />
+    </div>
+  </section>
+
+  <!-- Split variant -->
+  <section class="specimen-section">
+    <h2>Split Variant</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Side-by-side layout — text on the left, image fills the right half. At narrow containers, stacks vertically with image on top. Editorial, travel-magazine feel.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Hero
+        variant="split"
+        eyebrow="Featured Trip"
+        heading="The Amalfi Coast Path"
+        subheading="Five days walking the Path of the Gods — cliffside trails, lemon groves, and turquoise coves. Luggage transfers included."
+        primaryCta="Book This Trip"
+        primaryHref="/trips/amalfi"
+        secondaryCta="View Itinerary"
+        secondaryHref="/trips/amalfi/itinerary"
+        imageSrc="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&h=900&fit=crop"
+        imageAlt="Amalfi Coast cliffside path overlooking the sea"
+      />
+    </div>
+  </section>
+
+  <!-- Split variant — dark -->
+  <section class="specimen-section">
+    <h2>Split — Dark Background</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      The <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">dark</code> prop inverts the text side. CTA buttons adapt — white primary on dark, white-bordered secondary.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Hero
+        variant="split"
+        dark
+        eyebrow="New for 2026"
+        heading="Dolomites Traverse"
+        subheading="A week crossing the most dramatic peaks in the Alps. Rifugio to rifugio, with nothing but sky and stone."
+        primaryCta="Reserve Your Spot"
+        primaryHref="/trips/dolomites"
+        secondaryCta="See the Route"
+        secondaryHref="/trips/dolomites/route"
+        imageSrc="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=900&fit=crop"
+        imageAlt="Dramatic Dolomite peaks at golden hour"
+      />
+    </div>
+  </section>
+
+  <!-- Simple variant — light -->
+  <section class="specimen-section">
+    <h2>Simple — Light</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      No image. Centered text on white background. For interior pages, about sections, or landing pages where photography isn't the focus.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Hero
+        variant="simple"
+        eyebrow="About Headwater"
+        heading="Forty Years on the Trail"
+        subheading="Since 1985, we've been creating active holidays across Europe and beyond. We are the self-guided specialists, with hand-picked hotels and award-winning routes."
+        primaryCta="Our Story"
+        primaryHref="/our-story"
+        secondaryCta="Meet the Team"
+        secondaryHref="/meet-team"
+      />
+    </div>
+  </section>
+
+  <!-- Simple variant — dark -->
+  <section class="specimen-section">
+    <h2>Simple — Dark</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Dark background version. Eyebrow shifts to accent-300 for contrast. Good for CTA sections or below-the-fold heroes.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <Hero
+        variant="simple"
+        dark
+        eyebrow="Ready for your next adventure?"
+        heading="Your Next Trail Starts Here"
+        subheading="Browse our collection of walking and cycling holidays, or talk to our team about tailor-made travel."
+        primaryCta="Find a Holiday"
+        primaryHref="/find-holiday"
+        secondaryCta="Contact Us"
+        secondaryHref="/contact"
+      />
+    </div>
+  </section>
+
+  <!-- Responsive behavior -->
+  <section class="specimen-section">
+    <h2>Responsive Behavior</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Typography scales automatically via <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">clamp()</code>/<code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">cqi</code> tokens — no responsive type classes needed. Vertical padding tightens at narrow widths via <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">@md:</code>/<code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">@lg:</code> variants. Split variant stacks at narrow containers.
+    </p>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Image — Narrow (~320px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+      <div style="max-width: 320px; margin: 0 auto;">
+        <Hero
+          variant="image"
+          eyebrow="Walking Holidays"
+          heading="Walk the Trails of Europe"
+          subheading="Self-guided walking holidays through the most beautiful landscapes."
+          primaryCta="Explore Trips"
+          secondaryCta="Learn More"
+          imageSrc="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop"
+          imageAlt="Mountain trail"
+        />
+      </div>
+    </div>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Split — Narrow (~320px, stacks)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
+      <div style="max-width: 320px; margin: 0 auto;">
+        <Hero
+          variant="split"
+          eyebrow="Featured Trip"
+          heading="The Amalfi Coast Path"
+          subheading="Five days of cliffside trails and lemon groves."
+          primaryCta="Book This Trip"
+          imageSrc="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=400&h=300&fit=crop"
+          imageAlt="Amalfi Coast"
+        />
+      </div>
+    </div>
+
+    <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-4">Split — Wide (~1280px)</h3>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div style="max-width: 1280px;">
+        <Hero
+          variant="split"
+          eyebrow="Featured Trip"
+          heading="The Amalfi Coast Path"
+          subheading="Five days walking the Path of the Gods — cliffside trails, lemon groves, and turquoise coves."
+          primaryCta="Book This Trip"
+          secondaryCta="View Itinerary"
+          imageSrc="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&h=600&fit=crop"
+          imageAlt="Amalfi Coast"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Anatomy -->
+  <section class="specimen-section">
+    <h2>Anatomy</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Props and class construction breakdown.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div class="p-6">
+        <div class="flex flex-col gap-3 text-sm">
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Variants</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">"image" | "split" | "simple" (default)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Eyebrow</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-sm font-semibold uppercase tracking-wide, accent-500 (light) / accent-300 (dark)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Heading</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-6xl font-bold tracking-tight — clamp(30px, 5cqi, 60px)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Subheading</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">text-xl, gray-600 (light) / white/80 (dark), max-w-[50ch]</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">CTAs</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">Button lg pattern as &lt;a&gt; — primary fill + secondary outline</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Image overlay</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">bg-gray-950/50 — subtle, uniform (no gradient)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Padding</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">py-24 → @md:py-32 → @lg:py-40 (responsive tightening)</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">Split layout</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">grid-cols-1 @lg:grid-cols-2 — stacks at narrow, side-by-side at wide</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">dark prop</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">Inverts colors for simple and split variants — bg-gray-900, white text</code>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-xs font-semibold text-gray-500 uppercase tracking-wide w-24 shrink-0 pt-0.5">data-seamless</span>
+            <code class="text-xs bg-gray-100 px-2 py-1 rounded-sm font-mono text-gray-700 leading-relaxed">All variants use data-seamless for page-flow stacking (no gap between heroes + nav)</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</GalleryLayout>

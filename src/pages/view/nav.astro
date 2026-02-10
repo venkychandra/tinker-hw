@@ -1,0 +1,46 @@
+---
+import FullScreenLayout from '../../layouts/FullScreenLayout.astro';
+import Nav from '../../components/Nav.astro';
+---
+
+<FullScreenLayout title="Navigation">
+
+  <!-- Light variant -->
+  <div class="@container">
+    <Nav />
+  </div>
+
+  <!-- Light content placeholder -->
+  <div class="max-w-[var(--container-max)] mx-auto px-6 py-20">
+    <div class="h-8 w-80 bg-gray-200 rounded-sm mb-4"></div>
+    <div class="h-4 w-full max-w-xl bg-gray-100 rounded-sm mb-2"></div>
+    <div class="h-4 w-4/5 max-w-xl bg-gray-100 rounded-sm"></div>
+  </div>
+
+  <!-- Transparent variant on hero image -->
+  <div class="@container relative">
+    <img
+      src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&h=600&fit=crop"
+      alt="Mountain landscape"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="relative">
+      <Nav variant="transparent" />
+      <div class="max-w-[var(--container-max)] mx-auto px-6 py-32 text-center">
+        <h1 class="text-5xl font-bold text-white tracking-tight mb-4">Walk the Trails of Europe</h1>
+        <p class="text-xl text-white/80 max-w-[50ch] mx-auto">Self-guided walking and cycling holidays through the most beautiful landscapes on the continent.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transparent on solid dark -->
+  <div class="@container bg-gray-900">
+    <Nav variant="transparent" />
+  </div>
+
+  <!-- Transparent on primary -->
+  <div class="@container bg-primary-700">
+    <Nav variant="transparent" />
+  </div>
+
+</FullScreenLayout>

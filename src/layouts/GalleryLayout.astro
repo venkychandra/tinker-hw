@@ -13,6 +13,13 @@ interface Props {
 const { title, description, fullscreenHref, section = 'design-system' } = Astro.props;
 const wireframes = [
   { href: '/wireframes/home', label: 'Home' },
+  { href: '/wireframes/home-visual', label: 'Home (Visual)' },
+  { href: '/wireframes/holiday-listing', label: 'Holiday Listing' },
+  { href: '/wireframes/trip-detail', label: 'Trip Detail' },
+  { href: '/wireframes/destination', label: 'Destination' },
+  { href: '/wireframes/about', label: 'About' },
+  { href: '/wireframes/contact', label: 'Contact' },
+  { href: '/wireframes/faq', label: 'FAQ' },
 ];
 const pages = [
   { href: '/style-guide', label: 'Style Guide' },
@@ -21,9 +28,26 @@ const pages = [
   { href: '/grid', label: 'Grid' },
   { href: '/cards', label: 'Cards' },
   { href: '/forms', label: 'Forms' },
+  { href: '/nav', label: 'Navigation' },
+  { href: '/hero', label: 'Hero' },
+  { href: '/features', label: 'Features' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/stats', label: 'Stats' },
+  { href: '/logo-cloud', label: 'Logo Cloud' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/cta', label: 'CTA' },
+  { href: '/footer', label: 'Footer' },
 ];
 const layouts = [
-  { href: '/layouts/home', label: 'Home' },
+  { href: '/home', label: 'Home' },
+  { href: '/home-visual', label: 'Home (Visual)' },
+  { href: '/holiday-listing', label: 'Holiday Listing' },
+  { href: '/trip-detail', label: 'Trip Detail' },
+  { href: '/destination', label: 'Destination' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/faq-page', label: 'FAQ' },
 ];
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 

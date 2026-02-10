@@ -1,0 +1,255 @@
+---
+import GalleryLayout from '../layouts/GalleryLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import Card from '../components/Card.astro';
+import Testimonials from '../components/Testimonials.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import Walking from '../components/icons/Walking.astro';
+import Cycling from '../components/icons/Cycling.astro';
+import Mountain from '../components/icons/Mountain.astro';
+---
+
+<GalleryLayout
+  title="Home"
+  description="Complete home page assembled from approved components — hero, feature grids, testimonials, CTA, and footer."
+  section="layouts"
+  fullscreenHref="/view/home"
+>
+  <div class="gallery-specimen">
+    <div class="@container page-flow">
+      <!-- Hero with transparent nav overlay -->
+      <div class="relative" data-seamless>
+        <div class="absolute top-0 left-0 right-0 z-10">
+          <Nav variant="transparent" />
+        </div>
+        <Hero
+          variant="image"
+          heading="Experts in self-guided active holidays"
+          subheading="We plan the routes. You enjoy discovering them."
+          primaryCta="Find a Holiday"
+          primaryHref="/find-holiday"
+          secondaryCta="Request Brochure"
+          secondaryHref="/request-brochure"
+          imageSrc="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&h=900&fit=crop"
+          imageAlt="Mountain trail with hikers"
+        />
+      </div>
+
+      <!-- Explore our holidays -->
+      <FeatureGrid
+        variant="centered"
+        columns={3}
+        heading="Explore our holidays"
+        subheading="Walking, cycling, and multi-activity tours across Europe and beyond"
+      >
+        <Card variant="elevated">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mb-4">
+              <Walking class="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Walking</h3>
+            <p class="text-sm text-gray-600 mb-4">Self-guided holidays on award-winning routes</p>
+            <a href="/walking" class="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors duration-fast">
+              View trips →
+            </a>
+          </div>
+        </Card>
+
+        <Card variant="elevated">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mb-4">
+              <Cycling class="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Cycling</h3>
+            <p class="text-sm text-gray-600 mb-4">Scenic routes with e-bikes available</p>
+            <a href="/cycling" class="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors duration-fast">
+              View trips →
+            </a>
+          </div>
+        </Card>
+
+        <Card variant="elevated">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mb-4">
+              <Mountain class="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Multi-Activity</h3>
+            <p class="text-sm text-gray-600 mb-4">Walk and cycle combined</p>
+            <a href="/multi-activity" class="text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors duration-fast">
+              View trips →
+            </a>
+          </div>
+        </Card>
+      </FeatureGrid>
+
+      <!-- Featured destinations -->
+      <FeatureGrid
+        variant="default"
+        columns={4}
+        dark={true}
+        heading="Featured destinations"
+      >
+        <a href="/destinations/tuscany" class="block group">
+          <div class="relative aspect-[3/4] overflow-hidden rounded-lg mb-3">
+            <img
+              src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=400&h=533&fit=crop"
+              alt="Tuscany countryside"
+              class="w-full h-full object-cover transition-transform duration-normal ease-default group-hover:scale-105"
+            />
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-1">Tuscany</h3>
+          <p class="text-sm text-gray-400">Walking</p>
+        </a>
+
+        <a href="/destinations/camino" class="block group">
+          <div class="relative aspect-[3/4] overflow-hidden rounded-lg mb-3">
+            <img
+              src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=400&h=533&fit=crop"
+              alt="Camino de Santiago path"
+              class="w-full h-full object-cover transition-transform duration-normal ease-default group-hover:scale-105"
+            />
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-1">Camino de Santiago</h3>
+          <p class="text-sm text-gray-400">Walking</p>
+        </a>
+
+        <a href="/destinations/dordogne" class="block group">
+          <div class="relative aspect-[3/4] overflow-hidden rounded-lg mb-3">
+            <img
+              src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=533&fit=crop"
+              alt="Dordogne valley"
+              class="w-full h-full object-cover transition-transform duration-normal ease-default group-hover:scale-105"
+            />
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-1">Dordogne</h3>
+          <p class="text-sm text-gray-400">Cycling</p>
+        </a>
+
+        <a href="/destinations/croatia" class="block group">
+          <div class="relative aspect-[3/4] overflow-hidden rounded-lg mb-3">
+            <img
+              src="https://images.unsplash.com/photo-1555990538-b12c97da2a35?w=400&h=533&fit=crop"
+              alt="Croatian coast"
+              class="w-full h-full object-cover transition-transform duration-normal ease-default group-hover:scale-105"
+            />
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-1">Croatia</h3>
+          <p class="text-sm text-gray-400">Walking</p>
+        </a>
+      </FeatureGrid>
+
+      <!-- Why travel with Headwater -->
+      <FeatureGrid
+        variant="centered"
+        columns={3}
+        heading="Why travel with Headwater?"
+        subheading="40+ years of active holiday expertise"
+      >
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-accent-50 rounded-full mb-4">
+            <svg class="w-6 h-6 text-accent-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Hand-picked hotels</h3>
+          <p class="text-sm text-gray-600">Quality stays every night</p>
+        </div>
+
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-accent-50 rounded-full mb-4">
+            <svg class="w-6 h-6 text-accent-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Award-winning routes</h3>
+          <p class="text-sm text-gray-600">Tested by our team</p>
+        </div>
+
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-accent-50 rounded-full mb-4">
+            <svg class="w-6 h-6 text-accent-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="3 11 22 2 13 21 11 13 3 11" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">GPS & route notes</h3>
+          <p class="text-sm text-gray-600">Navigation included</p>
+        </div>
+
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-accent-50 rounded-full mb-4">
+            <svg class="w-6 h-6 text-accent-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Local experiences</h3>
+          <p class="text-sm text-gray-600">Authentic cuisine & wine</p>
+        </div>
+
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-accent-50 rounded-full mb-4">
+            <svg class="w-6 h-6 text-accent-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Tailor-made service</h3>
+          <p class="text-sm text-gray-600">Expert advice since 1985</p>
+        </div>
+
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-accent-50 rounded-full mb-4">
+            <svg class="w-6 h-6 text-accent-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">ABTA/ATOL protected</h3>
+          <p class="text-sm text-gray-600">Peace of mind</p>
+        </div>
+      </FeatureGrid>
+
+      <!-- Testimonials -->
+      <Testimonials
+        variant="default"
+        heading="What our guests say"
+        dark={true}
+      >
+        <TestimonialCard
+          quote="Outstanding organization from start to finish. The route notes were perfect, the hotels were hand-picked gems, and we discovered parts of Tuscany we'd never have found on our own."
+          name="Sarah & Michael Thompson"
+          location="Bristol, UK"
+          rating={5}
+        />
+        <TestimonialCard
+          quote="The GPS navigation app made everything so easy. We felt independent but never lost. The local restaurant recommendations were spot on — real authentic experiences."
+          name="David Henderson"
+          location="Edinburgh, Scotland"
+          rating={5}
+        />
+        <TestimonialCard
+          quote="This was our third Headwater holiday and it won't be our last. The quality of the hotels, the attention to detail, and the sheer beauty of the routes keep us coming back."
+          name="Janet & Robert Clarke"
+          location="Surrey, UK"
+          rating={5}
+        />
+      </Testimonials>
+
+      <!-- Final CTA -->
+      <CTA
+        variant="simple"
+        heading="Find your perfect active holiday"
+        subheading="Tell us what you're looking for and we'll help"
+        primaryCta="Find a Holiday"
+        primaryHref="/find-holiday"
+      />
+
+      <!-- Footer -->
+      <Footer variant="standard" />
+    </div>
+  </div>
+</GalleryLayout>

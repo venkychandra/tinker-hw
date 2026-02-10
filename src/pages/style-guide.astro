@@ -8,7 +8,7 @@ import GalleryLayout from '../layouts/GalleryLayout.astro';
   <section class="specimen-section">
     <h2>Grey Palette</h2>
     <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
-      Cool greys with a <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">hue 220</code> base. Saturation increases at the extremes to maintain warmth. Used for text hierarchy, borders, backgrounds, and structural elements.
+      Warm greys saturated with orange (<code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">hue 30</code>). Hue drifts from 36 at the light end to 20 at the dark end. Saturation increases at the extremes to maintain warmth. Earthy, grounded — not corporate cool.
     </p>
     <div class="border border-gray-200 rounded-lg overflow-hidden">
       <div class="flex">
@@ -38,7 +38,7 @@ import GalleryLayout from '../layouts/GalleryLayout.astro';
           <div><span class="font-semibold text-gray-900">Text:</span> 900, 600, 400</div>
           <div><span class="font-semibold text-gray-900">Borders:</span> 200, 300</div>
           <div><span class="font-semibold text-gray-900">Backgrounds:</span> 50, 100</div>
-          <div><span class="font-semibold text-gray-900">Hue:</span> 220 (cool)</div>
+          <div><span class="font-semibold text-gray-900">Hue:</span> 30 (warm)</div>
         </div>
       </div>
     </div>
@@ -46,9 +46,9 @@ import GalleryLayout from '../layouts/GalleryLayout.astro';
 
   <!-- Colors — Primary -->
   <section class="specimen-section">
-    <h2>Primary Palette</h2>
+    <h2>Primary — Forest Green</h2>
     <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
-      Blue at <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">hue 220</code>, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">saturation ~70%</code>. 500 is the base — works as a button background with white text. 50–100 for tinted backgrounds, 600–700 for hover/active.
+      Forest green at <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">hue ~152</code>. Pine forests, alpine meadows, European trail markers. 500 is the base — works as a button background with white text (4.5:1+). Hue rotates toward cyan to lighten, toward pure green to darken.
     </p>
     <div class="border border-gray-200 rounded-lg overflow-hidden">
       <div class="flex">
@@ -85,11 +85,52 @@ import GalleryLayout from '../layouts/GalleryLayout.astro';
     </div>
   </section>
 
+  <!-- Colors — Accent -->
+  <section class="specimen-section">
+    <h2>Accent — Terracotta</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
+      Terracotta at <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">hue ~14</code>. The trail marker accent — Mediterranean paths, Tuscan clay, sun-warmed stone. The signature element. Used for accent borders, active indicators, and secondary CTAs.
+    </p>
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <div class="flex">
+        {[
+          { shade: '50',  class: 'bg-accent-50' },
+          { shade: '100', class: 'bg-accent-100' },
+          { shade: '200', class: 'bg-accent-200' },
+          { shade: '300', class: 'bg-accent-300' },
+          { shade: '400', class: 'bg-accent-400' },
+          { shade: '500', class: 'bg-accent-500' },
+          { shade: '600', class: 'bg-accent-600' },
+          { shade: '700', class: 'bg-accent-700' },
+          { shade: '800', class: 'bg-accent-800' },
+          { shade: '900', class: 'bg-accent-900' },
+          { shade: '950', class: 'bg-accent-950' },
+        ].map(({ shade, class: bg }) => (
+          <div class="flex-1 flex flex-col">
+            <div class={`${bg} h-16`}></div>
+            <div class="px-2 py-2 text-center">
+              <span class="text-xs font-mono text-gray-500 block">{shade}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="border-t border-gray-200 px-6 py-4">
+        <div class="flex gap-8 text-sm text-gray-600">
+          <div><span class="font-semibold text-gray-900">Trail marker:</span> 500</div>
+          <div><span class="font-semibold text-gray-900">Hover:</span> 600</div>
+          <div><span class="font-semibold text-gray-900">Active:</span> 700</div>
+          <div><span class="font-semibold text-gray-900">Tint bg:</span> 50</div>
+          <div><span class="font-semibold text-gray-900">Accent border:</span> 400</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Type Scale -->
   <section class="specimen-section">
     <h2>Type Scale</h2>
     <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
-      Hand-crafted scale, not a modular ratio. Each step has a paired line-height — tighter for display sizes, more generous for body text. Font: <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">system-ui</code> stack.
+      Hand-crafted scale, not a modular ratio. Each step has a paired line-height — tighter for display sizes, more generous for body text. Font: <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">Outfit</code> — geometric sans with warm, open letterforms.
     </p>
     <div class="border border-gray-200 rounded-lg overflow-hidden">
       {[
@@ -177,19 +218,21 @@ import GalleryLayout from '../layouts/GalleryLayout.astro';
   <section class="specimen-section">
     <h2>Shadows</h2>
     <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
-      Four-level elevation scale using two-part shadows (direct light + ambient occlusion). Light source from above. Use <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">sm</code> for buttons, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">md</code> for cards, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">lg</code> for dropdowns, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">xl</code> for modals.
+      Five-level elevation scale using two-part shadows (direct light + ambient occlusion). Warm-tinted from <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">gray-900</code>. Firm with less blur than typical — grounded, like solid earth underfoot.
     </p>
     <div class="border border-gray-200 rounded-lg p-8">
       <div class="flex flex-wrap gap-8 items-end">
         {[
-          { name: 'shadow-sm', class: 'shadow-sm' },
-          { name: 'shadow-md', class: 'shadow-md' },
-          { name: 'shadow-lg', class: 'shadow-lg' },
-          { name: 'shadow-xl', class: 'shadow-xl' },
-        ].map(({ name, class: shadow }) => (
+          { name: 'shadow-sm', class: 'shadow-sm', use: 'Buttons' },
+          { name: 'shadow-md', class: 'shadow-md', use: 'Cards' },
+          { name: 'shadow-lg', class: 'shadow-lg', use: 'Dropdowns' },
+          { name: 'shadow-xl', class: 'shadow-xl', use: 'Modals' },
+          { name: 'shadow-2xl', class: 'shadow-2xl', use: 'Overlays' },
+        ].map(({ name, class: shadow, use }) => (
           <div class="flex flex-col items-center gap-3">
-            <div class={`w-24 h-24 bg-white rounded-lg ${shadow}`}></div>
+            <div class={`w-24 h-24 bg-white rounded-md ${shadow}`}></div>
             <span class="text-xs font-mono text-gray-400">{name}</span>
+            <span class="text-xs text-gray-400">{use}</span>
           </div>
         ))}
       </div>
@@ -200,14 +243,14 @@ import GalleryLayout from '../layouts/GalleryLayout.astro';
   <section class="specimen-section">
     <h2>Border Radius</h2>
     <p class="text-sm text-gray-600 mb-6 max-w-[65ch]">
-      Four values. <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">sm</code> for small buttons and badges, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">md</code> for inputs and default buttons, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">lg</code> for cards and containers, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">full</code> for pills and avatars.
+      Four values. Confident and grounded — 6px default, not playful. <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">sm</code> for badges, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">md</code> for buttons and inputs, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">lg</code> for cards, <code class="text-xs bg-gray-100 px-1.5 py-0.5 rounded-sm font-mono">full</code> for pills and avatars.
     </p>
     <div class="border border-gray-200 rounded-lg p-8">
       <div class="flex flex-wrap gap-8 items-end">
         {[
           { name: 'rounded-sm', value: '4px',    class: 'rounded-sm' },
-          { name: 'rounded-md', value: '8px',    class: 'rounded-md' },
-          { name: 'rounded-lg', value: '12px',   class: 'rounded-lg' },
+          { name: 'rounded-md', value: '6px',    class: 'rounded-md' },
+          { name: 'rounded-lg', value: '10px',   class: 'rounded-lg' },
           { name: 'rounded-full', value: '9999px', class: 'rounded-full' },
         ].map(({ name, value, class: radius }) => (
           <div class="flex flex-col items-center gap-3">
