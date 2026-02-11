@@ -1,6 +1,7 @@
 /*
 !.claude
 .claude/*
+!.claude/docs
 !.claude/skills
 !.gitignore
 !BOOTSTRAP.md
